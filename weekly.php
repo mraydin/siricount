@@ -602,7 +602,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 var ldatax = jd.map(function(e) {return e.Week;});
                 console.log("Week",ldatax);
                 var ldatay = jd.map(function(e) {return e.Trafik; });
-                console.log("Trafik",ldatay);
+                console.log("TrafikXX",ldatay);
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
