@@ -595,7 +595,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
         updateConfigByLine2(window.lineChart);
         
 	 function updateConfigByLine(chart) {
-           var myObject = {name: 8, s: "submit"};
+           var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
            $.getJSON("../../wcountSearch.php",myObject, function(jd) {
                 //console.log("jd",jd);
                 var ldatax = jd.map(function(e) {return e.Week;});
