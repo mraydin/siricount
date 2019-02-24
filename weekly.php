@@ -171,9 +171,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>Hafta</th>
-                            <th>Bu Hafta</th>
-                            <th>Geçen Hafta</th>
+                            <th><?php  $objDateTime = new DateTime('NOW');
+                                echo $objDateTime->format('W')?>.Hafta</th>
+                            <th>Bu Yıl</th>
+                            <th>Geçen Yıl</th>
+                            <th>Değişim</th>
                         </tr>
                         </thead>
                         <tbody id="theWeek">
@@ -591,13 +593,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         updateConfigByLine(window.lineChart);
         updateConfigByLine2(window.lineChart);
-        text = "<tr>";
-        for (i = 0; i < ldatay.length; i++) {
-            text += "<tr><td>" + ldatax[i] + "</td>";
-            text += "<td>" + ldatay[i] + "</td></tr>";
-        }
-        text += "</tr>";
-        document.getElementById("theWeek").innerHTML = text;
 
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
@@ -610,6 +605,15 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
+
+               text = "<tr>";
+               for (i = 0; i < ldatay.length; i++) {
+                   text += "<tr><td>" + ldatax[i] + "</td>";
+                   text += "<td>" + ldatay[i] + "</td></tr>";
+               }
+               text += "</tr>";
+               document.getElementById("theWeek").innerHTML = text;
+
 
 
             });
