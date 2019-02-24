@@ -13,17 +13,13 @@ echo '<!-- sidebar menu -->
 		 </ul>
 		<li><a><i class="fa fa-desktop"></i> Raporlar <span class="fa 
 fa-chevron-down"></span></a>
-		  <ul class="nav child_menu">
-		   <li><a>MERSİN FORUM <span class="fa fa-chevron-down"></span></a>
-		    <ul class="nav child_menu">
-		     <li class="sub_menu"><a href="searchBar.php">Haftalık</a>
-		     </li>
-		     <li><a href="#">Günlük</a>
-		     </li>
-		     <li><a href="#">Footfall Özeti</a>
-		     </li>
-		    </ul>
-		   </li>
+		  <ul class="nav child_menu">	    
+          <li class="sub_menu"><a href="searchBar.php">Haftalık</a>
+		  </li>
+		  <li><a href="#">Günlük</a>
+		  </li>
+		  <li><a href="#">Footfall Özeti</a>
+		  </li>		   
 		   <li><a href="#">Açılış & Kapanış Zamanı</a>
 		   </li>
 		   <li><a href="#">Dış Alan Trafiği</a>
