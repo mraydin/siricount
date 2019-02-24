@@ -596,11 +596,13 @@ moment().locale('tr').format('MMMM D, YYYY'));
         updateConfigByLine2(window.lineChart);
         text = "<tr>";
         for (i = 0; i < ldatay.length; i++) {
-            text += "<tr><td>" + ldatax[i] + "</td>";
-            text += "<td>" + window.lineChartchart.data.datasets[1].data[i] + "</td></tr>";
+            text += "<tr><td>" + window.lineChart.data.datasets[0].labels[i] + "</td>";
+            text += "<td>" + window.lineChart.data.datasets[0].data[i] + "</td></tr>";
+
         }
         text += "</tr>";
         document.getElementById("theWeek").innerHTML = text;
+        console.log (window.lineChart.data.datasets[0].data[1]);
 
 
 	 function updateConfigByLine(chart) {
