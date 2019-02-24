@@ -886,12 +886,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		chart.data.datasets[1].label = picker.endDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
                text = "<tr>";
-               ldatay,ldatax.forEach(myFunction);
+               ldatay.forEach(myFunction);
+               ldatax.forEach(myFunction2);
                document.getElementById("theWeek").innerHTML = text;
                text = "</tr>";
-               function myFunction(value,value2) {
+               function myFunction(value) {
                    text += "<td>" + value + "</td>";
-                   text += "<td>" + value2 + "</td>";
+               }
+               function myFunction2(value) {
+                   text += "<td>" + value + "</td>";
                }
             });
         }
