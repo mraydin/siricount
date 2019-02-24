@@ -165,6 +165,20 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
               </div>
             </div>
+            <div class="col-md-12 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <div class="col-md-4">
+                            <h2>Günlük Trend <small>
+                                </small></h2>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                    </div>
+                </div>
+            </div>
     </div>
     <div class="row">
             <div class="col-md-12 col-sm-8 col-xs-12">
