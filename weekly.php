@@ -159,7 +159,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <div class="x_panel">
                 <div class="x_title">
 			<div class="col-md-4">
-                  <h2>Haftalık Karşılaştırmalı Grafik<small></small></h2></div>
+                  <h2>Haftalık Trend<small></small></h2></div>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -172,7 +172,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <div class="x_panel">
                 <div class="x_title">
 			<div class="col-md-4">
-                  	<h2>Günlük Karşılaştırmalı Grafik <small>
+                  	<h2>Günlük Trend <small>
 			</small></h2>
 			</div>
 	
