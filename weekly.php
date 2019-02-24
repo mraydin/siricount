@@ -594,7 +594,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         updateConfigByLine(window.lineChart);
         updateConfigByLine2(window.lineChart);
-
+        console.log ("LineChart", window.lineChart.data.datasets[1].pointBorderWidth);
 
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
@@ -633,7 +633,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
             });
 
         }
-        console.log ("LineChart", ctx.data.datasets[1].data);
+
 
         function initLineChart() {
                 //Chart declaration:
