@@ -172,29 +172,13 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>.Hafta</th>
+                            <th>Bu Hafta</th>
+                            <th>Geçen Hafta</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                        <tr id="theWeek">
                         </tr>
                         </tbody>
                     </table>
@@ -818,10 +802,18 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      });
                 //console.log("tcounty",datay);
                 chart.data.datasets[1].data = datay;
-		chart.data.datasets[1].label = picker.endDate.locale('tr').format('D MMMM') + "'da bu saatte";
+		        chart.data.datasets[1].label = picker.endDate.locale('tr').format('D MMMM') + "'da bu saatte";
                 chart.update();
+               text = <th scope="row">1</th>
+               datay.forEach(myFunction);
+               document.getElementById("theWeek").innerHTML = text;
 
-            });
+               function myFunction(value) {
+                   text += "<td>" + value + "</td>";
+               }
+
+
+           });
         }
 
 	
