@@ -897,7 +897,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
 
-
+               text = "<tr>";
+               for (i = 0; i < ldatay.length; i++) {
+                   text += "<tr><td>" + ldatax[i] + "</td>";
+                   text += "<td>" + ldatay[i] + "</td>";
+                   text += "<td>" + "--" + "</td>";
+                   text += "<td>" + "%" + "</td></tr>";
+               }
+               text += "</tr>";
+               document.getElementById("theWeek").innerHTML = text;
 
             });
         }
