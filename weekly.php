@@ -873,18 +873,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 console.log("Trafik",ldatay);
                 chart.data.labels = ldatax;
                 chart.data.datasets[0].data = ldatay;
-		chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
+		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
-            });
-        }
-         function updateConfigByLine2(chart) {
-           var myObject = {name: picker.endDate.locale('tr').format('W'), s: "submit"};
-           $.getJSON("../../wcountSearch.php", myObject, function(jd) {
-                var ldatay = jd.map(function(e) {return e.Trafik;});
-                console.log("Week",ldatay);
-                chart.data.datasets[1].data = ldatay;
-		chart.data.datasets[1].label = picker.endDate.locale('tr').format('W') + ". Hafta";
-                chart.update();
+
                text = "<tr>";
                ldatay.forEach(myFunction);
                ldatax.forEach(myFunction2);
@@ -896,6 +887,16 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                function myFunction2(value) {
                    text += "<td>" + value + "</td>";
                }
+            });
+        }
+         function updateConfigByLine2(chart) {
+           var myObject = {name: picker.endDate.locale('tr').format('W'), s: "submit"};
+           $.getJSON("../../wcountSearch.php", myObject, function(jd) {
+                var ldatay = jd.map(function(e) {return e.Trafik;});
+                console.log("Week",ldatay);
+                chart.data.datasets[1].data = ldatay;
+		chart.data.datasets[1].label = picker.endDate.locale('tr').format('W') + ". Hafta";
+                chart.update();
             });
         }
         function initLineChart() {
