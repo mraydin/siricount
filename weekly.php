@@ -884,7 +884,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
                function myFunction(value) {
-                   text += "<tr><td>" + value + "</td></tr>";
+                   text += "<tr>"+"<td>" + value + "</td>"+"</tr>";
                }
 
 
