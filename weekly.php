@@ -650,7 +650,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         }
 
-        console.log ("LineChart", window.lineChart.data.datasets[1].data);
+        console.log ("LineChart", window.lineChart.data.datasets[1].data[3]);
 
 	<!-- /Default LineChart Script -->
 
