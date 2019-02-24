@@ -75,7 +75,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
           <div class="navbar nav_title" style="border: 0;">
             <a href="index.php" class="site_title"><i class="fa 
-fa-paw"></i> <span>SiriCount v2.0!</span></a>
+fa-paw"></i> <span>SiriCount v2.0!_Github</span></a>
           </div>
           <div class="clearfix"></div>
 
