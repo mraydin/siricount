@@ -1184,8 +1184,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 				for (i in day_data) {
 					x += day_data[i].Gun;
-                                        x += day_data[i].Tarih;
-                                        x += day_data[i].Giris;
+                                        x += day_data[i].Trafik;
+                                        x += day_data[i].Week;
                                         x += "null";
                                         x += "null";
                                         x += "null";
@@ -1197,25 +1197,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 				//x=day_data[0].Gun;
 	
 	 		//var x = day_data[0].Week;
-	
+
 
 	/*Custom filtering function which will search data in column four between two values */
-	$.fn.dataTable.ext.search.push(
-    	function( settings, data, dataIndex ) {
-        var min = parseInt( $('#min').val(), 10 );
-        var max = parseInt( $('#max').val(), 10 );
-        var age = parseFloat( data[2] ) || 0; // use data for the age column
- 
-        	if ( ( isNaN( min ) && isNaN( max ) ) ||
-             		( isNaN( min ) && age <= max ) ||
-             		( min <= age   && isNaN( max ) ) ||
-         	    	( min <= age   && age <= max ) )
-        	{
-            	return true;
-        }
-        return false;
-    	}
-	);	
  
 	$(document).ready(function() {
 	//console.log(day_data);
@@ -1232,14 +1216,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
     } );
 	
 	// Event listener to the two range filtering inputs to redraw on input
-    	$('#min, #max').keyup( function() {
-        table.draw();
-    	} );
+
 	   } );	
 
 		}
 	};
-        xmlhttp.open("GET", "../../dcount.php", true);
+        xmlhttp.open("GET", "../../wcount.php", true);
         xmlhttp.send();	// chart.
 	
 
