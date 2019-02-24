@@ -75,7 +75,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
           <div class="navbar nav_title" style="border: 0;">
             <a href="index.php" class="site_title"><i class="fa 
-fa-paw"></i> <span>SiriCount v2.0!_Github</span></a>
+fa-paw"></i> <span>SiriCount Github</span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -85,7 +85,7 @@ fa-paw"></i> <span>SiriCount v2.0!_Github</span></a>
               <img src="images/user.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
-              <span>Hoşgeldin,Git</span>
+              <span>Hoşgeldin</span>
               <h2><?php echo htmlspecialchars($_SESSION["username"]); ?></h2>
             </div>
           </div>
