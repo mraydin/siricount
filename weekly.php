@@ -609,7 +609,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
                text = "<tr>";
                ldatay.forEach(myFunction);
-
                text = "</tr>";
                document.getElementById("theWeek").innerHTML = text;
 

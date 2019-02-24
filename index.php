@@ -198,7 +198,7 @@ Durumu</span>
                 <div class="x_title">
                   <h2>Haftalık Karşılaştırmalı Grafik<small>(<?php  $objDateTime = new 
 DateTime('NOW');
-                                $objDateTime->modify('last week monday');
+                                $objDateTime->modify('this week monday');
                                 echo $objDateTime->format('d.m');
                                 ?>-<?php  $objDateTime = new DateTime('NOW');
                                 $objDateTime->modify('this week first sunday');
