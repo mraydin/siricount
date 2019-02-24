@@ -589,12 +589,12 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         data: []
                  }]
                };
-        console.log ("LineChart", window.lineChart.data.datasets[1].data[2]);
+
 		initLineChart();
 
         updateConfigByLine(window.lineChart);
         updateConfigByLine2(window.lineChart);
-
+        console.log ("LineChart", window.lineChart.data.datasets[1].data[2]);
 
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
