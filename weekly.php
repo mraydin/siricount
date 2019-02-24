@@ -167,17 +167,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
-                    <table border="0" cellspacing="5" cellpadding="5">
-                        <tbody>
-                        <tr>
-                            <td>Minimum Trafik:</td>
-                            <td><input type="text" id="min" name="min"></td>
-
-                            <td>&nbsp&nbspMaximum Trafik:</td>
-                            <td><input type="text" id="max" name="max"></td>
-                        </tr>
-                        </tbody>
-                    </table>
 
                     <div class="x_content">
                         <p class="text-muted font-13 m-b-30">
