@@ -125,7 +125,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
       <!-- page content -->
       <div class="right_col" role="main">
 
-	<div class="row">
+	<div class="">
             <div class="col-md-12">
 
               <!-- form date pickers -->
