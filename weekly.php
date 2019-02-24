@@ -878,8 +878,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 chart.update();
                text = "<tr>";
                ldatax.forEach(myFunction);
+               text += "</tr>";
                document.getElementById("theWeek").innerHTML = text;
-               text = "</tr>";
+
 
 
                function myFunction(value) {
