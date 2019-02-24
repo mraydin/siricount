@@ -165,7 +165,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-sm-8 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
                         <div class="col-md-4">
