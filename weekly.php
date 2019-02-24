@@ -171,9 +171,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th><?php  $objDateTime = new DateTime('NOW');
-                                $objDateTime->modify('last week');
-                                echo $objDateTime->format('W')?>.Hafta</th>
+                            <th><b id="weekName">.Hafta</b></th>
                             <th>Bu Yıl</th>
                             <th>Geçen Yıl</th>
                             <th>Değişim</th>
@@ -617,6 +615,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                }
                text += "</tr>";
                document.getElementById("theWeek").innerHTML = text;
+               document.getElementById("weekName").innerHTML = moment().subtract(1, 'week').locale('tr').format('W');
 
             });
      }
@@ -905,6 +904,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                    text += "<td>" + "%" + "</td></tr>";
                }
                text += "</tr>";
+               document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('W');
                document.getElementById("theWeek").innerHTML = text;
 
             });
