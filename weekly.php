@@ -591,7 +591,14 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         updateConfigByLine(window.lineChart);
         updateConfigByLine2(window.lineChart);
-        
+        text = "<tr>";
+        for (i = 0; i < ldatay.length; i++) {
+            text += "<tr><td>" + ldatax[i] + "</td>";
+            text += "<td>" + ldatay[i] + "</td></tr>";
+        }
+        text += "</tr>";
+        document.getElementById("theWeek").innerHTML = text;
+
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
            $.getJSON("../../wcountSearch.php",myObject, function(jd) {
@@ -603,15 +610,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
-
-               text = "<tr>";
-               for (i = 0; i < ldatay.length; i++) {
-                   text += "<tr><td>" + ldatay[i] + "</td>";
-                   text += "<td>" + ldatax[i] + "</td></tr>";
-               }
-               text += "</tr>";
-               document.getElementById("theWeek").innerHTML = text;
-
 
 
             });
