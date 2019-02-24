@@ -607,7 +607,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
-               console.log ("Chart", chart.data.datasets[0].data);
+               console.log ("Chart", chart.data.datasets[1].data);
 
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
