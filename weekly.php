@@ -594,6 +594,14 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         updateConfigByLine(window.lineChart);
         updateConfigByLine2(window.lineChart);
+        text = "<tr>";
+        for (i = 0; i < ldatay.length; i++) {
+            text += "<tr><td>" + ldatax[i] + "</td>";
+            text += "<td>" + window.lineChartchart.data.datasets[1].data[i] + "</td></tr>";
+        }
+        text += "</tr>";
+        document.getElementById("theWeek").innerHTML = text;
+
 
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
@@ -611,7 +619,9 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
+
             });
+     }
 
          function updateConfigByLine2(chart) {
            var myObject = {name: moment().locale('tr').format('W'), s:
@@ -622,7 +632,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[0].data = ldatay;
                 chart.update();
             });
+
         }
+
+
         function initLineChart() {
                 //Chart declaration:
                 if (window.lineChart != undefined)
@@ -632,15 +645,9 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         data: data
                 });
 
-            text = "<tr>";
-            for (i = 0; i < ldatay.length; i++) {
-                text += "<tr><td>" + ldatax[i] + "</td>";
-                text += "<td>" + ldatay[i] + "</td></tr>";
-            }
-            text += "</tr>";
-            document.getElementById("theWeek").innerHTML = text;
+
         }
-     }
+
 
 
 	<!-- /Default LineChart Script -->
