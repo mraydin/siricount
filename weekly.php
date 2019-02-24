@@ -172,6 +172,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <thead>
                         <tr>
                             <th><?php  $objDateTime = new DateTime('NOW');
+                                $objDateTime->modify('last week');
                                 echo $objDateTime->format('W')?>.Hafta</th>
                             <th>Bu Yıl</th>
                             <th>Geçen Yıl</th>
