@@ -167,15 +167,37 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="x_panel">
-                    <div class="x_title">
-                        <div class="col-md-4">
-                            <h2>Günlük Trend <small>
-                                </small></h2>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
+                    <table border="0" cellspacing="5" cellpadding="5">
+                        <tbody>
+                        <tr>
+                            <td>Minimum Trafik:</td>
+                            <td><input type="text" id="min" name="min"></td>
 
+                            <td>&nbsp&nbspMaximum Trafik:</td>
+                            <td><input type="text" id="max" name="max"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="x_content">
+                        <p class="text-muted font-13 m-b-30">
+
+                        </p>
+                        <table id="datatable-buttons" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Gün</th>
+                                <th>Tarih</th>
+                                <th>Trafik</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -1136,7 +1158,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 			wtuesday = data.list[13].main.temp-273;
 			wwednesday = data.list[21].main.temp-273;
 			wthursday = data.list[29].main.temp-273;
-			wstatus = data.list[05].weather[0].main;
+			wstatus = data.list[5].weather[0].main;
 			//console.log(city); 
 
                 //document.getElementById("graph").innerHTML = x.toFixed(1);
