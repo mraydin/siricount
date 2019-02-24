@@ -606,6 +606,16 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
+
+               text = "<tr>";
+               ldatay.forEach(myFunction);
+
+               text = "</tr>";
+               document.getElementById("theWeek").innerHTML = text;
+
+               function myFunction(value) {
+                   text += "<td>" + value + "</td>";
+               }
             });
         }
          function updateConfigByLine2(chart) {
@@ -876,15 +886,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
 
-               text = "<tr>";
-               ldatay.forEach(myFunction);
 
-               text = "</tr>";
-               document.getElementById("theWeek").innerHTML = text;
-
-               function myFunction(value) {
-                   text += "<td>" + value + "</td>";
-               }
 
             });
         }
