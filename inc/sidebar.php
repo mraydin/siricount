@@ -14,7 +14,7 @@ echo '<!-- sidebar menu -->
 		<li><a><i class="fa fa-desktop"></i> Raporlar <span class="fa 
 fa-chevron-down"></span></a>
 		  <ul class="nav child_menu">	    
-          <li class="sub_menu"><a href="searchBar.php">Haftalık</a>
+          <li class="sub_menu"><a href="weekly.php">Haftalık</a>
 		  </li>
 		  <li><a href="#">Günlük</a>
 		  </li>
