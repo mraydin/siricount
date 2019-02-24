@@ -622,7 +622,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
             });
      }
-        console.log ("LineChart", window.lineChart.data.datasets[1].labels);
+
 
          function updateConfigByLine2(chart) {
            var myObject = {name: moment().locale('tr').format('W'), s:
@@ -650,7 +650,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
         }
 
-
+        console.log ("LineChart", window.lineChart.data.datasets[1].label);
 
 	<!-- /Default LineChart Script -->
 
