@@ -171,7 +171,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th><b id="weekName">.Hafta</b></th>
+                            <th><b id="weekName"></b>.Hafta</th>
                             <th>Bu Yıl</th>
                             <th>Geçen Yıl</th>
                             <th>Değişim</th>
