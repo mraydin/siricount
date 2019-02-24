@@ -633,7 +633,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
             });
 
         }
-
+        console.log ("LineChart", ctx.data.datasets[1].data);
 
         function initLineChart() {
                 //Chart declaration:
@@ -643,7 +643,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         type: chartType,
                         data: data
                 });
-            console.log ("LineChart", window.lineChart.data.datasets[1].data);
+
 
 
         }
