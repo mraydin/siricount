@@ -607,18 +607,12 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
 
-               text = "<tr>";
-               for (i = 0; i < ldatay.length; i++) {
-                   text += "<tr><td>" + ldatax[i] + "</td>";
-                   text += "<td>" + ldatay[i] + "</td></tr>";
-               }
-               text += "</tr>";
-               document.getElementById("theWeek").innerHTML = text;
+
 
 
 
             });
-        }
+
          function updateConfigByLine2(chart) {
            var myObject = {name: moment().locale('tr').format('W'), s:
 "submit"};
@@ -637,7 +631,16 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         type: chartType,
                         data: data
                 });
+
+            text = "<tr>";
+            for (i = 0; i < ldatay.length; i++) {
+                text += "<tr><td>" + ldatax[i] + "</td>";
+                text += "<td>" + ldatay[i] + "</td></tr>";
+            }
+            text += "</tr>";
+            document.getElementById("theWeek").innerHTML = text;
         }
+     }
 
 
 	<!-- /Default LineChart Script -->
