@@ -595,8 +595,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
         updateConfigByLine2(window.lineChart);
         
 	 function updateConfigByLine(chart) {
-           var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
-           $.getJSON("../../pre_wcount.php", function(jd) {
+           var myObject = {name: 8, s: "submit"};
+           $.getJSON("../../wcountSearch.php",myObject, function(jd) {
                 //console.log("jd",jd);
                 var ldatax = jd.map(function(e) {return e.Week;});
                 console.log("Week",ldatax);
@@ -884,7 +884,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
                function myFunction(value) {
-                   text += <td>" + value + "</td>";
+                   text += "<td>" + value + "</td>";
                }
 
 
