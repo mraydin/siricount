@@ -125,7 +125,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
       <!-- page content -->
       <div class="right_col" role="main">
 
-	<div class="">
+	<div class="row">
             <div class="col-md-12">
 
               <!-- form date pickers -->
@@ -134,7 +134,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                   <h2>Tarih Seçimi <small> İstediğiniz tarih aralığını raporlayabilirsiniz.</small></h2>
 		<div class="col-md-8">
                       <form name="name" method="GET" >
-                      <div id="reportrange" class="pull-right" 
+                      <div id="reportrange" class="pull-right"
                         style="background: #fff; cursor: pointer;
                         padding: 5px 10px; border: 1px solid #ccc">
                         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -148,7 +148,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                       </form>
                 </div>
 	     <div class="clearfix"></div>
-	</div></div>
+	</div>
+              </div>
 
 
 	 <div class="row">
