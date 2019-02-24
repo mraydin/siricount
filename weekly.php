@@ -879,8 +879,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                text = "<tr>";
                ldatay.forEach(myFunction);
                ldatax.forEach(myFunction2);
-               document.getElementById("theWeek").innerHTML = text;
                text = "</tr>";
+               document.getElementById("theWeek").innerHTML = text;
+
                function myFunction(value) {
                    text += "<td>" + value + "</td>";
                }
