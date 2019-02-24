@@ -85,7 +85,7 @@ fa-paw"></i> <span>SiriCount v2.0!_Github</span></a>
               <img src="images/user.png" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
-              <span>Hoşgeldin,</span>
+              <span>Hoşgeldin,Git</span>
               <h2><?php echo htmlspecialchars($_SESSION["username"]); ?></h2>
             </div>
           </div>
