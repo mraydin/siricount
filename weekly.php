@@ -176,9 +176,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             <th>Geçen Hafta</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr id="theWeek">
-                        </tr>
+                        <tbody id="theWeek">
                         </tbody>
                     </table>
 
@@ -606,16 +604,14 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
 
-               //text = "<tr>";
-               ldatax.forEach(myFunction);
-               //text += "</tr>";
+               text = "<tr>";
+               for (i = 0; i < ldatay.length; i++) {
+                   text += "<tr><td>" + ldatay[i] + "</td>";
+                   text += "<td>" + ldatax[i] + "</td></tr>";
+               }
+               text += "</tr>";
                document.getElementById("theWeek").innerHTML = text;
 
-
-
-               function myFunction(value) {
-                   text += "<td>" + value + "</td>";
-               }
 
 
             });
