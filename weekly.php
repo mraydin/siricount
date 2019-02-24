@@ -606,13 +606,24 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
 
+               //text = "<tr>";
+               ldatax.forEach(myFunction);
+               //text += "</tr>";
+               document.getElementById("theWeek").innerHTML = text;
+
+
+
+               function myFunction(value) {
+                   text += "<td>" + value + "</td>";
+               }
+
 
             });
         }
          function updateConfigByLine2(chart) {
-           var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: 
+           var myObject = {name: moment().locale('tr').format('W'), s:
 "submit"};
-           $.getJSON("../../wcount.php", function(jd) {
+           $.getJSON("../../wcountSearch.php",myObject, function(jd) {
                 var ldatay = jd.map(function(e) {return e.Trafik;});
                 console.log("Week",ldatay);
                 chart.data.datasets[0].data = ldatay;
@@ -876,16 +887,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 chart.data.datasets[0].data = ldatay;
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
-               //text = "<tr>";
-               ldatax.forEach(myFunction);
-               //text += "</tr>";
-               document.getElementById("theWeek").innerHTML = text;
 
-
-
-               function myFunction(value) {
-                   text += "<td>" + value + "</td>";
-               }
 
 
             });
