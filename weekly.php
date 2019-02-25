@@ -1078,35 +1078,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
   <script>
       $.getJSON("../../full_ucount.php", function(jd) {
-          //console.log("jd",jd);
-          var datax = jd.map(function(e) {
-              return e.Tarih;
-          });
-          console.log("tcountx",datax);
-          var datay = jd.map(function(e) {
-              return e.Giris;
-          });
-          console.log("tcounty",datay);
-          chart.data.labels = datax;
-          chart.data.datasets[0].data = datay;
-          chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM') + "'da bu saatte";
-
-
-//		 chart.data.labels = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
-//"2013", "2014", "2015", "2016"];
-          //   		chart.data.datasets[0].data = [10, 13, 17, 12, 30, 47, 60, 120, 230, 300, 310, 400];
-          chart.update();
-
-
-
-	 //console.log(week_data);
-	//var x = "";
-	//for (i in week_data) {
-	//	x +=week_data[i].Week + " ";
-	//};
-	
-	 //var x = week_data[0].Week;
-	 //document.getElementById("wgraph").innerHTML = x;
 
   	$(function() {
 	  new Morris.Bar({
