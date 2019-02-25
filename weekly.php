@@ -241,8 +241,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
         <div class="clearfix"></div>
 	      </div>
-              <div class="x_content" style="height: 370px; width: 100%;">
-                  <canvas id="mybarChart"></canvas>
+              <div class="x_content" >
+                  <canvas id="mybarChart" style="height: 370px; width: 100%;"></canvas>
                 </div>
               </div>
             </div>
@@ -552,7 +552,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	};
 
       	var options = {
-		responsive: false,
+		responsive: true,
                 maintainAspectRatio: true,
         	scales: {
           		yAxes: [{
