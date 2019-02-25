@@ -584,10 +584,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
-                var total = 0;
+                /*var total = 0;
                for (i = 0; i < jd.length; i++) {
                    total += parseInt(jd[i].Trafik);
-               }
+               }*/
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
                    text += "<tr><td>" + ldatax[i] + "</td>";
@@ -596,7 +596,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                    text += "<td>" + "%" + "</td></tr>";
                }
                text += "</tr>";
-               document.getElementById("totalWeek").innerHTML = total;
+               //document.getElementById("totalWeek").innerHTML = total;
                document.getElementById("theWeek").innerHTML = text;
                document.getElementById("weekName").innerHTML = moment().subtract(1, 'week').locale('tr').format('W');
 
@@ -879,10 +879,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
 
-               var total = 0;
+               /*var total = 0;
                 for (i = 0; i < jd.length; i++) {
                    total += parseınt(jd[i].trafik);
-               }
+               }*/
 
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
@@ -892,7 +892,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                    text += "<td>" + "%" + "</td></tr>";
                }
                text += "</tr>";
-               document.getElementById("totalWeek").innerHTML = total;
+               //document.getElementById("totalWeek").innerHTML = total;
                document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('W');
                document.getElementById("theWeek").innerHTML = text;
 
