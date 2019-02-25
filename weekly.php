@@ -583,7 +583,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.update();
                 var total = 0;
                for (i = 0; i < jd.length; i++) {
-                   total += jd[i].Trafik;
+                   total += parseInt(jd[i].Trafik);
                }
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
