@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+                    <div id="chart_div" style="width: 100%; height: 500px;"></div>
 
                 </div>
             </div>
@@ -1162,9 +1162,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          ]);
 
          var options = {
-             title : 'Monthly Coffee Production by Country',
-             vAxis: {title: 'Cups'},
-             hAxis: {title: 'Month'},
+             title : 'Haftalık ziyaretçi Sayısı',
+             vAxis: {title: 'Ziyaretçi Sayısı'},
+             hAxis: {title: 'Gün},
              seriesType: 'bars',
              series: {5: {type: 'line'}}
          };
