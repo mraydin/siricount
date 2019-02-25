@@ -1153,7 +1153,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
-             ['Month', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar', { role: 'style' }],
+             ['Month', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
              ['Pazartesi',  165, 938, 522, 998, 450, 614.6, 40],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20],
