@@ -1164,7 +1164,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          var options = {
              title : 'Haftalık ziyaretçi Sayısı',
              vAxis: {title: 'Ziyaretçi Sayısı'},
-             hAxis: {title: 'Gün},
+             hAxis: {title: 'Gün'},
              seriesType: 'bars',
              series: {5: {type: 'line'}}
          };
