@@ -1077,14 +1077,28 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
   <script src="js/moris/morris.min.js"></script>
 
   <script>
+      $.getJSON("../../tcountSearch.php", function(jd) {
+          //console.log("jd",jd);
+          var datax = jd.map(function(e) {
+              return e.Tarih;
+          });
+          console.log("tcountx",datax);
+          var datay = jd.map(function(e) {
+              return e.Giris;
+          });
+          console.log("tcounty",datay);
+          chart.data.labels = datax;
+          chart.data.datasets[0].data = datay;
+          chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM') + "'da bu saatte";
 
-	 var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                        var obj = this.responseText;
-                        //console.log (obj);
-                        // document.getElementById("graph").innerHTML = obj;
-	 var week_data = JSON.parse(obj);
+
+//		 chart.data.labels = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
+//"2013", "2014", "2015", "2016"];
+          //   		chart.data.datasets[0].data = [10, 13, 17, 12, 30, 47, 60, 120, 230, 300, 310, 400];
+          chart.update();
+
+
+
 	 //console.log(week_data);
 	//var x = "";
 	//for (i in week_data) {
@@ -1102,21 +1116,20 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
 		//xLabels: 'week',
 		fillOpacity: 0.6,
-  		data: week_data,
-  		xkey: 'Week',
+  		data: jd,
+  		xkey: 'Hafta',
 		parseTime: false,
 		smooth: false,
-  		ykeys: ['Trafik'],
-  		labels: ['Trafik']
+  		ykeys: ['Giris'],
+  		labels: ['Giris']
 	  });
 	 });
 	}
 
 	};
-        console.log ("Morris Out",Morris.Bar.element);
+        console.log ("Morris Out",jd);
 
-        xmlhttp.open("GET", "../../wcount.php", true);
-        xmlhttp.send();	// chart.
+      });
 	
 
   </script>
