@@ -1248,7 +1248,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      color: "#A57164",
                      dataPoints: [
                          { y: 236, label: "Pzt" },
-                         { y: 172, label: "Salı },
+                         { y: 172, label: "Salı" },
                          { y: 309, label: "Çar" },
                          { y: 302, label: "Per" },
                          { y: 285, label: "Cmt" },
