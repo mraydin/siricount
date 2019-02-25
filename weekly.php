@@ -1172,13 +1172,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  name: "Gold",
                  color: "silver",
                  dataPoints: [
-                     { y: 243, label: "Italy" },
-                     { y: 236, label: "China" },
-                     { y: 243, label: "France" },
-                     { y: 273, label: "Great Britain" },
-                     { y: 269, label: "Germany" },
-                     { y: 196, label: "Russia" },
-                     { y: 1118, label: "USA" }
+                     { y: 243, label: "Pzt" },
+                     { y: 236, label: "Salı" },
+                     { y: 243, label: "Çar" },
+                     { y: 273, label: "Per" },
+                     { y: 269, label: "Cum" },
+                     { y: 196, label: "Cmt" },
+                     { y: 1118, label: "Pzr" }
                  ]
              },
                  {
@@ -1187,13 +1187,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "gold",
                      dataPoints: [
-                         { y: 212, label: "Italy" },
-                         { y: 186, label: "China" },
-                         { y: 272, label: "France" },
-                         { y: 299, label: "Great Britain" },
-                         { y: 270, label: "Germany" },
-                         { y: 165, label: "Russia" },
-                         { y: 896, label: "USA" }
+                         { y: 212, label: "Pzt" },
+                         { y: 186, label: "Salı"},
+                         { y: 272, label: "Çar" },
+                         { y: 299, label: "Per" },
+                         { y: 270, label: "Cum" },
+                         { y: 165, label: "Cmt" },
+                         { y: 896, label:  "Pzr"}
                      ]
                  },
                  {
@@ -1202,13 +1202,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "silver",
                      dataPoints: [
-                         { y: 212, label: "Italy" },
-                         { y: 186, label: "China" },
-                         { y: 272, label: "France" },
-                         { y: 299, label: "Great Britain" },
-                         { y: 270, label: "Germany" },
-                         { y: 165, label: "Russia" },
-                         { y: 896, label: "USA" }
+                         { y: 212, label:"Pzt"  },
+                         { y: 186, label:"Salı" },
+                         { y: 272, label:"Çar"  },
+                         { y: 299, label:"Per"  },
+                         { y: 270, label:"Cmt"  },
+                         { y: 165, label:"Cum"  },
+                         { y: 896, label: "Pzr"  }
                      ]
                  },
                  {
@@ -1217,13 +1217,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "gold",
                      dataPoints: [
-                         { y: 212, label: "Italy" },
-                         { y: 186, label: "China" },
-                         { y: 272, label: "France" },
-                         { y: 299, label: "Great Britain" },
-                         { y: 270, label: "Germany" },
-                         { y: 165, label: "Russia" },
-                         { y: 896, label: "USA" }
+                         { y: 212, label: "Pzt"  },
+                         { y: 186, label: "Salı" },
+                         { y: 272, label: "Çar"   },
+                         { y: 299, label: "Per"   },
+                         { y: 270, label: "Cmt"  },
+                         { y: 165, label: "Cum"   },
+                         { y: 896, label: "Pzr" }
                      ]
                  },
                  {
@@ -1232,13 +1232,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "silver",
                      dataPoints: [
-                         { y: 212, label: "Italy" },
-                         { y: 186, label: "China" },
-                         { y: 272, label: "France" },
-                         { y: 299, label: "Great Britain" },
-                         { y: 270, label: "Germany" },
-                         { y: 165, label: "Russia" },
-                         { y: 896, label: "USA" }
+                         { y: 212, label: "Pzt" },
+                         { y: 186, label: "Salı },
+                         { y: 272, label: "Çar" },
+                         { y: 299, label: "Per"  },
+                         { y: 270, label: "Cmt" },
+                         { y: 165, label: "Cum" },
+                         { y: 896, label: "Pzr" }
                      ]
                  },
                  {
