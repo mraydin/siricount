@@ -1076,8 +1076,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	  });
 	 });
 
-
-        console.log ("Morris Out",morrisBar);
       });
 
 
