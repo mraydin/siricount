@@ -1168,7 +1168,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              vAxis: {title: 'Ziyaretçi Sayısı'},
              hAxis: {title: 'Gün'},
              seriesType: 'bars',
-             series: {5: {type: 'line'}}
+             series: {5: {type: 'line'},
+                      6: {type: 'line'}
+
+             }
          };
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
