@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: musta
- * Date: 25.02.2019
- * Time: 08:34
- */
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
