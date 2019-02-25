@@ -1170,7 +1170,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  type: "column",
                  showInLegend: true,
                  name: "Gold",
-                 color: "silver",
+                 color: "#34495E",
                  dataPoints: [
                      { y: 243, label: "Pzt" },
                      { y: 236, label: "Salı" },
@@ -1185,7 +1185,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "gold",
+                     color: "#26B99A",
                      dataPoints: [
                          { y: 212, label: "Pzt" },
                          { y: 186, label: "Salı"},
@@ -1200,7 +1200,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "silver",
+                     color: "#34495E",
                      dataPoints: [
                          { y: 212, label:"Pzt" },
                          { y: 186, label:"Salı"},
@@ -1215,7 +1215,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "gold",
+                     color: "#26B99A",
                      dataPoints: [
                          { y: 212, label: "Pzt"},
                          { y: 186, label: "Salı"},
@@ -1230,7 +1230,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "silver",
+                     color: "#34495E",
                      dataPoints: [
                          { y: 212, label: "Pzt" },
                          { y: 186, label: "Salı"},
@@ -1245,7 +1245,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Bronze",
-                     color: "#A57164",
+                     color: "#26B99A",
                      dataPoints: [
                          { y: 236, label: "Pzt" },
                          { y: 172, label: "Salı" },
