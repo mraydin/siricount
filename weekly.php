@@ -185,7 +185,51 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
         </div>
     </div>
-    <div class="row">
+
+
+                <div class="row">
+                    <br />
+
+                    <div class="col-md-12 col-sm-8 col-xs-12">
+                        <div class="x_panel tile fixed_height_320 overflow_hidden">
+                            <div class="x_title">
+                                <h2>Haftalık Trend(<?php  $objDateTime = new DateTime('NOW');
+                                    $objDateTime->modify('this week monday');
+                                    echo $objDateTime->format('d.m');
+                                    ?>-<?php  $objDateTime = new DateTime('NOW');
+                                    $objDateTime->modify('this week first sunday');
+                                    echo $objDateTime->format('d.m');
+                                    ?>)</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Settings 1</a>
+                                            </li>
+                                            <li><a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div id="myfirstchart" style="height: 250px;"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
             <div class="col-md-12 col-sm-8 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
@@ -228,73 +272,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
               </div>
             </div>
-	<div class="row">
-        <br />
 
-	<div class="col-md-8 col-sm-8 col-xs-12">
-            <div class="x_panel tile fixed_height_320 overflow_hidden">
-              <div class="x_title">
-                <h2>Haftalık Trend(<?php  $objDateTime = new DateTime('NOW');
-                                $objDateTime->modify('this week monday');
-                                echo $objDateTime->format('d.m');
-                                ?>-<?php  $objDateTime = new DateTime('NOW');
-                                $objDateTime->modify('this week first sunday');
-                                echo $objDateTime->format('d.m');
-                                ?>)</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Settings 1</a>
-                      </li>
-                      <li><a href="#">Settings 2</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a class="close-link"><i class="fa fa-close"></i></a>
-                  </li>
-                </ul>
-                <div class="clearfix"></div>
-              </div>
-              <div class="x_content">
-
-		 <div id="myfirstchart" style="height: 250px;"></div>
-
-              </div>
-            </div>
-          </div>
-	
-	  <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="x_panel tile fixed_height_320 overflow_hidden">
-              <div class="x_title">
-                <h2>Haftalık Trafik (<?php  $objDateTime = new DateTime('NOW');
-				$objDateTime->modify('first day of this month');
-                                echo $objDateTime->format('d.m');
-                                ?>-<?php  $objDateTime = new DateTime('NOW');
-				$objDateTime->modify('last day of this month');
-                                echo $objDateTime->format('d.m');
-                                ?>)</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                  </li>
-                  <li><a class="close-link"><i class="fa fa-close"></i></a>
-                  </li>
-                </ul>
-                <div class="clearfix"></div>
-              </div>
-              <div class="x_content">
-		 <div id="myfirstline" style="height: 250px;"></div>
-
-              </div>
-            </div>
-          </div>
-
-	</div>		
 	 </div>
 	
 
