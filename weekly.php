@@ -1145,7 +1145,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	});
 
  </script>
- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <script src="js/canvasjs/canvasjs.min.js"></script>
  <script>
 
      window.onload = function () {
