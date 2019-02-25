@@ -552,7 +552,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	};
 
       	var options = {
-		responsive: true,
+		responsive: false,
                 maintainAspectRatio: true,
         	scales: {
           		yAxes: [{
