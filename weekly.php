@@ -582,8 +582,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
                 var total = 0;
-               for (i = 0; i < ldatay.length; i++) {
-                   total +=ldatay[i]
+               for (i = 0; i < jd.Trafik.length; i++) {
+                   total +=jd.Trafik[i]
                }
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
