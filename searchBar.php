@@ -1192,7 +1192,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 			wtuesday = data.list[13].main.temp-273;
 			wwednesday = data.list[21].main.temp-273;
 			wthursday = data.list[29].main.temp-273;
-			wstatus = data.list[05].weather[0].main;
+			wstatus = data.list[5].weather[0].main;
 			//console.log(city); 
 
                 //document.getElementById("graph").innerHTML = x.toFixed(1);

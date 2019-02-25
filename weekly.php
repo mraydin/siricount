@@ -1170,10 +1170,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              colors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB', '#26B99A', '#ACADAC', '#3498DB'],
              hAxis: {title: 'Gün'},
              seriesType: 'bars',
-             series: {5: {type: 'line'},
-                      6: {type: 'line'}
 
-             }
          };
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
