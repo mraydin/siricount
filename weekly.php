@@ -181,7 +181,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </tbody>
                         <tfoot>
                         <tr>
-                            <td id="totalWeek"></td>
+                            <td>Toplam</td>
+                            <td><b id="totalWeek"></b></td>
+                            <td>--</td>
+                            <td>%-</td>
                         </tr>
                         </tfoot>
                     </table>
