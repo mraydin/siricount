@@ -297,94 +297,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
   </div>
   
   <!-- User Script -->
-  <script>
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-  		if (this.readyState == 4 && this.status == 200) {
-    			var myObj = JSON.parse(this.responseText);
-    			//console.log (myObj);
-    			document.getElementById("enter").innerHTML = myObj[0].Giris;
-    			//document.getElementById("exit").innerHTML = myObj[0].Cikis;
-			document.getElementById("thisyear").innerHTML = myObj[0].BuYil;
-			document.getElementById("thismonth").innerHTML = myObj[0].BuAy;
-			document.getElementById("thisweek").innerHTML = myObj[0].BuHafta;
-			document.getElementById("thishour").innerHTML = myObj[0].BuSaat;
-			//document.getElementById("thisnow").innerHTML = myObj[0].Cikis-myObj[0].Giris;
-			var oran = document.getElementById("beforeday").innerHTML = 
-			(((myObj[0].Giris-myObj[0].DunOran)/myObj[0].DunOran)*100).toFixed(0);
-			var saatoran = document.getElementById("beforehour").innerHTML =
-			(((myObj[0].BuSaat-myObj[0].SaatOran)/myObj[0].SaatOran)*100).toFixed(0);
-			if (myObj[0].YilOran == 0) {
-			 var yiloran = document.getElementById("beforeyear").innerHTML =  "-";
-			} else {
-			var yiloran = document.getElementById("beforeyear").innerHTML =
-			(((myObj[0].BuYil-myObj[0].YilOran)/myObj[0].YilOran)*100).toFixed(0);
-			};
-			var haftaoran = document.getElementById("beforeweek").innerHTML =
-                        (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
-                        };
-			if (myObj[0].AyOran == 0) {
-                         var ayoran = document.getElementById("beforemonth").innerHTML =  "-";
-                        } else {
-                        var ayoran = document.getElementById("beforemonth").innerHTML =
-                        (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
-                        };
-			//console.log(oran);
-			var z =  document.getElementsByClassName("example")[0];
-			var v =  document.getElementsByClassName("example")[1];
-			var w =  document.getElementsByClassName("example")[2];
-			var x =  document.getElementsByClassName("example")[3];
-			var y =  document.getElementsByClassName("example")[4];	
-			if (oran <= 0) {
-			  x.style.color = "red";
-			  x.classList.add("fa");
-			  x.classList.add("fa-sort-desc");
-			} else if (oran > 0) {
-			  x.style.color = "#1ABB9C";
-                          x.classList.add("fa");
-                          x.classList.add("fa-sort-asc");
-			};
-                        if (saatoran <= 0) {
-                          y.style.color = "red";
-                          y.classList.add("fa");
-                          y.classList.add("fa-sort-desc");
-                        } else if (saatoran > 0) {
-                          y.style.color = "#1ABB9C";
-                          y.classList.add("fa");
-                          y.classList.add("fa-sort-asc");
-                        };
-			if (yiloran <= 0) {
-                          z.style.color = "red";
-                          z.classList.add("fa");
-                          z.classList.add("fa-sort-desc");
-                        } else if (yiloran > 0) {
-                          z.style.color = "#1ABB9C";
-                          z.classList.add("fa");
-                          z.classList.add("fa-sort-asc");
-                        };
-			if (haftaoran <= 0) {
-                          w.style.color = "red";
-                          w.classList.add("fa");
-                          w.classList.add("fa-sort-desc");
-                        } else if (haftaoran > 0) {
-                          w.style.color = "#1ABB9C";
-                          w.classList.add("fa");
-                          w.classList.add("fa-sort-asc");
-                        };
-			if (ayoran <= 0) {
-                          v.style.color = "red";
-                          v.classList.add("fa");
-                          v.classList.add("fa-sort-desc");
-                        } else if (ayoran > 0) {
-                          v.style.color = "#1ABB9C";
-                          v.classList.add("fa");
-                          v.classList.add("fa-sort-asc");
-                        };
-  		
-	};
-	xmlhttp.open("GET", "../../count.php", true);
-	xmlhttp.send();
-  </script>
 
 
   <script src="js/bootstrap.min.js"></script>
@@ -421,40 +333,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
   <!-- pace -->
   <script src="js/pace/pace.min.js"></script>
 
-  <!-- dashbord linegraph -->
-  <script>
-    Chart.defaults.global.legend = {
-      enabled: false
-    };
-
-    var data = {
-      labels: [
-        "Kadın",
-        "Erkek",
-        "Çocuk-Bebek"
-      ],
-      datasets: [{
-        data: [61, 18, 21],
-        backgroundColor: [
-          "#455C73",
-          "#26B99A",
-          "#3498DB"
-        ],
-        hoverBackgroundColor: [
-          "#34495E",
-          "#36CAAB",
-          "#49A9EA"
-        ]
-
-      }]
-    };
-
-    var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-      type: 'doughnut',
-      tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-      data: data
-    });
-  </script>
      <!-- skycons -->
   <script src="js/skycons/skycons.min.js"></script>
   <script>
@@ -1132,44 +1010,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
   </script>
 
-   <script>
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                        var myObj = this.responseText;
-			var x, city, wmonday,wsunday,wtuesday,wwednesday,wthursday;
-			var data = JSON.parse(myObj);
-			console.log(data);
-	                x = data.list[0].main.temp-273;
-			city = data.city.name;
-			wmonday = data.list[0].main.temp-273;
-			wsunday = data.list[5].main.temp-273;
-			wtuesday = data.list[13].main.temp-273;
-			wwednesday = data.list[21].main.temp-273;
-			wthursday = data.list[29].main.temp-273;
-			wstatus = data.list[5].weather[0].main;
-			//console.log(city); 
-
-                //document.getElementById("graph").innerHTML = x.toFixed(1);
-		//document.getElementById("wcity").innerHTML = city;
-		//document.getElementById("wmonday").innerHTML = wmonday.toFixed(0);
-		//document.getElementById("wsunday").innerHTML = wsunday.toFixed(0);
-		//document.getElementById("wtuesday").innerHTML = wtuesday.toFixed(0);
-		//document.getElementById("wwednesday").innerHTML = wwednesday.toFixed(0);
-		//document.getElementById("wthursday").innerHTML = wthursday.toFixed(0);
-		
-		//var ws =  document.getElementsByTagName("P");
-
-
-
-		}
-
-        };
-
-        xmlhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast?q=Mersin&appid=541515afee797cfd215e0b69dfe8c5d9", true);
-        xmlhttp.send(); // chart.
-
-   </script>
 
    <script>
 
