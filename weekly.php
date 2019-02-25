@@ -1153,17 +1153,17 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          var chart = new CanvasJS.Chart("chartContainer", {
              animationEnabled: true,
              title:{
-                 text: "Olympic Medals of all Times (till 2016 Olympics)"
+                 text: ""
              },
              axisY: {
-                 title: "Medals"
+                 title: "Ziyaretçi Sayısı"
              },
              legend: {
                  cursor:"pointer",
                  itemclick : toggleDataSeries
              },
              toolTip: {
-                 shared: true,
+                 shared: false,
                  content: toolTipFormatter
              },
              data: [{
