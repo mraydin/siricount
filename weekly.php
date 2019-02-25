@@ -581,7 +581,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.labels = ldatax;
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
-
+                var total = 0;
                for (i = 0; i < ldatay.length; i++) {
                    total +=ldatay[i]
                }
