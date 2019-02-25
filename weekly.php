@@ -1149,23 +1149,23 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-
+     function updateConfigByMutating(chart) {
          var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
          $.getJSON("../../tcountSearch.php",myObject, function(jd) {
              //console.log("jd",jd);
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("Tarih",datax);
              var datay = jd.map(function(e) {return e.Giris; });
-
-
+         });
+     }
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
-    console.log ("datay",datay);
+
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
              ['Month', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'],
-             ['Pazartesi',  datay],
+             ['Pazartesi',  165, 938, 522, 998, 450, 614.6, 40],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20],
              ['Perşembe',  139, 1110, 615, 968, 215, 609.4, 30],
@@ -1185,7 +1185,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
-     });
      }
  </script>
 
