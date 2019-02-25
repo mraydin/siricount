@@ -1149,15 +1149,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-     function updateConfigByMutating(chart) {
+
          var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
          $.getJSON("../../tcountSearch.php",myObject, function(jd) {
              //console.log("jd",jd);
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("Tarih",datax);
              var datay = jd.map(function(e) {return e.Giris; });
-         });
-     }
+
+
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
     console.log ("datay",datay);
@@ -1185,6 +1185,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
+     });
      }
  </script>
 
