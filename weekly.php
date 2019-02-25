@@ -1153,7 +1153,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
-             ['Month', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
+             ['Month', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar', { role: 'style' }],
              ['Pazartesi',  165, 938, 522, 998, 450, 614.6, 40],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20],
@@ -1166,6 +1166,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          var options = {
              title : 'Haftalık ziyaretçi Sayısı',
              vAxis: {title: 'Ziyaretçi Sayısı'},
+             colors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB'],
              hAxis: {title: 'Gün'},
              seriesType: 'bars',
              series: {5: {type: 'line'},
