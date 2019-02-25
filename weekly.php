@@ -553,7 +553,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
       	var options = {
 		responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
         	scales: {
           		yAxes: [{
             			ticks: {
