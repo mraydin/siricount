@@ -276,10 +276,28 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
 
 	 </div>
-	
+
+    <div class="row">
+        <div class="col-md-12 col-sm-8 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Aylık Trend</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                    <div id="chartContainer" style="height:350px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
-        <!-- footer content -->
+
+
+                <!-- footer content -->
 	 <?php include 'inc/footer.php'; ?>
         <!-- /footer content -->
       </div>
@@ -1127,6 +1145,103 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	});
 
  </script>
+ <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <script>
+
+     window.onload = function () {
+
+         var chart = new CanvasJS.Chart("chartContainer", {
+             animationEnabled: true,
+             title:{
+                 text: "Olympic Medals of all Times (till 2016 Olympics)"
+             },
+             axisY: {
+                 title: "Medals"
+             },
+             legend: {
+                 cursor:"pointer",
+                 itemclick : toggleDataSeries
+             },
+             toolTip: {
+                 shared: true,
+                 content: toolTipFormatter
+             },
+             data: [{
+                 type: "column",
+                 showInLegend: true,
+                 name: "Gold",
+                 color: "gold",
+                 dataPoints: [
+                     { y: 243, label: "Italy" },
+                     { y: 236, label: "China" },
+                     { y: 243, label: "France" },
+                     { y: 273, label: "Great Britain" },
+                     { y: 269, label: "Germany" },
+                     { y: 196, label: "Russia" },
+                     { y: 1118, label: "USA" }
+                 ]
+             },
+                 {
+                     type: "column",
+                     showInLegend: true,
+                     name: "Silver",
+                     color: "silver",
+                     dataPoints: [
+                         { y: 212, label: "Italy" },
+                         { y: 186, label: "China" },
+                         { y: 272, label: "France" },
+                         { y: 299, label: "Great Britain" },
+                         { y: 270, label: "Germany" },
+                         { y: 165, label: "Russia" },
+                         { y: 896, label: "USA" }
+                     ]
+                 },
+                 {
+                     type: "column",
+                     showInLegend: true,
+                     name: "Bronze",
+                     color: "#A57164",
+                     dataPoints: [
+                         { y: 236, label: "Italy" },
+                         { y: 172, label: "China" },
+                         { y: 309, label: "France" },
+                         { y: 302, label: "Great Britain" },
+                         { y: 285, label: "Germany" },
+                         { y: 188, label: "Russia" },
+                         { y: 788, label: "USA" }
+                     ]
+                 }]
+         });
+         chart.render();
+
+         function toolTipFormatter(e) {
+             var str = "";
+             var total = 0 ;
+             var str3;
+             var str2 ;
+             for (var i = 0; i < e.entries.length; i++){
+                 var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+                 total = e.entries[i].dataPoint.y + total;
+                 str = str.concat(str1);
+             }
+             str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+             str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
+             return (str2.concat(str)).concat(str3);
+         }
+
+         function toggleDataSeries(e) {
+             if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                 e.dataSeries.visible = false;
+             }
+             else {
+                 e.dataSeries.visible = true;
+             }
+             chart.render();
+         }
+
+     }
+ </script>
+
   <!-- /footer content -->
 </body>
 
