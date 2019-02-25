@@ -582,7 +582,9 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
                 var total = 0;
-
+               for (i = 0; i < jd.length; i++) {
+                   total += jd[i].Trafik;
+               }
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
                    text += "<tr><td>" + ldatax[i] + "</td>";
