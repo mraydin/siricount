@@ -1169,7 +1169,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              vAxis: {title: 'Ziyaretçi Sayısı'},
              colors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB', '#26B99A', '#ACADAC', '#3498DB'],
              hAxis: {title: 'Gün'},
-             seriesType: 'bars',
+             seriesType: 'lines',
 
          };
 
