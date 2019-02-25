@@ -234,7 +234,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 	<div class="col-md-8 col-sm-8 col-xs-12">
             <div class="x_panel tile fixed_height_320 overflow_hidden">
               <div class="x_title">
-                <h2>Günlük Trafik(<?php  $objDateTime = new DateTime('NOW');
+                <h2>Haftalık Trend(<?php  $objDateTime = new DateTime('NOW');
                                 $objDateTime->modify('this week monday');
                                 echo $objDateTime->format('d.m');
                                 ?>-<?php  $objDateTime = new DateTime('NOW');
@@ -1080,7 +1080,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
       $.getJSON("../../full_ucount.php", function(jd) {
 
   	$(function() {
-	  new Morris.Bar({
+	  var morrisBar = new Morris.Bar({
 	  	element: 'myfirstchart',
 		hideHover: 'true',
 		lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
@@ -1097,7 +1097,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	 });
 
 
-        console.log ("Morris Out",jd);
+        console.log ("Morris Out",morrisBar.element);
       });
 
 
