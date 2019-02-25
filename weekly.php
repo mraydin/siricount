@@ -879,8 +879,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
 
-               for (i = 0; i < jd.length; i++) {
-                   total += parseInt(jd[i].Trafik);
+               var total = 0;
+                for (i = 0; i < jd.length; i++) {
+                   total += parseınt(jd[i].trafik);
                }
 
                text = "<tr>";
