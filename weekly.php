@@ -1062,7 +1062,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	  	element: 'myfirstchart',
 		hideHover: 'true',
 		lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-		barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+		barColors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB'],
 		//xLabels: 'week',
 		fillOpacity: 0.6,
   		data: jd,
