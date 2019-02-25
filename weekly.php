@@ -1113,7 +1113,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	}
 
 	};
-        console.log ("Morris Out"",Morris.Bar.element);
+        console.log ("Morris Out",Morris.Bar.element);
 
         xmlhttp.open("GET", "../../wcount.php", true);
         xmlhttp.send();	// chart.
