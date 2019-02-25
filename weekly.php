@@ -1077,7 +1077,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
   <script src="js/moris/morris.min.js"></script>
 
   <script>
-      $.getJSON("../../tcountSearch.php", function(jd) {
+      $.getJSON("../../full_ucount.php", function(jd) {
           //console.log("jd",jd);
           var datax = jd.map(function(e) {
               return e.Tarih;
