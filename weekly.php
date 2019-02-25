@@ -221,7 +221,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             </div>
                             <div class="x_content">
 
-                                <div id="myfirstchart" style="height: 250px;"></div>
+                                <div id="myfirstchart" style="width: 900px; height: 500px;"></div>
 
                             </div>
                         </div>
@@ -1145,145 +1145,32 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	});
 
  </script>
- <script src="js/canvasjs/canvasjs.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawVisualization);
 
-     window.onload = function () {
+     function drawVisualization() {
+         // Some raw data (not necessarily accurate)
+         var data = google.visualization.arrayToDataTable([
+             ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+             ['2004/05',  165,      938,         522,             998,           450,      614.6],
+             ['2005/06',  135,      1120,        599,             1268,          288,      682],
+             ['2006/07',  157,      1167,        587,             807,           397,      623],
+             ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+             ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+         ]);
 
-         var chart = new CanvasJS.Chart("chartContainer", {
-             animationEnabled: true,
-             title:{
-                 text: ""
-             },
-             axisY: {
-                 title: "Ziyaretçi Sayısı"
-             },
-             legend: {
-                 cursor:"pointer",
-                 itemclick : toggleDataSeries
-             },
-             toolTip: {
-                 shared: false,
-                 content: toolTipFormatter
-             },
-             data: [{
-                 type: "column",
-                 showInLegend: true,
-                 name: "Gold",
-                 color: "#34495E",
-                 dataPoints: [
-                     { y: 243, label: "Pzt" },
-                     { y: 236, label: "Salı" },
-                     { y: 243, label: "Çar" },
-                     { y: 273, label: "Per" },
-                     { y: 269, label: "Cum" },
-                     { y: 196, label: "Cmt" },
-                     { y: 1118, label: "Pzr" }
-                 ]
-             },
-                 {
-                     type: "column",
-                     showInLegend: true,
-                     name: "Silver",
-                     color: "#26B99A",
-                     dataPoints: [
-                         { y: 212, label: "Pzt" },
-                         { y: 186, label: "Salı"},
-                         { y: 272, label: "Çar" },
-                         { y: 299, label: "Per" },
-                         { y: 270, label: "Cum" },
-                         { y: 165, label: "Cmt" },
-                         { y: 896, label:  "Pzr"}
-                     ]
-                 },
-                 {
-                     type: "column",
-                     showInLegend: true,
-                     name: "Silver",
-                     color: "#34495E",
-                     dataPoints: [
-                         { y: 212, label:"Pzt" },
-                         { y: 186, label:"Salı"},
-                         { y: 272, label:"Çar" },
-                         { y: 299, label:"Per"},
-                         { y: 270, label:"Cmt"},
-                         { y: 165, label:"Cum" },
-                         { y: 896, label: "Pzr" }
-                     ]
-                 },
-                 {
-                     type: "column",
-                     showInLegend: true,
-                     name: "Silver",
-                     color: "#26B99A",
-                     dataPoints: [
-                         { y: 212, label: "Pzt"},
-                         { y: 186, label: "Salı"},
-                         { y: 272, label: "Çar" },
-                         { y: 299, label: "Per" },
-                         { y: 270, label: "Cmt" },
-                         { y: 165, label: "Cum"},
-                         { y: 896, label: "Pzr" }
-                     ]
-                 },
-                 {
-                     type: "column",
-                     showInLegend: true,
-                     name: "Silver",
-                     color: "#34495E",
-                     dataPoints: [
-                         { y: 212, label: "Pzt" },
-                         { y: 186, label: "Salı"},
-                         { y: 272, label: "Çar" },
-                         { y: 299, label: "Per" },
-                         { y: 270, label: "Cmt" },
-                         { y: 165, label: "Cum" },
-                         { y: 896, label: "Pzr" }
-                     ]
-                 },
-                 {
-                     type: "column",
-                     showInLegend: true,
-                     name: "Bronze",
-                     color: "#26B99A",
-                     dataPoints: [
-                         { y: 236, label: "Pzt" },
-                         { y: 172, label: "Salı" },
-                         { y: 309, label: "Çar" },
-                         { y: 302, label: "Per" },
-                         { y: 285, label: "Cmt" },
-                         { y: 188, label: "Cum" },
-                         { y: 788, label: "Pzr" }
-                     ]
-                 }]
-         });
-         chart.render();
+         var options = {
+             title : 'Monthly Coffee Production by Country',
+             vAxis: {title: 'Cups'},
+             hAxis: {title: 'Month'},
+             seriesType: 'bars',
+             series: {5: {type: 'line'}}
+         };
 
-         function toolTipFormatter(e) {
-             var str = "";
-             var total = 0 ;
-             var str3;
-             var str2 ;
-             for (var i = 0; i < e.entries.length; i++){
-                 var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
-                 total = e.entries[i].dataPoint.y + total;
-                 str = str.concat(str1);
-             }
-             str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
-             str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
-             return (str2.concat(str)).concat(str3);
-         }
-
-         function toggleDataSeries(e) {
-             if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                 e.dataSeries.visible = false;
-             }
-             else {
-                 e.dataSeries.visible = true;
-             }
-             chart.render();
-         }
-
+         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
      }
  </script>
 
