@@ -179,6 +179,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </thead>
                         <tbody id="theWeek">
                         </tbody>
+                        <tfoot>
+                        <tr>
+                            <td id="totalWeek"></td>
+                        </tr>
+                        </tfoot>
                     </table>
 
                 </div>
@@ -584,8 +589,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                    text += "<td>" + ldatay[i] + "</td>";
                    text += "<td>" + "--" + "</td>";
                    text += "<td>" + "%" + "</td></tr>";
+                   total +=ldatay[i]
                }
                text += "</tr>";
+               document.getElementById("totalWeek").innerHTML = total;
                document.getElementById("theWeek").innerHTML = text;
                document.getElementById("weekName").innerHTML = moment().subtract(1, 'week').locale('tr').format('W');
 
