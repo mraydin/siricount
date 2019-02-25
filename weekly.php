@@ -582,14 +582,15 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
 
-
+               for (i = 0; i < ldatay.length; i++) {
+                   total +=ldatay[i]
+               }
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
                    text += "<tr><td>" + ldatax[i] + "</td>";
                    text += "<td>" + ldatay[i] + "</td>";
                    text += "<td>" + "--" + "</td>";
                    text += "<td>" + "%" + "</td></tr>";
-                   total +=ldatay[i]
                }
                text += "</tr>";
                document.getElementById("totalWeek").innerHTML = total;
