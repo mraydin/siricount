@@ -573,7 +573,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 	 function updateConfigByLine(chart) {
            var myObject = {name: moment().subtract(1, 'week').locale('tr').format('W'), s: "submit"};
            $.getJSON("../../wcountSearch.php",myObject, function(jd) {
-                //console.log("jd",jd);
+                console.log("jd Trafik",jd.Trafik);
                 var ldatax = jd.map(function(e) {return e.Week;});
                 console.log("Week",ldatax);
                 var ldatay = jd.map(function(e) {return e.Trafik; });
@@ -582,9 +582,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.data.datasets[1].data = ldatay;
                 chart.update();
                 var total = 0;
-               for (i = 0; i < jd.Trafik.length; i++) {
-                   total +=jd.Trafik[i]
-               }
+
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
                    text += "<tr><td>" + ldatax[i] + "</td>";
