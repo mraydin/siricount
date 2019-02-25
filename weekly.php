@@ -970,45 +970,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
   </script>
 
-<script>
-
-	 var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                        var obj = this.responseText;
-                        //console.log (obj);
-			//var x;
-	 var week_data = JSON.parse(obj);
-		//console.log(week_data);
-		//x = week_data[1].Giris;
-		
-                //document.getElementById("graph").innerHTML = x;
-
-  	$(function() {
-	  new Morris.Area({
-	  	element: 'myfirstline',
-		hideHover: 'true',
-		lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-		//xLabels: 'Hafta',
-		fillOpacity: 1,
-		parseTime: false,
-		resize: true,
-  		data: week_data,
-  		xkey: 'Hafta',
-  		ykeys: ['Giris'],
-  		labels: ['Giris']
-	  });
-	 });
-	}
-
-	};
-
-        xmlhttp.open("GET", "../../ucount.php", true);
-        xmlhttp.send();	// chart.
-	
-
-
-  </script>
 
 
    <script>
