@@ -759,7 +759,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
                var total = 0;
                 for (i = 0; i < jd.length; i++) {
-                   total += parseınt(jd[i].trafik);
+                   total += parseInt(jd[i].trafik);
                }
 
                text = "<tr>";
