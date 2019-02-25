@@ -221,7 +221,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             </div>
                             <div class="x_content">
 
-                                <div id="myfirstchart" style="width: 900px; height: 500px;"></div>
+                                <div id="myfirstchart"></div>
 
                             </div>
                         </div>
@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <div id="chartContainer" style="height:350px;"></div>
+                    <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
                 </div>
             </div>
