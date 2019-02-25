@@ -1199,6 +1199,51 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  {
                      type: "column",
                      showInLegend: true,
+                     name: "Silver",
+                     color: "silver",
+                     dataPoints: [
+                         { y: 212, label: "Italy" },
+                         { y: 186, label: "China" },
+                         { y: 272, label: "France" },
+                         { y: 299, label: "Great Britain" },
+                         { y: 270, label: "Germany" },
+                         { y: 165, label: "Russia" },
+                         { y: 896, label: "USA" }
+                     ]
+                 },
+                 {
+                     type: "column",
+                     showInLegend: true,
+                     name: "Silver",
+                     color: "silver",
+                     dataPoints: [
+                         { y: 212, label: "Italy" },
+                         { y: 186, label: "China" },
+                         { y: 272, label: "France" },
+                         { y: 299, label: "Great Britain" },
+                         { y: 270, label: "Germany" },
+                         { y: 165, label: "Russia" },
+                         { y: 896, label: "USA" }
+                     ]
+                 },
+                 {
+                     type: "column",
+                     showInLegend: true,
+                     name: "Silver",
+                     color: "silver",
+                     dataPoints: [
+                         { y: 212, label: "Italy" },
+                         { y: 186, label: "China" },
+                         { y: 272, label: "France" },
+                         { y: 299, label: "Great Britain" },
+                         { y: 270, label: "Germany" },
+                         { y: 165, label: "Russia" },
+                         { y: 896, label: "USA" }
+                     ]
+                 },
+                 {
+                     type: "column",
+                     showInLegend: true,
                      name: "Bronze",
                      color: "#A57164",
                      dataPoints: [
