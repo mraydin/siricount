@@ -748,7 +748,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
            var myObject = {name: picker.startDate.locale('tr').format('W'), s: "submit"};
            $.getJSON("../../wcountSearch.php", myObject, function(jd) {
                 //console.log("jd",jd);
-                var ldatax = jd.map(function(e) {return e.Week;});
+                var ldatax = jd.map(function(e) {return e.Week; });
                 console.log("Week",ldatax);
                 var ldatay = jd.map(function(e) {return e.Trafik; });
                 console.log("Trafik",ldatay);
@@ -759,7 +759,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
                var total = 0;
                 for (i = 0; i < jd.length; i++) {
-                   total += parseInt(jd[i].trafik);
+                   total += parseInt(jd[i].Trafik);
                }
 
                text = "<tr>";
