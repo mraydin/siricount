@@ -1170,7 +1170,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  type: "column",
                  showInLegend: true,
                  name: "Gold",
-                 color: "gold",
+                 color: "silver",
                  dataPoints: [
                      { y: 243, label: "Italy" },
                      { y: 236, label: "China" },
@@ -1185,7 +1185,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "silver",
+                     color: "gold",
                      dataPoints: [
                          { y: 212, label: "Italy" },
                          { y: 186, label: "China" },
@@ -1215,7 +1215,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      type: "column",
                      showInLegend: true,
                      name: "Silver",
-                     color: "silver",
+                     color: "gold",
                      dataPoints: [
                          { y: 212, label: "Italy" },
                          { y: 186, label: "China" },
