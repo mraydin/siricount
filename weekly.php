@@ -1202,13 +1202,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "silver",
                      dataPoints: [
-                         { y: 212, label:"Pzt"  },
-                         { y: 186, label:"Salı" },
-                         { y: 272, label:"Çar"  },
-                         { y: 299, label:"Per"  },
-                         { y: 270, label:"Cmt"  },
-                         { y: 165, label:"Cum"  },
-                         { y: 896, label: "Pzr"  }
+                         { y: 212, label:"Pzt" },
+                         { y: 186, label:"Salı"},
+                         { y: 272, label:"Çar" },
+                         { y: 299, label:"Per"},
+                         { y: 270, label:"Cmt"},
+                         { y: 165, label:"Cum" },
+                         { y: 896, label: "Pzr" }
                      ]
                  },
                  {
@@ -1217,12 +1217,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Silver",
                      color: "gold",
                      dataPoints: [
-                         { y: 212, label: "Pzt"  },
-                         { y: 186, label: "Salı" },
-                         { y: 272, label: "Çar"   },
-                         { y: 299, label: "Per"   },
-                         { y: 270, label: "Cmt"  },
-                         { y: 165, label: "Cum"   },
+                         { y: 212, label: "Pzt"},
+                         { y: 186, label: "Salı"},
+                         { y: 272, label: "Çar" },
+                         { y: 299, label: "Per" },
+                         { y: 270, label: "Cmt" },
+                         { y: 165, label: "Cum"},
                          { y: 896, label: "Pzr" }
                      ]
                  },
@@ -1233,9 +1233,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      color: "silver",
                      dataPoints: [
                          { y: 212, label: "Pzt" },
-                         { y: 186, label: "Salı },
+                         { y: 186, label: "Salı"},
                          { y: 272, label: "Çar" },
-                         { y: 299, label: "Per"  },
+                         { y: 299, label: "Per" },
                          { y: 270, label: "Cmt" },
                          { y: 165, label: "Cum" },
                          { y: 896, label: "Pzr" }
@@ -1247,13 +1247,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      name: "Bronze",
                      color: "#A57164",
                      dataPoints: [
-                         { y: 236, label: "Italy" },
-                         { y: 172, label: "China" },
-                         { y: 309, label: "France" },
-                         { y: 302, label: "Great Britain" },
-                         { y: 285, label: "Germany" },
-                         { y: 188, label: "Russia" },
-                         { y: 788, label: "USA" }
+                         { y: 236, label: "Pzt" },
+                         { y: 172, label: "Salı },
+                         { y: 309, label: "Çar" },
+                         { y: 302, label: "Per" },
+                         { y: 285, label: "Cmt" },
+                         { y: 188, label: "Cum" },
+                         { y: 788, label: "Pzr" }
                      ]
                  }]
          });
