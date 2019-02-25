@@ -879,6 +879,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 		        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
                 chart.update();
 
+               for (i = 0; i < jd.length; i++) {
+                   total += parseInt(jd[i].Trafik);
+               }
+
                text = "<tr>";
                for (i = 0; i < ldatay.length; i++) {
                    text += "<tr><td>" + ldatax[i] + "</td>";
@@ -887,6 +891,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                    text += "<td>" + "%" + "</td></tr>";
                }
                text += "</tr>";
+               document.getElementById("totalWeek").innerHTML = total;
                document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('W');
                document.getElementById("theWeek").innerHTML = text;
 
