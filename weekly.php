@@ -1159,7 +1159,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              async: false,
              dataType: 'json',
              success: function (resp) {
-                console.log ("Resp",resp)
+                console.log ("Resp",resp.Tarih)
              }
              }).responseJSON;
              return datax;
