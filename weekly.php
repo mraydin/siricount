@@ -1175,17 +1175,30 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          };
 
 
+
+
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
 
-         console.log("GetData :",getValue().datatarih);
-         console.log("GetValue :",getValue().resp);
 
 
      }
+
      function getValue() {
 
-        var responsivedata;
+         var jsonData = $.ajax({
+             type: 'GET',
+             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+             async: false,
+             dataType: 'json',
+
+         }).responseText;
+     }
+
+     var data = new google.visualization.DataTable(jsonData);
+
+     /*function getValue() {
+
          var datax;
          var datatarih;
          $.ajax({
@@ -1203,9 +1216,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              }
          });
          return { datax: datax,
-             datatarih: datatarih,
-             resp:resp}
-     }
+             datatarih: datatarih}
+     }*/
 
 
  </script>
