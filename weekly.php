@@ -1150,9 +1150,21 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
  <script>
 
 
-     console.log ("Pazartesi", updateConfigByMutating());
-     console.log ("Pazartesi", updateConfigByMutating().readyState);
-     console.log ("Pazartesi", updateConfigByMutating().responseText);
+     $.ajax({
+         type: 'GET',
+         url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "s=submit",
+         data: data,
+         async: false,
+         beforeSend: function (xhr) {
+             if (xhr && xhr.overrideMimeType) {
+                 xhr.overrideMimeType('application/json;charset=utf-8');
+             }
+         },
+         dataType: 'json',
+         success: function (data) {
+             console.log("DATA",data)
+         }
+     });
 
      function updateConfigByMutating() {
          var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
