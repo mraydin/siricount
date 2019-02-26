@@ -1198,39 +1198,53 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOndort().datax
                     },{
-                        label: "10:00",
+                        label: "15:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: getValueOn().datax
+                        data: getValueOnbes().datax
                     },
                     {
-                        label: "11:00",
+                        label: "16:00",
                         backgroundColor: "#26B99A",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: getValueOnbir().datax
+                        data: getValueOnalti().datax
                     },
                     {
-                        label: "12:00",
+                        label: "17:00",
                         backgroundColor: "#ACADAC",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: getValueOniki().datax
+                        data: getValueOnyedi().datax
                     },
                     {
-                        label: "13:00",
+                        label: "18:00",
                         backgroundColor: "#536c86",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: getValueOnuc().datax
+                        data: getValueOnsekiz().datax
                     },
                     {
-                        label: "14:00",
+                        label: "19:00",
                         backgroundColor: "#3498DB",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: getValueOndort().datax
+                        data: getValueOndokuz().datax
+                    },
+                    {
+                        label: "20:00",
+                        backgroundColor: "#26B99A",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueYirmi().datax
+                    },
+                    {
+                        label: "21:00",
+                        backgroundColor: "#ACADAC",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueYirmibir().datax
                     }
                 ]
             };
@@ -1350,6 +1364,146 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 $.ajax({
                     type: 'GET',
                     url: "../../rcountSearch.php?name" + "=" + "14" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOnbes() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "15" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOnalti() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "16" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOnyedi() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "17" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOnsekiz() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "18" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOndokuz() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "19" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueYirmi() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "20" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueYirmibir() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "21" + "&" + "s=submit",
                     async: false,
                     dataType: 'json',
                     success: function (resp) {
