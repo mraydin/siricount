@@ -1156,7 +1156,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          var datax = $.ajax({
              type: 'GET',
              url: "../../tcountSearch.php?name=22.02.2019&s=submit",
-             async: false
+             async: false,
+             dataType: 'json'
              }).responseText;
              return datax;
      }
