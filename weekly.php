@@ -1150,8 +1150,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
  <script>
 
 
-     console.log ("Pazartesi", updateConfigByMutating().responseJSON.responseText);
+     console.log ("Pazartesi", updateConfigByMutating());
      console.log ("Pazartesi", updateConfigByMutating().statusTex);
+     console.log ("Pazartesi", updateConfigByMutating().responseText);
 
      function updateConfigByMutating() {
          var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
