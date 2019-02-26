@@ -284,9 +284,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <h2>Aylık Trend</h2>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
+                <div class="x_content" style="width: 50%;">
 
-                    <canvas id="MYcanvas" style="width: 50%; height: 20%;"></canvas>
+                    <canvas id="MYcanvas"> </canvas>
 
                 </div>
             </div>
