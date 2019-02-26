@@ -241,7 +241,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
         <div class="clearfix"></div>
 	      </div>
-              <div class="x_content" >
+              <div class="x_content" style="position: relative; margin: auto; height: 40vh; width: 80vw;">
                   <canvas id="mybarChart""></canvas>
                 </div>
               </div>
