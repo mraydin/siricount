@@ -1162,7 +1162,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              console.log("Tarih Google", datay);
 
          });
-         return jd;
+         return myObject;
      }
      //var pazartesi = updateConfigByMutating().datay;
 
