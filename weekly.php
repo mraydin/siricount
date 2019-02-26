@@ -1150,13 +1150,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
  <script>
 
      function updateConfigByMutating() {
-         //var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
-         $.getJSON("../../tcount.php", function(jd) {
+         var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
+         $.getJSON("../../tcountSearch.php", myObject, function(jd) {
              //console.log("jd",jd);
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("TarihGoogle",datax);
              var datay = jd.map(function(e) {return e.Giris; });
-             console.log("TarihGoogle",datay);
+             console.log("TarihGoogle","Pazartesi" + datay);
          });
      };
      updateConfigByMutating();
