@@ -688,12 +688,12 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			var haftaoran = document.getElementById("beforeweek").innerHTML =
                         (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
                         };
-			if (myObj[0].AyOran == 0) {
+			/*if (myObj[0].AyOran == 0) {
                          var ayoran = document.getElementById("beforemonth").innerHTML =  "-";
                         } else {
                         var ayoran = document.getElementById("beforemonth").innerHTML =
                         (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
-                        };
+                        };*/
 			//console.log(oran);
 			var z =  document.getElementsByClassName("example")[0];
 			var v =  document.getElementsByClassName("example")[1];
@@ -736,7 +736,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           w.classList.add("fa");
                           w.classList.add("fa-sort-asc");
                         };
-			if (ayoran <= 0) {
+			/*if (ayoran <= 0) {
                           v.style.color = "red";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-desc");
@@ -744,7 +744,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           v.style.color = "#1ABB9C";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-asc");
-                        };
+                        };*/
   		
 	};
 	xmlhttp.open("GET", "../../count.php", true);
@@ -1083,7 +1083,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var obj = this.responseText;
-                        console.log (obj);
+                        //console.log (obj);
                         //var x;
          var data = JSON.parse(obj);
         //console.log (data);
@@ -1305,7 +1305,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   </script>
 
-<script>
+<!--<script>
 
 	 var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -1343,7 +1343,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	
 
 
-  </script>
+  </script>-->
 
    <script>
         var xmlhttp = new XMLHttpRequest();
