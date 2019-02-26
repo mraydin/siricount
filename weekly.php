@@ -1160,7 +1160,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 graphset:[
                     {
                         type:"bar",
-                        scalex: {
+                        "scale-x": {
                             labels: ["Alice", "Brett", "Chris", "Donna", "Emily", "Frank"],
                         height:"100%",
                         width:"33.33%",
