@@ -1162,6 +1162,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          });
      };
      var pazartesi = updateConfigByMutating();
+     console.log ("Pazartesi", pazartesi);
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
