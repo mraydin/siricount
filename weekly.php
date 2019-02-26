@@ -1159,11 +1159,21 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
+     function getValue() {
+
+         var jsonData = $.ajax({
+             type: 'GET',
+             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+             async: false,
+             dataType: 'json',
+
+         }).responseText;
+     }
+
+     var data = new google.visualization.DataTable(jsonData);
+
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
-         var data = new google.visualization.DataTable();
-         data.addRows(getValue().datatarih);
-         data.addColumn(getValue().datax);
 
          var options = {
              title : 'Haftalık ziyaretçi Sayısı',
@@ -1184,18 +1194,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
      }
 
-     function getValue() {
 
-         var jsonData = $.ajax({
-             type: 'GET',
-             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
-             async: false,
-             dataType: 'json',
-
-         }).responseText;
-     }
-
-     var data = new google.visualization.DataTable(jsonData);
 
      /*function getValue() {
 
