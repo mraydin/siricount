@@ -1199,7 +1199,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      datax.unshift("Pazartesi");
                      datay = resp.map(function(e) {return e.Tarih;});
                      datay.unshift("Month");
-                     //console.log ("Resp",datax);
+                     console.log ("Resp",datax);
                  }
              });
              return { datax: datax,
