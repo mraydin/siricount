@@ -1168,7 +1168,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              dataType: 'json',
 
          }).responseText;
-     }
+
 
      var data = new google.visualization.DataTable(jsonData);
 
@@ -1192,6 +1192,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
 
+     }
      }
 
 
