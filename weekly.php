@@ -1157,9 +1157,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
      google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawVisualization);
+     google.charts.setOnLoadCallback(drawChart);
 
-     function getValue() {
+     function drawChart() {
 
          var jsonData = $.ajax({
              type: 'GET',
