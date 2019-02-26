@@ -1159,10 +1159,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("TarihGoogle",datax);
              var datay = jd.map(function(e) {return e.Giris; });
-             console.log("Tarih Google", datay);
+
             return datay;
          });
-         return datay;
+         console.log("Tarih Google", datay);
      }
      //var pazartesi = updateConfigByMutating().datay;
 
