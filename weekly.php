@@ -1173,19 +1173,44 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
           console.log("GetValue", getValue().datatarih);
 </script>
         <script>
+
+            function getValue() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        datatarih.unshift("Month");
+                        responsivedata = resp;
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+
+            console.log("GetValue", getValue().datatarih);
+
+
      var canvas = document.getElementById("mybarCanvas");
      var ctx = canvas.getContext('2d');
      var chartType = 'bar';
      var barChartData = {
          labels: [
-             "Absence of OB",
-             "Closeness",
-             "Credibility",
-             "Heritage",
-             "M Disclosure",
-             "Provenance",
-             "Reliability",
-             "Transparency"
+             "Pazartesi",
+             "Salı",
+             "Çarşamba",
+             "Perşembee",
+             "Cuma",
+             "Cumartesi",
+             "Pazar"
          ],
          datasets: [
              {
@@ -1193,28 +1218,28 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  backgroundColor: "pink",
                  borderColor: "red",
                  borderWidth: 1,
-                 data: [3, 5, 6, 7,3, 5, 6, 7]
+                 data: getValue().datax
              },
              {
                  label: "Mastercard",
                  backgroundColor: "lightblue",
                  borderColor: "blue",
                  borderWidth: 1,
-                 data: [4, 7, 3, 6, 10,7,4,6]
+                 data: getValue().datax
              },
              {
                  label: "Paypal",
                  backgroundColor: "lightgreen",
                  borderColor: "green",
                  borderWidth: 1,
-                 data: [10,7,4,6,9,7,3,10]
+                 data: getValue().datax
              },
              {
                  label: "Visa",
                  backgroundColor: "yellow",
                  borderColor: "orange",
                  borderWidth: 1,
-                 data: [6,9,7,3,10,7,4,6]
+                 data: getValue().datax
              }
          ]
      };
