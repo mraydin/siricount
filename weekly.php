@@ -1171,7 +1171,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         backgroundColor: "pink",
                         borderColor: "red",
                         borderWidth: 1,
-                        data: [3, 5, 6, 7,3, 5, 6, 7]
+                        data: getValue().datax
                     },
                     {
                         label: "Mastercard",
@@ -1231,7 +1231,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 var datatarih;
                 $.ajax({
                     type: 'GET',
-                    url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+                    url: "../../rcountSearch.php?name" + "=" + "10" + "&" + "s=submit",
                     async: false,
                     dataType: 'json',
                     success: function (resp) {
