@@ -1186,6 +1186,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              [getValue().datax],
              [getValue().datax],
              [getValue().datax],
+             [getValue().datax],
+             [getValue().datax],
+             [getValue().datax],
+             [getValue().datax],
              [getValue().datax]
 
          ]);
