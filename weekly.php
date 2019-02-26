@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+                    <div id="mybarCanvas" style="width: 100%; height: 500px;"></div>
 
                 </div>
             </div>
@@ -1172,7 +1172,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
           console.log("GetValue", getValue().datatarih);
 
-     var canvas = document.getElementById("mybarChart");
+     var canvas = document.getElementById("mybarCanvas");
      var ctx = canvas.getContext('2d');
      var chartType = 'bar';
      var barChartData = {
