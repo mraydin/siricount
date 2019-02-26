@@ -1153,46 +1153,52 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
 
-            console.log("GetValue", getValue().datax);
+            console.log("GetValue", getValueOn().datax);
             var barChartData = {
                 labels: [
-                    "Absence of OB",
-                    "Closeness",
-                    "Credibility",
-                    "Heritage",
-                    "M Disclosure",
-                    "Provenance",
-                    "Reliability",
-                    "Transparency"
+                    "Pazartesi",
+                    "Salı",
+                    "Çarşamba",
+                    "Perşembe",
+                    "Cuma",
+                    "Cumartesi",
+                    "Pazar"
                 ],
                 datasets: [
                     {
                         label: "American Express",
-                        backgroundColor: "pink",
-                        borderColor: "red",
+                        backgroundColor: "#34495E",
+                        borderColor: "blue",
                         borderWidth: 1,
-                        data: getValue().datax
+                        data: getValueOn().datax
                     },
                     {
                         label: "Mastercard",
-                        backgroundColor: "lightblue",
+                        backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
-                        data: [4, 7, 3, 6, 10,7,4,6]
+                        data: getValueOnbir().datax
                     },
                     {
                         label: "Paypal",
-                        backgroundColor: "lightgreen",
-                        borderColor: "green",
+                        backgroundColor: "#34495E",
+                        borderColor: "blue",
                         borderWidth: 1,
-                        data: [10,7,4,6,9,7,3,10]
+                        data: getValueOniki().datax
                     },
                     {
                         label: "Visa",
-                        backgroundColor: "yellow",
-                        borderColor: "orange",
+                        backgroundColor: "#34495E",
+                        borderColor: "blue",
                         borderWidth: 1,
-                        data: [6,9,7,3,10,7,4,6]
+                        data: getValueOnuc().datax
+                    },
+                    {
+                        label: "Visa",
+                        backgroundColor: "#34495E",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOndort().datax
                     }
                 ]
             };
@@ -1225,7 +1231,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
             };
 
 
-            function getValue() {
+            function getValueOn() {
 
                 var datax;
                 var datatarih;
@@ -1245,10 +1251,91 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 return { datax: datax,
                     datatarih: datatarih}
             }
+            function getValueOnbir() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "11" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOniki() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "12" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOnuc() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "13" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
+            function getValueOndort() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../rcountSearch.php?name" + "=" + "14" + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        //datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
 
 
 
- </script>
+
+        </script>
 
   <!-- /footer content -->
 </body>
