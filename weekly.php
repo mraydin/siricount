@@ -1152,26 +1152,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
      console.log("GetValue :",getValue().datax);
      //console.log("GetData :",getValue().datay);
 
-     function getValue() {
 
-         var datax;
-         var datay;
-         $.ajax({
-             type: 'GET',
-             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
-             async: false,
-             dataType: 'json',
-             success: function (resp) {
-                 datax = resp.map(function(e) {return e.Giris;});
-                 datax.unshift("Pazartesi");
-                 datay = resp.map(function(e) {return e.Tarih;});
-                 datay.unshift("Month");
-                 //console.log ("Resp",datax);
-             }
-             });
-             return { datax: datax,
-                       datay: datay}
-     }
 
 
 
@@ -1202,6 +1183,27 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
+     }
+
+     function getValue() {
+
+         var datax;
+         var datay;
+         $.ajax({
+             type: 'GET',
+             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+             async: false,
+             dataType: 'json',
+             success: function (resp) {
+                 datax = resp.map(function(e) {return e.Giris;});
+                 datax.unshift("Pazartesi");
+                 datay = resp.map(function(e) {return e.Tarih;});
+                 datay.unshift("Month");
+                 //console.log ("Resp",datax);
+             }
+         });
+         return { datax: datax,
+             datay: datay}
      }
  </script>
 
