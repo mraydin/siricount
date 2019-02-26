@@ -1166,7 +1166,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[list]
+                                values:list
                             }
                         ]
                     },
