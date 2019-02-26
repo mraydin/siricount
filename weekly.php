@@ -1161,9 +1161,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              dataType: 'json',
              success: function (resp) {
                  datax = resp.map(function(e) {return e.Giris;});
-
-                 //console.log("Tarih",datax);
-                console.log ("Resp",datax);
+                 datax.unshift("Pazartesi")
+                 console.log ("Resp",datax);
              }
              });
              return datax;
