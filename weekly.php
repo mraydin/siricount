@@ -1159,7 +1159,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              console.log("TarihGoogle",datay);
          });
      };
-     parseInt(updateConfigByMutating());
+     updateConfigByMutating();
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
