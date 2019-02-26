@@ -1179,7 +1179,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          chart.draw(data, options);
 
          console.log("GetData :",getValue().datatarih);
-         console.log("GetValue :",getValue().datax);
+         console.log("GetValue :",getValue().resp);
 
 
      }
@@ -1201,7 +1201,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              }
          });
          return { datax: datax,
-             datatarih: datatarih}
+             datatarih: datatarih,
+             resp:resp}
      }
 
 
