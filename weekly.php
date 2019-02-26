@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <canvas id="mybarCanvas" style="width: 100%; height: 500px;"></canvas>
+                    <div id="myChart" style="width: 100%; height: 500px;"></div>
 
                 </div>
             </div>
@@ -1172,6 +1172,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
           console.log("GetValue", getValue().datatarih);
 </script>
+
+        <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
         <script>
 
             function getValue() {
@@ -1198,94 +1200,53 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
             console.log("GetValue", getValue().datatarih);
 
+            var myConfig ={
+                graphset:[
+                    {
+                        type:"bar",
+                        height:"100%",
+                        width:"33.33%",
+                        x:"0%",
+                        y:"0%",
+                        series:[
+                            {
+                                values:[20,40,25,50,15,45,33,34]
+                            }
+                        ]
+                    },
+                    {
+                        type:"bar",
+                        height:"100%",
+                        width:"33.33%",
+                        x:"33.33%",
+                        y:"0%",
+                        series:[
+                            {
+                                values:[5,30,21,18,59,50,28,33]
+                            }
+                        ]
+                    },
+                    {
+                        type:"bar",
+                        height:"100%",
+                        width:"33.33%",
+                        x:"66.66%",
+                        y:"0%",
+                        series:[
+                            {
+                                values:[30,5,18,21,33,41,29,15]
+                            }
+                        ]
+                    }
+                ]
+            };
 
-     var canvas = document.getElementById("mybarCanvas");
-     var ctx = canvas.getContext('2d');
-     var chartType = 'bar';
-     var barChartData = {
-         labels: [
-             "Pazartesi",
-             "Salı",
-             "Çarşamba",
-             "Perşembe",
-             "Cuma",
-             "Cumartesi",
-             "Pazar"
-         ],
-         datasets: [
-             {
-                 label: "10",
-                 backgroundColor: "pink",
-                 borderColor: "red",
-                 borderWidth: 1,
-                 data: getValue().datax
-             },
-             {
-                 label: "11",
-                 backgroundColor: "lightblue",
-                 borderColor: "blue",
-                 borderWidth: 1,
-                 data: getValue().datax
-             },
-             {
-                 label: "12",
-                 backgroundColor: "lightgreen",
-                 borderColor: "green",
-                 borderWidth: 1,
-                 data: getValue().datax
-             },
-             {
-                 label: "13",
-                 backgroundColor: "yellow",
-                 borderColor: "orange",
-                 borderWidth: 1,
-                 data: getValue().datax
-             },
-             {
-                 label: "14",
-                 backgroundColor: "yellow",
-                 borderColor: "orange",
-                 borderWidth: 1,
-                 data: getValue().datax
-             },
-             {
-                 label: "15",
-                 backgroundColor: "yellow",
-                 borderColor: "orange",
-                 borderWidth: 1,
-                 data: getValue().datax
-             }
-         ]
-     };
-
-     var chartOptions = {
-         responsive: true,
-         legend: {
-             position: "top"
-         },
-         title: {
-             display: false,
-             text: "Chart.js Bar Chart"
-         },
-         scales: {
-             yAxes: [{
-                 ticks: {
-                     beginAtZero: true
-                 }
-             }]
-         }
-     }
-
-     window.onload = function() {
-         //Chart declaration:
-         //window.myBarChart.destroy();
-         window.myBarChart = new Chart(ctx, {
-             type: chartType,
-             data: barChartData,
-             options: chartOptions
-
-         });
-     }
+            zingchart.render({
+                id : 'myChart',
+                data : myConfig,
+                height: "100%",
+                width: "100%"
+            });
 
 
 
