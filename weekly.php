@@ -1171,7 +1171,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
           }
 
           console.log("GetValue", getValue().datatarih);
-
+</script>
+        <script>
      var canvas = document.getElementById("mybarCanvas");
      var ctx = canvas.getContext('2d');
      var chartType = 'bar';
