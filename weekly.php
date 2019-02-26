@@ -1158,6 +1158,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              var datay = jd.map(function(e) {return e.Giris; });
          });
      };
+     updateConfigByMutating();
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
