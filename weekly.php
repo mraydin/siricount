@@ -1210,7 +1210,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[20,40,25,50,15,45,33,34]
+                                values:[getValue().datatarih]
                             }
                         ]
                     },
@@ -1222,7 +1222,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[5,30,21,18,59,50,28,33]
+                                values:[getValue().datatarih]
                             }
                         ]
                     },
