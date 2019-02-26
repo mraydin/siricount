@@ -1154,6 +1154,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
             console.log("GetValue", getValue().datax);
+            list = getValue().datax;
 
             var myConfig ={
                 graphset:[
@@ -1165,7 +1166,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[getValue().datax]
+                                values:[list]
                             }
                         ]
                     },
