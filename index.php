@@ -1305,7 +1305,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   </script>
 
-<!--<script>
+<script>
 
 	 var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -1343,7 +1343,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	
 
 
-  </script>-->
+  </script>
 
    <script>
         var xmlhttp = new XMLHttpRequest();
