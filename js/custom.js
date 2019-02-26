@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-/** ******  left menus  *********************** **/
+/** ******  left menu  *********************** **/
 $(function () {
     $('#sidebar-menu li ul').slideUp();
     $('#sidebar-menu li').removeClass('active');
