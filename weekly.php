@@ -284,7 +284,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <h2>Aylık Trend</h2>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content" style="width: 100%; height: %60;">
+                <div class="x_content" style="width: 100%; height: %80;">
 
                     <canvas id="MYcanvas"> </canvas>
 
@@ -1166,83 +1166,71 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     {
                         label: "10:00",
                         backgroundColor: "#34495E",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOn().datax
                     },
                     {
                         label: "11:00",
                         backgroundColor: "#26B99A",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnbir().datax
                     },
                     {
                         label: "12:00",
                         backgroundColor: "#ACADAC",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOniki().datax
                     },
                     {
                         label: "13:00",
                         backgroundColor: "#536c86",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnuc().datax
                     },
                     {
                         label: "14:00",
                         backgroundColor: "#3498DB",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOndort().datax
                     },{
                         label: "15:00",
                         backgroundColor: "#34495E",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnbes().datax
                     },
                     {
                         label: "16:00",
                         backgroundColor: "#26B99A",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnalti().datax
                     },
                     {
                         label: "17:00",
                         backgroundColor: "#ACADAC",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnyedi().datax
                     },
                     {
                         label: "18:00",
                         backgroundColor: "#536c86",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnsekiz().datax
                     },
                     {
                         label: "19:00",
                         backgroundColor: "#3498DB",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOndokuz().datax
                     },
                     {
                         label: "20:00",
                         backgroundColor: "#26B99A",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueYirmi().datax
                     },
                     {
                         label: "21:00",
                         backgroundColor: "#ACADAC",
-                        borderColor: "blue",
                         borderWidth: 1,
                         data: getValueYirmibir().datax
                     }
