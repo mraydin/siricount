@@ -1160,8 +1160,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              return datay;
          });
      };
-     var pazartesi = updateConfigByMutating().datay;
-     console.log ("Pazartesi", pazartesi);
+     //var pazartesi = updateConfigByMutating().datay;
+     console.log ("Pazartesi", updateConfigByMutating().datay;);
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
