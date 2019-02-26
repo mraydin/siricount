@@ -1236,16 +1236,16 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              }]
          }
      }
-     init();
-     function init() {
+
+     window.onload = function() {
          //Chart declaration:
-         if (window.myBarChart != undefined)
          //window.myBarChart.destroy();
-             window.myBarChart = new Chart(ctx, {
-                 type: chartType,
-                 data: barChartData,
-                 options: chartOptions
-             });
+         window.myBarChart = new Chart(ctx, {
+             type: chartType,
+             data: barChartData,
+             options: chartOptions
+
+         });
      }
 
 
