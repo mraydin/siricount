@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <div id="myChart" style="width: 100%; height: 500px;"></div>
+                    <canvas id="MYcanvas"></canvas>
 
                 </div>
             </div>
@@ -1148,62 +1148,82 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
  </script>
 
 
-        <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+
         <script>
 
 
 
             console.log("GetValue", getValue().datax);
-            list = getValue().datax;
-
-            var myConfig ={
-                graphset:[
+            var barChartData = {
+                labels: [
+                    "Absence of OB",
+                    "Closeness",
+                    "Credibility",
+                    "Heritage",
+                    "M Disclosure",
+                    "Provenance",
+                    "Reliability",
+                    "Transparency"
+                ],
+                datasets: [
                     {
-                        type:"bar",
-                        height:"100%",
-                        width:"33.33%",
-                        x:"0%",
-                        y:"0%",
-                        series:[
-                            {
-                                values:list,
-                                text: "Pazartesi"
-                            }
-                        ]
+                        label: "American Express",
+                        backgroundColor: "pink",
+                        borderColor: "red",
+                        borderWidth: 1,
+                        data: [3, 5, 6, 7,3, 5, 6, 7]
                     },
                     {
-                        type:"bar",
-                        height:"100%",
-                        width:"33.33%",
-                        x:"33.33%",
-                        y:"0%",
-                        series:[
-                            {
-                                values:getValue().datax
-                            }
-                        ]
+                        label: "Mastercard",
+                        backgroundColor: "lightblue",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: [4, 7, 3, 6, 10,7,4,6]
                     },
                     {
-                        type:"bar",
-                        height:"100%",
-                        width:"33.33%",
-                        x:"66.66%",
-                        y:"0%",
-                        series:[
-                            {
-                                values:[30,5,18,21,33,41,29,15]
-                            }
-                        ]
+                        label: "Paypal",
+                        backgroundColor: "lightgreen",
+                        borderColor: "green",
+                        borderWidth: 1,
+                        data: [10,7,4,6,9,7,3,10]
+                    },
+                    {
+                        label: "Visa",
+                        backgroundColor: "yellow",
+                        borderColor: "orange",
+                        borderWidth: 1,
+                        data: [6,9,7,3,10,7,4,6]
                     }
                 ]
             };
 
-            zingchart.render({
-                id : 'myChart',
-                data : myConfig,
-                height: "100%",
-                width: "100%"
-            });
+            var chartOptions = {
+                responsive: true,
+                legend: {
+                    position: "top"
+                },
+                title: {
+                    display: true,
+                    text: "Chart.js Bar Chart"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+
+            window.onload = function() {
+                var ctx = document.getElementById("MYcanvas").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: "bar",
+                    data: barChartData,
+                    options: chartOptions
+                });
+            };
+
 
             function getValue() {
 
