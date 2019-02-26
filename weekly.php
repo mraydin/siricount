@@ -1154,8 +1154,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          $.getJSON("../../tcount.php", function(jd) {
              //console.log("jd",jd);
              var datax = jd.map(function(e) {return e.Tarih;});
-             console.log("TarihGoogle",datax);
+             //console.log("TarihGoogle",datax);
              var datay = jd.map(function(e) {return e.Giris; });
+             console.log("TarihGoogle",datay);
          });
      };
      updateConfigByMutating();
