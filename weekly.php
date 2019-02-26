@@ -1149,7 +1149,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-     console.log("GetValue :",getValue().datax);
+
      //console.log("GetData :",getValue().datay);
 
 
@@ -1180,6 +1180,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
          };
          console.log("GetData :",getValue().datay);
+         console.log("GetValue :",getValue().datax);
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
