@@ -1153,17 +1153,19 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
      function getValue() {
 
-         var datax = $.ajax({
+         var datax;
+         $.ajax({
              type: 'GET',
              url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
              async: false,
              dataType: 'json',
              success: function (resp) {
-                 var datax = resp.map(function(e) {return e.Giris;});
+                 datax = resp.map(function(e) {return e.Giris;});
+
                  //console.log("Tarih",datax);
                 console.log ("Resp",datax);
              }
-             }).responseJSON;
+             });
              return datax;
      }
 
