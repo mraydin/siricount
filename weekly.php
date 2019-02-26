@@ -1198,7 +1198,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     datatarih: datatarih}
             }
 
-            console.log("GetValue", getValue().datatarih);
+            console.log("GetValue", getValue().datax);
 
             var myConfig ={
                 graphset:[
@@ -1210,7 +1210,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[getValue().datatarih]
+                                values:[getValue().datax]
                             }
                         ]
                     },
@@ -1222,7 +1222,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         y:"0%",
                         series:[
                             {
-                                values:[getValue().datatarih]
+                                values:[getValue().datax]
                             }
                         ]
                     },
