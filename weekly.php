@@ -1182,16 +1182,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
              [getValue().datay],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax],
-             [getValue().datax]
-
+             ['Salı',  135, 1120, 599, 1268, 288, 682, 30, 157, 1167, 587, 807, 397],
+             ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20, 139, 1110, 615, 968, 215],
+             ['Perşembe',  139, 1110, 615, 968, 215, 609.4, 30, 139, 1110, 615, 968, 215],
+             ['Cuma',  139, 1110, 615, 968, 215, 609.4, 40,  136, 691, 629, 1026, 366],
+             ['Cumartesi',  139, 1110, 615, 968, 215, 609.4, 50, 136, 691, 629, 1026, 366],
+             ['Pazar',  136, 691, 629, 1026, 366, 569.6, 60, 136, 691, 629, 1026, 366]
          ]);
 
          var options = {
