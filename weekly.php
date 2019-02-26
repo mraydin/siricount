@@ -1150,15 +1150,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
  <script>
 
      console.log("GetValue :",getValue());
+
      function getValue() {
 
-     var datax; $.ajax({
-         type: 'GET',
-         url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "s=submit",
-         async: false
-         }, responseJSON;
-         return value;
-     })
+         var datax = $.ajax({
+             type: 'GET',
+             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "s=submit",
+             async: false
+             }).responseJSON;
+             return datax;
      }
 
      function updateConfigByMutating() {
