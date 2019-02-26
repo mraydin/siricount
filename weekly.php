@@ -1162,7 +1162,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
-             ["Month", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+             [getValue().datatarih],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30, 157, 1167, 587, 807, 397],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20, 139, 1110, 615, 968, 215],
              ['Perşembe',  139, 1110, 615, 968, 215, 609.4, 30, 139, 1110, 615, 968, 215],
@@ -1184,13 +1184,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
 
-         console.log("GetData :",getValue().datay);
+         console.log("GetData :",getValue().datatarih);
          console.log("GetValue :",getValue().datax);
 
          function getValue() {
 
              var datax;
-             var datay;
+             var datatarih;
              $.ajax({
                  type: 'GET',
                  url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
@@ -1199,13 +1199,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  success: function (resp) {
                      datax = resp.map(function(e) {return e.Giris;});
                      datax.unshift("Pazartesi");
-                     datay = resp.map(function(e) {return e.Tarih;});
-                     datay.unshift("Month");
-                     console.log ("Resp",datax);
+                     datatarih = resp.map(function(e) {return e.Tarih;});
+                     datatarih.unshift("Month");
+                     //console.log ("Resp",datax);
                  }
              });
              return { datax: datax,
-                 datay: datay}
+                 datatarih: datatarih}
          }
      }
 
