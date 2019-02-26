@@ -1149,15 +1149,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-     function updateConfigByMutating(chart) {
-         var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
-         $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+     function updateConfigByMutating() {
+         //var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+         $.getJSON("../../tcount.php", function(jd) {
              //console.log("jd",jd);
              var datax = jd.map(function(e) {return e.Tarih;});
-             //console.log("Tarih",datax);
+             console.log("Tarih",datax);
              var datay = jd.map(function(e) {return e.Giris; });
          });
-     }
+     };
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
@@ -1179,7 +1179,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              vAxis: {title: 'Ziyaretçi Sayısı'},
              colors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB', '#26B99A', '#ACADAC', '#3498DB'],
              hAxis: {title: 'Gün'},
-             seriesType: 'bars',
+             seriesType: 'bars'
 
          };
 
