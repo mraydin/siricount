@@ -1047,7 +1047,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
   </script>
-  <script src="js/custom.js"></script>
+  <script src="js/custom.min.js"></script>
 
   <!-- echart -->
   <script src="js/echart/echarts-all.js"></script>
