@@ -1156,18 +1156,20 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("TarihGoogle",datax);
              var datay = jd.map(function(e) {return e.Giris; });
-             console.log("TarihGoogle", datay);
+             console.log("Tarih Google", datay);
+             datay.ushift("Pazartesi");
+             return datay;
          });
      };
-     updateConfigByMutating();
+     var pazartesi = updateConfigByMutating();
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
      function drawVisualization() {
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
-             ['Month', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'],
-             ['Pazartesi',  165, 938, 522, 998, 450, 614.6, 40],
+             ['Month', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],
+             [pazartesi],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20],
              ['Perşembe',  139, 1110, 615, 968, 215, 609.4, 30],
