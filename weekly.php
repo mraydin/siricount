@@ -1161,7 +1161,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              }).responseJSON;
              return datax;
      }
-
+     console.log("Console",updateConfigByMutating());
      function updateConfigByMutating() {
          var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
          var data = $.getJSON("../../tcountSearch.php", myObject, function(jd) {
@@ -1169,8 +1169,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              var datax = jd.map(function(e) {return e.Tarih;});
              //console.log("TarihGoogle",datax);
              var datay = jd.map(function(e) {return e.Giris; });
+             var items = jd.map(function (item) {
+                 return item.Giris;
          });
-         return data;
      }
      //var pazartesi = updateConfigByMutating().datay;
 
