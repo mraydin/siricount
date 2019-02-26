@@ -2073,7 +2073,7 @@ input.parsley-error, textarea.parsley-error, select.parsley-error {
   opacity: 1;
 }
 
-/* ***** dropzone ****** */
+/* ***** dropzones ****** */
 
 .dropzone, .dropzone * {
   box-sizing: border-box;
