@@ -1149,11 +1149,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-     console.log("GetValue :",getValue());
+     console.log("GetValue :",getValue().datax);
+     console.log("GetData :",getValue().datay);
 
      function getValue() {
 
          var datax;
+         var datay;
          $.ajax({
              type: 'GET',
              url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
@@ -1162,11 +1164,15 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              success: function (resp) {
                  datax = resp.map(function(e) {return e.Giris;});
                  datax.unshift("Pazartesi");
-                 console.log ("Resp",datax);
+                 datay = resp.map(function(e) {return e.Tarih;});
+                 datay.unshift("Month");
+                 //console.log ("Resp",datax);
              }
              });
-             return datax;
+             return { datax: datax,
+                       datay: datay}
      }
+
 
 
      google.charts.load('current', {'packages':['corechart']});
@@ -1176,7 +1182,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
              ['Month', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'],
-             [getValue()],
+             [getValue().datax],
              ['Salı',  135, 1120, 599, 1268, 288, 682, 30, 157, 1167, 587, 807, 397],
              ['Çarşamba',  157, 1167, 587, 807, 397, 623, 20, 139, 1110, 615, 968, 215],
              ['Perşembe',  139, 1110, 615, 968, 215, 609.4, 30, 139, 1110, 615, 968, 215],
