@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <canvas id="MYcanvas" style="width: 50%;"></canvas>
+                    <canvas id="MYcanvas" style="width: 50%; height: 50%;"></canvas>
 
                 </div>
             </div>
@@ -1166,35 +1166,35 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 ],
                 datasets: [
                     {
-                        label: "American Express",
+                        label: "10:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOn().datax
                     },
                     {
-                        label: "Mastercard",
+                        label: "11:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnbir().datax
                     },
                     {
-                        label: "Paypal",
+                        label: "12:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOniki().datax
                     },
                     {
-                        label: "Visa",
+                        label: "13:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOnuc().datax
                     },
                     {
-                        label: "Visa",
+                        label: "14:00",
                         backgroundColor: "#34495E",
                         borderColor: "blue",
                         borderWidth: 1,
@@ -1209,8 +1209,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     position: "top"
                 },
                 title: {
-                    display: true,
-                    text: "Chart.js Bar Chart"
+                    display: false,
+                    text: ""
                 },
                 scales: {
                     yAxes: [{
