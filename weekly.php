@@ -1207,7 +1207,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              "Pazartesi",
              "Salı",
              "Çarşamba",
-             "Perşembee",
+             "Perşembe",
              "Cuma",
              "Cumartesi",
              "Pazar"
@@ -1231,6 +1231,20 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                  label: "Çarşamba",
                  backgroundColor: "lightgreen",
                  borderColor: "green",
+                 borderWidth: 1,
+                 data: getValue().datax
+             },
+             {
+                 label: "Perşembe",
+                 backgroundColor: "yellow",
+                 borderColor: "orange",
+                 borderWidth: 1,
+                 data: getValue().datax
+             },
+             {
+                 label: "Perşembe",
+                 backgroundColor: "yellow",
+                 borderColor: "orange",
                  borderWidth: 1,
                  data: getValue().datax
              },
