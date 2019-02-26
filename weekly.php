@@ -1158,7 +1158,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
              async: false,
              dataType: 'json'
-             }).responseJSON;
+             }).responseJSON.Tarih;
              return datax;
      }
 
