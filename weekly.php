@@ -1187,7 +1187,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
 
-         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
          chart.draw(data, options);
 
 
