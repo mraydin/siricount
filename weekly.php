@@ -1182,6 +1182,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          // Some raw data (not necessarily accurate)
          var data = google.visualization.arrayToDataTable([
              [getValue().datay],
+             [getValue().datax],
+             [getValue().datax],
+             [getValue().datax],
+             [getValue().datax],
              [getValue().datax]
 
          ]);
