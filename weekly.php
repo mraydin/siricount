@@ -1149,7 +1149,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
-     console.log("GetValue :",getValue().Tarih);
+     console.log("GetValue :",getValue());
 
      function getValue() {
 
@@ -1158,7 +1158,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              url: "../../tcountSearch.php?name=22.02.2019&s=submit",
              async: false,
              dataType: 'json'
-             }).responseText;
+             }).responseJSON;
              return datax;
      }
 
