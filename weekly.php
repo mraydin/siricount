@@ -286,7 +286,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                    <div id="mybarCanvas" style="width: 100%; height: 500px;"></div>
+                    <canvas id="mybarCanvas" style="width: 100%; height: 500px;"></canvas>
 
                 </div>
             </div>
