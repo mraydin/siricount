@@ -1146,78 +1146,103 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	});
 
  </script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
  <script>
+     function getValue() {
 
+              var datax;
+              var datatarih;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Giris;});
+                      datax.unshift("Pazartesi");
+                      datatarih = resp.map(function(e) {return e.Tarih;});
+                      datatarih.unshift("Month");
+                      responsivedata = resp;
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  datatarih: datatarih}
+          }
 
-     //console.log("GetData :",getValue().datay);
-
-
-
-
-
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawChart);
-
-     function drawChart() {
-
-         var jsonData = $.ajax({
-             type: 'GET',
-             url: "../../rcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
-             async: false,
-             dataType: 'json',
-
-         }).responseText;
-
-
-     var data = new google.visualization.DataTable(jsonData);
-
-     function drawVisualization() {
-         // Some raw data (not necessarily accurate)
-
-         var options = {
-             title : 'Haftalık ziyaretçi Sayısı',
-             vAxis: {title: 'Ziyaretçi Sayısı'},
-             colors: ['#34495E', '#26B99A', '#ACADAC', '#3498DB', '#26B99A', '#ACADAC', '#3498DB'],
-             hAxis: {title: 'Gün'},
-             seriesType: 'bars'
-
-         };
-
-
-
-
-         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-         chart.draw(data, options);
-
-
-
-     }
-     }
-
-
-
-     /*function getValue() {
-
-         var datax;
-         var datatarih;
-         $.ajax({
-             type: 'GET',
-             url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
-             async: false,
-             dataType: 'json',
-             success: function (resp) {
-                 datax = resp.map(function(e) {return e.Giris;});
-                 datax.unshift("Pazartesi");
-                 datatarih = resp.map(function(e) {return e.Tarih;});
-                 datatarih.unshift("Month");
-                 responsivedata = resp;
-                 //console.log ("Resp",datax);
+     var canvas = document.getElementById("mybarChart");
+     var ctx = canvas.getContext('2d');
+     var chartType = 'bar';
+     var barChartData = {
+         labels: [
+             "Absence of OB",
+             "Closeness",
+             "Credibility",
+             "Heritage",
+             "M Disclosure",
+             "Provenance",
+             "Reliability",
+             "Transparency"
+         ],
+         datasets: [
+             {
+                 label: "American Express",
+                 backgroundColor: "pink",
+                 borderColor: "red",
+                 borderWidth: 1,
+                 data: [3, 5, 6, 7,3, 5, 6, 7]
+             },
+             {
+                 label: "Mastercard",
+                 backgroundColor: "lightblue",
+                 borderColor: "blue",
+                 borderWidth: 1,
+                 data: [4, 7, 3, 6, 10,7,4,6]
+             },
+             {
+                 label: "Paypal",
+                 backgroundColor: "lightgreen",
+                 borderColor: "green",
+                 borderWidth: 1,
+                 data: [10,7,4,6,9,7,3,10]
+             },
+             {
+                 label: "Visa",
+                 backgroundColor: "yellow",
+                 borderColor: "orange",
+                 borderWidth: 1,
+                 data: [6,9,7,3,10,7,4,6]
              }
+         ]
+     };
+
+     var chartOptions = {
+         responsive: true,
+         legend: {
+             position: "top"
+         },
+         title: {
+             display: true,
+             text: "Chart.js Bar Chart"
+         },
+         scales: {
+             yAxes: [{
+                 ticks: {
+                     beginAtZero: true
+                 }
+             }]
+         }
+     }
+     function init() {
+         //Chart declaration:
+         if (window.myBarChart != undefined)
+             //window.myBarChart.destroy();
+         window.myBarChart = new Chart(ctx, {
+             type: chartType,
+             data: barChartData,
+             options: chartOptions
          });
-         return { datax: datax,
-             datatarih: datatarih}
-     }*/
+
 
 
  </script>
