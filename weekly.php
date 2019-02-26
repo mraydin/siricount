@@ -1170,6 +1170,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                   datatarih: datatarih}
           }
 
+          console.log("GetValue", getValue().datatarih);
+
      var canvas = document.getElementById("mybarChart");
      var ctx = canvas.getContext('2d');
      var chartType = 'bar';
@@ -1233,15 +1235,17 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              }]
          }
      }
+     init();
      function init() {
          //Chart declaration:
          if (window.myBarChart != undefined)
-             //window.myBarChart.destroy();
-         window.myBarChart = new Chart(ctx, {
-             type: chartType,
-             data: barChartData,
-             options: chartOptions
-         });
+         //window.myBarChart.destroy();
+             window.myBarChart = new Chart(ctx, {
+                 type: chartType,
+                 data: barChartData,
+                 options: chartOptions
+             });
+     }
 
 
 
