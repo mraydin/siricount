@@ -1197,6 +1197,40 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderColor: "blue",
                         borderWidth: 1,
                         data: getValueOndort().datax
+                    },{
+                        label: "10:00",
+                        backgroundColor: "#34495E",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOn().datax
+                    },
+                    {
+                        label: "11:00",
+                        backgroundColor: "#26B99A",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOnbir().datax
+                    },
+                    {
+                        label: "12:00",
+                        backgroundColor: "#ACADAC",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOniki().datax
+                    },
+                    {
+                        label: "13:00",
+                        backgroundColor: "#536c86",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOnuc().datax
+                    },
+                    {
+                        label: "14:00",
+                        backgroundColor: "#3498DB",
+                        borderColor: "blue",
+                        borderWidth: 1,
+                        data: getValueOndort().datax
                     }
                 ]
             };
