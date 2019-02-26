@@ -1149,6 +1149,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script>
 
+
+     console.log ("Pazartesi", updateConfigByMutating());
+
      function updateConfigByMutating() {
          var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
          $.getJSON("../../tcountSearch.php", myObject, function(jd) {
@@ -1159,9 +1162,9 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              console.log("Tarih Google", datay);
              return jd;
          });
-     };
+     }
      //var pazartesi = updateConfigByMutating().datay;
-     console.log ("Pazartesi", updateConfigByMutating().jd);
+
      google.charts.load('current', {'packages':['corechart']});
      google.charts.setOnLoadCallback(drawVisualization);
 
