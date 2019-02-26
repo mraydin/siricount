@@ -1176,27 +1176,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
         <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
         <script>
 
-            function getValue() {
 
-                var datax;
-                var datatarih;
-                $.ajax({
-                    type: 'GET',
-                    url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
-                    async: false,
-                    dataType: 'json',
-                    success: function (resp) {
-                        datax = resp.map(function(e) {return e.Giris;});
-                        datax.unshift("Pazartesi");
-                        datatarih = resp.map(function(e) {return e.Tarih;});
-                        datatarih.unshift("Month");
-                        responsivedata = resp;
-                        //console.log ("Resp",datax);
-                    }
-                });
-                return { datax: datax,
-                    datatarih: datatarih}
-            }
 
             console.log("GetValue", getValue().datax);
 
@@ -1247,6 +1227,27 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 height: "100%",
                 width: "100%"
             });
+
+            function getValue() {
+
+                var datax;
+                var datatarih;
+                $.ajax({
+                    type: 'GET',
+                    url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+                    async: false,
+                    dataType: 'json',
+                    success: function (resp) {
+                        datax = resp.map(function(e) {return e.Giris;});
+                        datax.unshift("Pazartesi");
+                        datatarih = resp.map(function(e) {return e.Tarih;});
+                        //datatarih.unshift("Month");
+                        //console.log ("Resp",datax);
+                    }
+                });
+                return { datax: datax,
+                    datatarih: datatarih}
+            }
 
 
 
