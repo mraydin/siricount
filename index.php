@@ -1229,7 +1229,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   <script src="js/moris/raphael-min.js"></script>
   <script src="js/moris/morris.min.js"></script>
-  <script>
+  <!--<script>
 	var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -1260,7 +1260,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	};
         xmlhttp.open("GET", "../../daycount.php", true);
         xmlhttp.send();
-  </script>
+  </script>-->
 
   <script>
 
