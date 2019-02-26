@@ -1214,42 +1214,42 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          ],
          datasets: [
              {
-                 label: "Pazartesi",
+                 label: "10",
                  backgroundColor: "pink",
                  borderColor: "red",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Salı",
+                 label: "11",
                  backgroundColor: "lightblue",
                  borderColor: "blue",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Çarşamba",
+                 label: "12",
                  backgroundColor: "lightgreen",
                  borderColor: "green",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Perşembe",
+                 label: "13",
                  backgroundColor: "yellow",
                  borderColor: "orange",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Perşembe",
+                 label: "14",
                  backgroundColor: "yellow",
                  borderColor: "orange",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Perşembe",
+                 label: "15",
                  backgroundColor: "yellow",
                  borderColor: "orange",
                  borderWidth: 1,
