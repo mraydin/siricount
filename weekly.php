@@ -1151,7 +1151,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
 
      console.log ("Pazartesi", updateConfigByMutating());
-     console.log ("Pazartesi", updateConfigByMutating().statusTex);
+     console.log ("Pazartesi", updateConfigByMutating().readyState);
      console.log ("Pazartesi", updateConfigByMutating().responseText);
 
      function updateConfigByMutating() {
