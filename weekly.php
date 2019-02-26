@@ -1179,11 +1179,13 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              seriesType: 'bars'
 
          };
-         console.log("GetData :",getValue().datay);
-         console.log("GetValue :",getValue().datax);
+
 
          var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
          chart.draw(data, options);
+
+         console.log("GetData :",getValue().datay);
+         console.log("GetValue :",getValue().datax);
 
          function getValue() {
 
@@ -1191,7 +1193,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              var datay;
              $.ajax({
                  type: 'GET',
-                 url: "../../tcountSearch.php?name" + "=" + moment().subtract(1, 'days').format('DD.MM.YYYY') + "&" + "s=submit",
+                 url: "../../tcountSearch.php?name" + "=" + "22.02.2019" + "&" + "s=submit",
                  async: false,
                  dataType: 'json',
                  success: function (resp) {
