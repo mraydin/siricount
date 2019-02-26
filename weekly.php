@@ -1214,28 +1214,28 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
          ],
          datasets: [
              {
-                 label: "American Express",
+                 label: "Pazartesi",
                  backgroundColor: "pink",
                  borderColor: "red",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Mastercard",
+                 label: "Salı",
                  backgroundColor: "lightblue",
                  borderColor: "blue",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Paypal",
+                 label: "Çarşamba",
                  backgroundColor: "lightgreen",
                  borderColor: "green",
                  borderWidth: 1,
                  data: getValue().datax
              },
              {
-                 label: "Visa",
+                 label: "Perşembe",
                  backgroundColor: "yellow",
                  borderColor: "orange",
                  borderWidth: 1,
@@ -1250,7 +1250,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
              position: "top"
          },
          title: {
-             display: true,
+             display: false,
              text: "Chart.js Bar Chart"
          },
          scales: {
