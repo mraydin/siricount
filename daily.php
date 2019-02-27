@@ -173,7 +173,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </div>
                         <div class="col-md-3 tile">
                             <span>Saatlik Toplam</span>
-                            <h2>231,809</h2>
+                            <h2 id="buSaat"></h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -379,10 +379,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
         <!-- Menu Widget Data -->
     console.log(getValue().datax);
         document.getElementById("dunOran").innerHTML = getValue().datax;
+        document.getElementById("buSaat").innerHTML = getValue().busaat;
         function getValue() {
 
             var datax;
-            var dunoran;
+            var busaat;
             $.ajax({
                 type: 'GET',
                 url: "../../count.php",
@@ -391,13 +392,13 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 success: function (resp) {
                     datax = resp.map(function(e) {return e.Giris;});
                     //datax.unshift("Pazartesi");
-                    dunoran = resp.map(function(e) {return e.DunOran;});
+                    busaat = resp.map(function(e) {return e.BuSaat;});
                     //datatarih.unshift("Month");
                     //console.log ("Resp",datax);
                 }
             });
             return { datax: datax,
-                dunoran: dunoran}
+                busaat: busaat}
         }
 
 
