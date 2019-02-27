@@ -377,7 +377,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 	//destroyChart(myBarChart);
 
         <!-- Menu Widget Data -->
-    console.log(getValue()[0].datax);
+    console.log(getValue());
         function getValue() {
 
             var datax;
