@@ -1308,8 +1308,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueYirmi().datax,
                         datalabels: {
-                            align: 'endend',
-                            anchor: 'endend',
+                            align: 'end',
+                            anchor: 'end',
                             rotation: -90,
                             formatter: function(value) {
                                 return "20:00";
@@ -1323,7 +1323,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueYirmibir().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'endend',
+                            anchor: 'end',
                             rotation: -90,
                             formatter: function(value) {
                                 return "21:00";
