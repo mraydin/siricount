@@ -813,7 +813,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
       $.getJSON("../../full_ucount.php", function(jd) {
 
   	$(function() {
-	  new Morris.Bar({
+	  new Morris.Area({
 	  	element: 'myfirstchart',
 		hideHover: 'true',
 		lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
