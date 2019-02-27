@@ -1294,7 +1294,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         font: {
                             weight: 'bold'
                         },formatter: function(value, context) {
-                            return context.chart.data.datasets.label[context.dataIndex];
+                            return context.chart.data.datasets.label;
                         },
 
 
