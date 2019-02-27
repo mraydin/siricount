@@ -1293,10 +1293,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         color: '#3498DB',
                         font: {
                             weight: 'bold'
-                        },formatter: function(value, context) {
-                            return context.chart.data.datasets[context.dataIndex].label;
                         },
-
 
                         title: false
                     }
