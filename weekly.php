@@ -284,7 +284,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <h2>Geçen Hafta</h2>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content" style="position: relative; margin: auto; height: 40vh; width: 80vw;">
+                <div class="x_content" style="position: relative; margin: auto; height: 60vh; width: 80vw;">
 
                     <canvas id="MYcanvas"> </canvas>
 
