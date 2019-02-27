@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 date_default_timezone_set('Europe/Istanbul');
+setlocale(LC_TIME,'turkish');
 ?>
 <?php
 
