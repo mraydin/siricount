@@ -447,12 +447,6 @@ DateTime('NOW');
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Settings 1</a>
-                      </li>
-                      <li><a href="#">Settings 2</a>
-                      </li>
-                    </ul>
                   </li>
                   <li><a class="close-link"><i class="fa fa-close"></i></a>
                   </li>
@@ -499,12 +493,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-close"></i></a>
                     </li>
@@ -536,12 +524,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                   </li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Settings 1</a>
-                      </li>
-                      <li><a href="#">Settings 2</a>
-                      </li>
-                    </ul>
                   </li>
                   <li><a class="close-link"><i class="fa fa-close"></i></a>
                   </li>
@@ -777,32 +759,8 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   
 
-  <!-- worldmap -->
-  <script type="text/javascript" src="js/maps/jquery-jvectormap-2.0.3.min.js"></script>
-  <script type="text/javascript" src="js/maps/gdp-data.js"></script>
-  <script type="text/javascript" src="js/maps/jquery-jvectormap-world-mill-en.js"></script>
-  <script type="text/javascript" src="js/maps/jquery-jvectormap-us-aea-en.js"></script>
   <!-- pace -->
   <script src="js/pace/pace.min.js"></script>
-  <script>
-    $(function() {
-      $('#world-map-gdp').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: 'transparent',
-        zoomOnScroll: false,
-        series: {
-          regions: [{
-            values: gdpData,
-            scale: ['#E6F2F0', '#149B7E'],
-            normalizeFunction: 'polynomial'
-          }]
-        },
-        onRegionTipShow: function(e, el, code) {
-          el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-        }
-      });
-    });
-  </script>
   <!-- dashbord linegraph -->
   <script>
     Chart.defaults.global.legend = {
@@ -816,7 +774,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         "Çocuk-Bebek"
       ],
       datasets: [{
-        data: [61, 18, 21],
+        data: [58, 22, 19],
         backgroundColor: [
           "#455C73",
           "#26B99A",
@@ -836,24 +794,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
       tooltipFillColor: "rgba(51, 51, 51, 0.55)",
       data: data
     });
-  </script>
-     <!-- skycons -->
-  <script src="js/skycons/skycons.min.js"></script>
-  <script>
-    var icons = new Skycons({
-        "color": "#73879C"
-      }),
-      list = [
-        "clear-day", "clear-night", "partly-cloudy-day",
-        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-        "fog"
-      ],
-      i;
-
-    for (i = list.length; i--;)
-      icons.set(list[i], list[i]);
-
-    icons.play();
   </script>
   <!-- /dashbord linegraph -->
   <!-- datepicker -->
