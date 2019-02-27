@@ -766,8 +766,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointBorderWidth: 1,
                         datalabels: {
-                            align: 'start',
-                            anchor: 'start'
+                            align: 'center',
+                            anchor: 'center'
                         },
                         data: []
                 }, {
@@ -780,8 +780,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         pointHoverBorderColor: "rgba(151,187,205,1)",
                         pointBorderWidth: 1,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end'
+                            align: 'center',
+                            anchor: 'center'
                         },
                         data: []
                  }]
