@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 date_default_timezone_set('Europe/Istanbul');
-setlocale(LC_TIME,'turkish');
+
 ?>
 <?php
 
@@ -135,7 +135,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <!-- form date pickers -->
               <div class="x_panel" style="">
                 <div class="x_title">
-                    <h2><?php  $objDateTime = new DateTime('NOW');
+                    <h2><?php
+                        setlocale(LC_TIME,'turkish');
+                        $objDateTime = new DateTime('NOW');
                         echo $objDateTime->format('d.m.Y, l');
                         ?> <small> gününe ait raporları inceliyorsunuz.</small></h2>
 
