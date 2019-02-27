@@ -1387,7 +1387,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     }
                 },
                 legend: {
-                    padding: 4,
+                    padding: 40,
                     position: "top"
                 },
                 title: {
@@ -1408,7 +1408,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     }],
                     xAxes: [{
                         afterFit: (scale) => {
-                            scale.height = 80;
+                            scale.height = 120;
                         }
                     }]
                 }
