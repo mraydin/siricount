@@ -157,19 +157,25 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <div class="row top_tiles" style="margin: 10px 0;">
 
-                        <div class="col-md-3 tile">
-                            <span>Günlük Toplam</span>
+                        <div class="col-md-3 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
+                            <h1>Günlük Toplam</h1>
                             <h2>231</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
+                            </div>
                         </div>
-                        <div class="col-md-3 tile">
+                        <div class="col-md-3 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
                             <span>Saatlik Toplam</span>
                             <h2>231,809</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
+                            </div>
                         </div>
                         <div class="col-md-3 tile_stats_count">
                             <div class="left"></div>
