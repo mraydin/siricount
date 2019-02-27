@@ -1197,8 +1197,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOniki().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "12:00";
@@ -1211,8 +1211,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnuc().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "13:00";
@@ -1225,8 +1225,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOndort().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "14:00";
@@ -1238,8 +1238,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnbes().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "15:00";
@@ -1252,8 +1252,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnalti().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "16:00";
@@ -1266,8 +1266,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnyedi().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "17:00";
@@ -1280,8 +1280,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnsekiz().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "18:00";
@@ -1294,8 +1294,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOndokuz().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'startstart',
                             rotation: -90,
                             formatter: function(value) {
                                 return "19:00";
@@ -1308,8 +1308,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueYirmi().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "20:00";
@@ -1322,8 +1322,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueYirmibir().datax,
                         datalabels: {
-                            align: 'center',
-                            anchor: 'center',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "21:00";
