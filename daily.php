@@ -388,7 +388,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 async: false,
                 dataType: 'json',
                 success: function (resp) {
-                    datax = resp.map(function(e) {return e.Giris;});
+                    datax = resp.Giris;
+                    //datax = resp.map(function(e) {return e.Giris;});
                     //datax.unshift("Pazartesi");
                     datatarih = resp.map(function(e) {return e.DunOran;});
                     //datatarih.unshift("Month");
