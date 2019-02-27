@@ -1408,7 +1408,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     }],
                     xAxes: [{
                         afterFit: (scale) => {
-                            scale.height = 120;
+                            scale.height = 80;
                         }
                     }]
                 }
