@@ -231,7 +231,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             </div>
         <div class="clearfix"></div>
 	      </div>
-              <div class="x_content" style="margin: auto; height: 60vh; width: 80vw;">
+              <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
                   <canvas id="mybarChart""></canvas>
                 </div>
               </div>
@@ -568,6 +568,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	};
 
       	var options = {
+      	    barPercentage: 0.7,
 		responsive: true,
                 maintainAspectRatio: false,
         	scales: {
@@ -663,6 +664,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
       	var options = {
 		responsive: true,
+            barPercentage: 0.7,
                 maintainAspectRatio: false,
         	scales: {
           		yAxes: [{
