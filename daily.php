@@ -135,10 +135,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <!-- form date pickers -->
               <div class="x_panel" style="">
                 <div class="x_title">
-                    <h2><?php
-                        $objDateTime = new DateTime('NOW');
-                        echo $objDateTime->format('d.m.Y');
-                        ?><small>tarihine ait raporları inceliyorsunuz.</small></h2>
+                    <h2><b id="buTarih"></b><small>tarihine ait raporları inceliyorsunuz.</small></h2>
 
                     <div class="col-md-8">
                                   <form name="name" method="GET" >
