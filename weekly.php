@@ -1322,7 +1322,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueYirmibir().datax,
                         datalabels: {
-                            align: 'end',
+                            align: 'center',
                             anchor: 'end',
                             rotation: -90,
                             formatter: function(value) {
@@ -1366,11 +1366,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
                         }
                     }]
-                },xAxes: [{
-                    ticks: {
-                        padding: 40
-                    },
-                }]
+                }
             }
 
             window.onload = function() {
