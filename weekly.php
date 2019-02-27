@@ -1279,9 +1279,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueYirmibir().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end',formatter: function(value, context) {
-                                return context.chart.data.label[context.dataIndex];
-                            },
+                            anchor: 'end',
                         }
                     }
                 ]
