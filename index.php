@@ -476,7 +476,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
                     <div class="goal-wrapper">
                       <span class="gauge-value pull-right">sn</span>
-                      <span id="gauge-text" class="gauge-value pull-left">441</span>
+                      <span id="gauge-text" class="gauge-value pull-left">421</span>
                       <span id="goal-text" class="goal-value pull-right">1200</span>
                     </div>
                   </div>
