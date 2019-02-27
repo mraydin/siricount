@@ -160,7 +160,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <div class="col-md-3 tile_stats_count">
                             <div class="left"></div>
                             <div class="right">
-                            <h1>Günlük Toplam</h1>
+                            <span>Günlük Toplam</span>
                             <h2>231</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
