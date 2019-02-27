@@ -466,8 +466,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         pointHoverBorderColor: "rgba(151,187,205,1)",
                         pointBorderWidth: 1,
                         datalabels: {
-                            align: 'start',
-                            anchor: 'start'
+                            align: 'end',
+                            anchor: 'end'
                         },
                         data: []
                  }]
