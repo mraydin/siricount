@@ -135,8 +135,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <h2><?php  $objDateTime = new DateTime('NOW');
                         echo $objDateTime->format('d.m.Y');
                         ?></h2> <small> gününe ait raporları rörüntülüyorsunuz.</small>
-                  <h2>Tarih Seçimi <small> İstediğiniz tarih aralığını raporlayabilirsiniz.</small></h2>
+
                     <div class="col-md-8">
+                        <h2>Tarih Seçimi <small> İstediğiniz tarih aralığını raporlayabilirsiniz.</small></h2>
                                   <form name="name" method="GET" >
                                   <div id="reportrange" class="pull-right"
                                     style="background: #fff; cursor: pointer;
