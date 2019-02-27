@@ -377,7 +377,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 	//destroyChart(myBarChart);
 
         <!-- Menu Widget Data -->
-    console.log(getValue().datax);
+    console.log(getValue()[0].datax);
         function getValue() {
 
             var datax;
@@ -388,8 +388,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 async: false,
                 dataType: 'json',
                 success: function (resp) {
-                    datax = resp.Giris;
-                    //datax = resp.map(function(e) {return e.Giris;});
+                    datax = resp.map(function(e) {return e.Giris;});
                     //datax.unshift("Pazartesi");
                     datatarih = resp.map(function(e) {return e.DunOran;});
                     //datatarih.unshift("Month");
