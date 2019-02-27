@@ -158,6 +158,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 <div class="row top_tiles" style="margin: 10px 0;">
 
                         <div class="col-md-3 tile_stats_count">
+                            <div class="left"></div>
                             <div class="right">
                             <span>Günlük Toplam</span>
                             <h2>231</h2>
