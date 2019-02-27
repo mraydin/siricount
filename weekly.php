@@ -1186,15 +1186,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
             console.log("GetValue", getValueOn().datax);
             var barChartData = {
-                labels: [
-                    "Pazartesi",
-                    "Salı",
-                    "Çarşamba",
-                    "Perşembe",
-                    "Cuma",
-                    "Cumartesi",
-                    "Pazar"
-                ],
+                labels: getValueOnbir().datatarih,
                 datasets: [
                     {
                         label: "10:00",
