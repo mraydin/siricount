@@ -133,35 +133,65 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <div class="x_panel" style="">
                 <div class="x_title">
                   <h2>Tarih Seçimi <small> İstediğiniz tarih aralığını raporlayabilirsiniz.</small></h2>
-		<div class="col-md-8">
-                      <form name="name" method="GET" >
-                      <div id="reportrange" class="pull-right"
-                        style="background: #fff; cursor: pointer;
-                        padding: 5px 10px; border: 1px solid #ccc">
-                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                        <span><?php  $objDateTime = new DateTime('NOW');
-                                echo $objDateTime->format('d.m.Y');
-                                ?>-<?php  $objDateTime = new DateTime('NOW');
-                                $objDateTime->modify('last day of this month');
-                                echo $objDateTime->format('d.m.Y');
-                                ?></span> <b class="caret"></b>
-                      </div>
-                      </form>
+                    <div class="col-md-8">
+                                  <form name="name" method="GET" >
+                                  <div id="reportrange" class="pull-right"
+                                    style="background: #fff; cursor: pointer;
+                                    padding: 5px 10px; border: 1px solid #ccc">
+                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    <span><?php  $objDateTime = new DateTime('NOW');
+                                            echo $objDateTime->format('d.m.Y');
+                                            ?>-<?php  $objDateTime = new DateTime('NOW');
+                                            $objDateTime->modify('last day of this month');
+                                            echo $objDateTime->format('d.m.Y');
+                                            ?></span> <b class="caret"></b>
+                                  </div>
+                                  </form>
+                            </div>
+                     <div class="clearfix"></div>
                 </div>
-	     <div class="clearfix"></div>
-	</div>
               </div>
 
+
                 <div class="row">
-            <div class="col-md-12 col-sm-8 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-            <div class="col-md-4">
-                    <h2>Saatlik Trend <small>
-            </small></h2>
-            </div>
-        <div class="clearfix"></div>
-	      </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-12">
+                      <div class="x_panel">
+                        <div class="x_title">
+                            <div class="col-md-4">
+                            <h2>Saatlik Trend <small></small></h2>
+                             </div>
+                    <div class="clearfix"></div>
+                  </div>
               <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
                   <canvas id="mybarChart""></canvas>
                 </div>
