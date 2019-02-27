@@ -166,7 +166,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         <div class="col-md-3 tile">
                             <span>Günlük Toplam</span>
-                            <h2>231</h2>
+                            <h2 id="dunOran"></h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -377,11 +377,12 @@ moment().locale('tr').format('MMMM D, YYYY'));
 	//destroyChart(myBarChart);
 
         <!-- Menu Widget Data -->
-    console.log(getValue());
+    console.log(getValue().datax);
+        document.getElementById("dunOran").innerHTML = getValue().datax;
         function getValue() {
 
             var datax;
-            var datatarih;
+            var dunoran;
             $.ajax({
                 type: 'GET',
                 url: "../../count.php",
@@ -390,13 +391,13 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 success: function (resp) {
                     datax = resp.map(function(e) {return e.Giris;});
                     //datax.unshift("Pazartesi");
-                    datatarih = resp.map(function(e) {return e.DunOran;});
+                    dunoran = resp.map(function(e) {return e.DunOran;});
                     //datatarih.unshift("Month");
                     //console.log ("Resp",datax);
                 }
             });
             return { datax: datax,
-                datatarih: datatarih}
+                dunoran: dunoran}
         }
 
 
