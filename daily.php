@@ -171,7 +171,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
                         </div>
-                        <div class="col-md-3 tile">
+                        <div class="col-md-3 tile_stats_count">
                             <div class="left"></div>
                             <span>Dış Alan</span>
                             <h2>------</h2>
