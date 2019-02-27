@@ -1388,7 +1388,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 },
                 legend: {
                     padding: 4,
-                    position: "bottom"
+                    position: "top"
                 },
                 title: {
                     display: false,
