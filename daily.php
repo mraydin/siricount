@@ -161,7 +161,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             <div class="left"></div>
                             <div class="right">
                             <span>Günlük Toplam</span>
-                            <h2>231</h2>
+                            <b>231</b>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -171,7 +171,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             <div class="left"></div>
                             <div class="right">
                             <span>Saatlik Toplam</span>
-                            <h2>231,809</h2>
+                            <b>231,809</b>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -181,7 +181,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             <div class="left"></div>
                             <div class="right">
                             <span>Dış Alan</span>
-                            <h2>------</h2>
+                            <b>------</b>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
