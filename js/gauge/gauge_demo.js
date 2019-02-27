@@ -17,5 +17,5 @@ var target = document.getElementById('foo'); // your canvas element
 var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
 gauge.maxValue = 1200; // set max gauge value
 gauge.animationSpeed = 32; // set animation speed (32 is default value)
-gauge.set(552); // set actual value
+gauge.set(421); // set actual value
 gauge.setTextField(document.getElementById("gauge-text"));
