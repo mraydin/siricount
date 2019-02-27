@@ -1358,7 +1358,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            mirror: true
+                            mirror: true,
                         },
                         scaleLabel: {
                             display: true,
@@ -1366,7 +1366,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
                         }
                     }]
-                }
+                },yAxes: [{
+                    ticks: {
+                        padding: 40
+                    },
+                }]
+            }
             }
 
             window.onload = function() {
