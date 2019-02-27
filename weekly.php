@@ -558,11 +558,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
 		labels: [],
         	datasets: [{
           		label: 'Dün, bu saatte',
-         		backgroundColor: "#26B99A",
+         		backgroundColor: "rgba(3, 88, 106, 0.65)",
           		data: []
         	}, {
           		label: 'Bugün',
-          		backgroundColor: "#03586A",
+          		backgroundColor: "rgba(38, 185, 154, 0.65)",
           		data: []
         	}]
       	};
@@ -652,12 +652,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	var data = {
 		labels: [],
         	datasets: [{
-          		label: 'İlk Seçilen,bu saatte',
-         		backgroundColor: "#26B99A",
+          		label: picker.startDate.locale('tr').format('DD.MM.YYYY')+' bu saatte',
+         		backgroundColor: "rgba(3, 88, 106, 0.65)",
           		data: []
         	}, {
-          		label: 'Son Seçilen, bu saat',
-          		backgroundColor: "#03586A",
+          		label: picker.endDate.locale('tr').format('DD.MM.YYYY')+' bu saat',
+          		backgroundColor: "rgba(38, 185, 154, 0.65)",
           		data: []
         	}]
       	};
