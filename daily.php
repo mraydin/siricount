@@ -178,6 +178,19 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
                         </div>
+                    <div class="col-md-3 tile_stats_count">
+                        <div class="left"></div>
+                        <div class="right">
+                            <span class="count_top"><i class="fa fa-cloud"></i> HavaDurumu</span>
+                            <div class="count"><b class="red">
+                                    <?php echo floor($obj['main']['temp']-273);?></b>°C</div>
+                            <span class="count_bottom"><i class="green">
+                                    <i class="owf owf-<?php echo $obj['weather'][0]['id'];?> owf-lg">
+                                    </i>
+                                </i><?php echo $durum ?>
+                            </span>
+                        </div>
+                    </div>
 
 
                 </div>
