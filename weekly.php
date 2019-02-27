@@ -1167,7 +1167,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         label: "10:00",
                         backgroundColor: "#34495E",
                         borderWidth: 1,
-                        data: getValueOn().datax
+                        data: getValueOn().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "11:00",
