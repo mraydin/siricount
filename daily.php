@@ -159,21 +159,21 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         <div class="col-md-3 tile">
                             <span>Günlük Toplam</span>
-                            <span>231</span>
+                            <h2>231</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
                         </div>
                         <div class="col-md-3 tile">
                             <span>Saatlik Toplam</span>
-                            <span>231,809</span>
+                            <h2>231,809</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
                         </div>
                         <div class="col-md-3 tile">
                             <span>Dış Alan</span>
-                            <b>------</b>
+                            <h2>------</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
