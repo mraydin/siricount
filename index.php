@@ -303,7 +303,7 @@ aria-valuemax="100" style="width: 12%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>388 Kişi</span>
+                    <b>388 Kişi</b>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -321,7 +321,7 @@ aria-valuemax="100" style="width: 11%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>355 Kişi</span>
+                    <b>355 Kişi</b>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -337,8 +337,8 @@ aria-valuemax="100" style="width: 40%;">
                       </div>
                     </div>
                   </div>
-                  <div class="w_right w_10">
-                    <span>1293 Kişi</span>
+                  <div class="w_right w_20">
+                    <b>1293 Kişi</b>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -354,8 +354,8 @@ aria-valuemax="100" style="width: 34%;">
                       </div>
                     </div>
                   </div>
-                  <div class="w_right w_10">
-                    <span>1099 Kişi</span>
+                  <div class="w_right w_20">
+                    <b>1099 Kişi</b>
                   </div>
                   <div class="clearfix"></div>
                 </div>
