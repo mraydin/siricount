@@ -438,7 +438,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 console.log("tcounty",datay);
 		chart.data.labels = datax;
 		chart.data.datasets[0].data = datay;
-		chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM') + "'da bu saatte";
+		chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM');
 
 
 //		 chart.data.labels = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
@@ -460,7 +460,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                      });
                 //console.log("tcounty",datay);
                 chart.data.datasets[1].data = datay;
-		        chart.data.datasets[1].label = picker.endDate.locale('tr').format('D MMMM') + "'da bu saatte";
+		        chart.data.datasets[1].label = picker.endDate.locale('tr').format('D MMMM');
                 chart.update();
 
            });
