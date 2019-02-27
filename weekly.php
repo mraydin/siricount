@@ -1278,7 +1278,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueYirmibir().datax,
                         datalabels: {
-                            label: "21:00",
                             align: 'end',
                             anchor: 'end'
                         }
@@ -1294,10 +1293,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         color: '#3498DB',
                         font: {
                             weight: 'bold'
+                        },formatter: function(value, context) {
+                            return context.chart.data.label[context.dataIndex];
                         },
-                        formatter: function(value, context) {
-                            return context.chart.data.labels[context.dataIndex];
-                        },
+
 
                         title: false
                     }
