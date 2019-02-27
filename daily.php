@@ -150,37 +150,42 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             </div>
                      <div class="clearfix"></div>
 
-                    <div class="col-md-3 tile">
-                        <span>Total Sessions</span>
-                        <h2>231,809</h2>
-                        <span class="sparkline_two" style="height: 160px;">
-                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                </span>
-                    </div>
-                    <div class="col-md-3 tile">
-                        <span>Total Sessions</span>
-                        <h2>231,809</h2>
-                        <span class="sparkline_two" style="height: 160px;">
-                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                </span>
-                    </div>
-                    <div class="col-md-3 tile">
-                        <span>Total Sessions</span>
-                        <h2>231,809</h2>
-                        <span class="sparkline_two" style="height: 160px;">
-                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                </span>
-                    </div>
+
                 </div>
               </div>
 
 
                 <div class="row">
 
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="x_content">
 
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
+                        <div class="col-md-3 tile">
+                            <span>Total Sessions</span>
+                            <h2>231,809</h2>
+                            <span class="sparkline_two" style="height: 160px;">
+                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                </span>
+                        </div>
 
-
-
+                                </div>
+                            </div>
+                        </div>
                 </div>
 
 
