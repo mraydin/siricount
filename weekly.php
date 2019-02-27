@@ -1280,6 +1280,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         datalabels: {
                             align: 'end',
                             anchor: 'end',
+                            rotation: 90,
                             formatter: function(value) {
                                 return "22:00";
                             },
