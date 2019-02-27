@@ -451,6 +451,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'start',
+                            anchor: 'start'
+
+                        },
                         data: []
                 }, {
                         label: ["Geçen Hafta"],
@@ -461,6 +466,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(151,187,205,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'start',
+                            anchor: 'start'
+
+                        },
                         data: []
                  }]
                };
@@ -521,6 +531,19 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 window.lineChart = new Chart(ctx, {
                         type: chartType,
                         data: data
+                        options: {
+                            plugins: {
+                                datalabels: {
+                                    color: '#3498DB',
+                                    font: {
+                                        weight: 'bold'
+                                    },
+
+                                    title: false
+                                }
+                            }
+
+                        }
                 });
 
 
