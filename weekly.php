@@ -1374,6 +1374,14 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
             };
 
             var chartOptions = {
+                layout: {
+                    padding: {
+                        left: 0,
+                        right: 0,
+                        top: 60,
+                        bottom: 0
+                    }
+                },
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
