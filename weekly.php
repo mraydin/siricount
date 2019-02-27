@@ -1177,66 +1177,111 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         label: "11:00",
                         backgroundColor: "#26B99A",
                         borderWidth: 1,
-                        data: getValueOnbir().datax
+                        data: getValueOnbir().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "12:00",
                         backgroundColor: "#ACADAC",
                         borderWidth: 1,
-                        data: getValueOniki().datax
+                        data: getValueOniki().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "13:00",
                         backgroundColor: "#536c86",
                         borderWidth: 1,
-                        data: getValueOnuc().datax
+                        data: getValueOnuc().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "14:00",
                         backgroundColor: "#3498DB",
                         borderWidth: 1,
-                        data: getValueOndort().datax
+                        data: getValueOndort().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },{
                         label: "15:00",
                         backgroundColor: "#34495E",
                         borderWidth: 1,
-                        data: getValueOnbes().datax
+                        data: getValueOnbes().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "16:00",
                         backgroundColor: "#26B99A",
                         borderWidth: 1,
-                        data: getValueOnalti().datax
+                        data: getValueOnalti().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "17:00",
                         backgroundColor: "#ACADAC",
                         borderWidth: 1,
-                        data: getValueOnyedi().datax
+                        data: getValueOnyedi().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "18:00",
                         backgroundColor: "#536c86",
                         borderWidth: 1,
-                        data: getValueOnsekiz().datax
+                        data: getValueOnsekiz().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "19:00",
                         backgroundColor: "#3498DB",
                         borderWidth: 1,
-                        data: getValueOndokuz().datax
+                        data: getValueOndokuz().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "20:00",
                         backgroundColor: "#26B99A",
                         borderWidth: 1,
-                        data: getValueYirmi().datax
+                        data: getValueYirmi().datax,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     },
                     {
                         label: "21:00",
                         backgroundColor: "#ACADAC",
                         borderWidth: 1,
-                        data: getValueYirmibir().datax
+                        data: getValueYirmibir().datax,
+                        datalabels: {
+                            label: "21:00",
+                            align: 'end',
+                            anchor: 'end'
+                        }
                     }
                 ]
             };
@@ -1246,7 +1291,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 maintainAspectRatio: false,
                 plugins: {
                     datalabels: {
-                        color: 'black',
+                        color: 'blue',
                         font: {
                             weight: 'bold'
                         },
