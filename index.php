@@ -337,7 +337,7 @@ aria-valuemax="100" style="width: 40%;">
                       </div>
                     </div>
                   </div>
-                  <div class="w_right w_20">
+                  <div class="w_right w_16">
                     <span>1293 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
@@ -375,12 +375,6 @@ aria-valuemax="100" style="width: 34%;">
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Settings 1</a>
-                      </li>
-                      <li><a href="#">Settings 2</a>
-                      </li>
-                    </ul>
                   </li>
                   <li><a class="close-link"><i class="fa fa-close"></i></a>
                   </li>
