@@ -1170,7 +1170,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOn().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "10:00";
+                            }
                         }
                     },
                     {
@@ -1180,7 +1184,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnbir().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "11:00";
+                            }
                         }
                     },
                     {
@@ -1190,7 +1198,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOniki().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "12:00";
+                            }
                         }
                     },
                     {
@@ -1200,7 +1212,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnuc().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "13:00";
+                            }
                         }
                     },
                     {
@@ -1210,7 +1226,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOndort().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "14:00";
+                            }
                         }
                     },{
                         label: "15:00",
@@ -1219,7 +1239,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnbes().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "15:00";
+                            }
                         }
                     },
                     {
@@ -1229,7 +1253,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnalti().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "16:00";
+                            }
                         }
                     },
                     {
@@ -1239,7 +1267,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnyedi().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "17:00";
+                            }
                         }
                     },
                     {
@@ -1249,7 +1281,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOnsekiz().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "18:00";
+                            }
                         }
                     },
                     {
@@ -1259,7 +1295,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueOndokuz().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "19:00";
+                            }
                         }
                     },
                     {
@@ -1269,7 +1309,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueYirmi().datax,
                         datalabels: {
                             align: 'end',
-                            anchor: 'end'
+                            anchor: 'end',
+                            rotation: -90,
+                            formatter: function(value) {
+                                return "20:00";
+                            }
                         }
                     },
                     {
@@ -1280,10 +1324,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         datalabels: {
                             align: 'end',
                             anchor: 'end',
-                            rotation: 90,
+                            rotation: -90,
                             formatter: function(value) {
-                                return "22:00";
-                            },
+                                return "21:00";
+                            }
 
                         }
                     }
