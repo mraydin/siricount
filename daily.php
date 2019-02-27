@@ -138,7 +138,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <h2><?php
                         $objDateTime = new DateTime('NOW');
                         echo $objDateTime->format('d.m.Y');
-                        ?> <small> gününe ait raporları inceliyorsunuz.</small></h2>
+                        ?> <small>tarihine ait raporları inceliyorsunuz.</small></h2>
 
                     <div class="col-md-8">
                                   <form name="name" method="GET" >
