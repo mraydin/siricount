@@ -331,7 +331,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
   <script type="text/javascript" src="js/moment/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
   <!-- chart js -->
-  <script src="js/chartjs/chart.min.js"></script>
+
+    <script data-require="chart.js@2.6.0" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 
 
   <!-- flot js -->
