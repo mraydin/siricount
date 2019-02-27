@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+date_default_timezone_set('Europe/Istanbul');
+?>
 <?php
 
 include 'inc/head.php';
