@@ -337,7 +337,7 @@ aria-valuemax="100" style="width: 40%;">
                       </div>
                     </div>
                   </div>
-                  <div class="w_right w_16">
+                  <div class="w_right w_10">
                     <span>1293 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
@@ -354,7 +354,7 @@ aria-valuemax="100" style="width: 34%;">
                       </div>
                     </div>
                   </div>
-                  <div class="w_right w_20">
+                  <div class="w_right w_10">
                     <span>1099 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
