@@ -765,6 +765,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'start',
+                            anchor: 'start'
+                        },
                         data: []
                 }, {
                         label: [],
@@ -775,6 +779,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(151,187,205,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        },
                         data: []
                  }]
                };
@@ -832,7 +840,17 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                    window.lineChart.destroy();
                 window.lineChart = new Chart(ctx, {
                         type: chartType,
-                        data: data
+                        data: data,
+                        plugins: {
+                            datalabels: {
+                                color: '#536c86',
+                                font: {
+                                    weight: 'bold'
+                                },
+
+                                title: false
+                            }
+                        }
                 });
         }
 
