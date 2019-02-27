@@ -199,7 +199,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Geçen Hafta(<?php  $objDateTime = new DateTime('NOW');
-                                    $objDateTime->modify('last week');
+                                    $objDateTime->modify('last monday');
                                     echo $objDateTime->format('W');
                                     ?>.Hafta)</h2>
                                 <div class="clearfix"></div>
