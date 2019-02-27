@@ -136,9 +136,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <div class="x_panel" style="">
                 <div class="x_title">
                     <h2><?php
-                        setlocale(LC_TIME,'turkish');
                         $objDateTime = new DateTime('NOW');
-                        echo $objDateTime->format('d.m.Y, l');
+                        echo $objDateTime->format('d.m.Y');
                         ?> <small> gününe ait raporları inceliyorsunuz.</small></h2>
 
                     <div class="col-md-8">
