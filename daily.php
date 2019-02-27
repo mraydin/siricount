@@ -571,6 +571,34 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
   	//	init();
 	//}
 
+          <!-- Dynamic Menu Widget Data -->
+          console.log(getValue().datax);
+          document.getElementById("dunOran").innerHTML = getValue().datax;
+          document.getElementById("buSaat").innerHTML = getValue().busaat;
+          function getValue() {
+
+              var datax;
+              var busaat;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../countSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD'),
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Giris;});
+                      //datax.unshift("Pazartesi");
+                      busaat = resp.map(function(e) {return e.BuSaat;});
+                      //datatarih.unshift("Month");
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  busaat: busaat}
+          }
+
+
+          <!-- /Menu Widget Data-->
+
 	});
       $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
         console.log("cancel event fired");
