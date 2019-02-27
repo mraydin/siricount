@@ -1240,6 +1240,20 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
             var chartOptions = {
                 responsive: true,
                 maintainAspectRatio: false,
+                options: {
+                    plugins: {
+                        datalabels: {
+                            color: 'black',
+                            font: {
+                                weight: 'bold'
+                            },
+                            formatter: function(value) {
+                                return value + '%';
+                            },
+
+                            title: false
+                        }
+                    },
                 legend: {
                     position: "top"
                 },
