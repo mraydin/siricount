@@ -378,9 +378,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
       }
 
       var optionSet1 = {
-        startDate: moment().subtract(18, 'days'),
+        startDate: moment().subtract(29, 'days'),
         endDate: moment(),
-        minDate: '28/02/2019',
+        minDate: '31/01/2019',
         maxDate: '31/12/2019',
         dateLimit: {
           days: 60
