@@ -451,6 +451,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'start',
+                            anchor: 'start'
+                        },
                         data: []
                 }, {
                         label: ["Geçen Hafta"],
@@ -461,6 +465,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         pointHoverBackgroundColor: "#fff",
                         pointHoverBorderColor: "rgba(151,187,205,1)",
                         pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'start',
+                            anchor: 'start'
+                        },
                         data: []
                  }]
                };
@@ -524,7 +532,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                         options: {
                             plugins: {
                                 datalabels: {
-                                    color: '#3498DB',
+                                    color: '#536c86',
                                     font: {
                                         weight: 'bold'
                                     },
