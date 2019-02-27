@@ -344,6 +344,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
         console.log(getValue().datax);
         document.getElementById("dunOran").innerHTML = getValue().datax;
         document.getElementById("buSaat").innerHTML = getValue().busaat;
+        document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
         function getValue() {
 
             var datax;
