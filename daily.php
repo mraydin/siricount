@@ -343,6 +343,34 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
+        <!-- Menu Widget Data -->
+        console.log(getValue().datax);
+        document.getElementById("dunOran").innerHTML = getValue().datax;
+        document.getElementById("buSaat").innerHTML = getValue().busaat;
+        function getValue() {
+
+            var datax;
+            var busaat;
+            $.ajax({
+                type: 'GET',
+                url: "../../count.php",
+                async: false,
+                dataType: 'json',
+                success: function (resp) {
+                    datax = resp.map(function(e) {return e.Giris;});
+                    //datax.unshift("Pazartesi");
+                    busaat = resp.map(function(e) {return e.BuSaat;});
+                    //datatarih.unshift("Month");
+                    //console.log ("Resp",datax);
+                }
+            });
+            return { datax: datax,
+                busaat: busaat}
+        }
+
+
+        <!-- /Menu Widget Data-->
+
 	<!-- Default Bar Script -->
 		// Bar chart
     	var canvas = document.getElementById("mybarChart");
@@ -376,33 +404,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	};
 	//destroyChart(myBarChart);
 
-        <!-- Menu Widget Data -->
-    console.log(getValue().datax);
-        document.getElementById("dunOran").innerHTML = getValue().datax;
-        document.getElementById("buSaat").innerHTML = getValue().busaat;
-        function getValue() {
 
-            var datax;
-            var busaat;
-            $.ajax({
-                type: 'GET',
-                url: "../../count.php",
-                async: false,
-                dataType: 'json',
-                success: function (resp) {
-                    datax = resp.map(function(e) {return e.Giris;});
-                    //datax.unshift("Pazartesi");
-                    busaat = resp.map(function(e) {return e.BuSaat;});
-                    //datatarih.unshift("Month");
-                    //console.log ("Resp",datax);
-                }
-            });
-            return { datax: datax,
-                busaat: busaat}
-        }
-
-
-        <!-- /Menu Widget Data-->
 
 	
 	init();

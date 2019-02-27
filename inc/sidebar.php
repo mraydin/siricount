@@ -16,7 +16,7 @@ fa-chevron-down"></span></a>
 		  <ul class="nav child_menu">	    
           <li class="sub_menu"><a href="weekly.php">Haftalık</a>
 		  </li>
-		  <li><a href="#">Günlük</a>
+		  <li><a href="daily.php">Günlük</a>
 		  </li>
 		  <li><a href="#">Footfall Özeti</a>
 		  </li>		   
