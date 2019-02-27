@@ -1366,12 +1366,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 
                         }
                     }]
-                },yAxes: [{
+                },xAxes: [{
                     ticks: {
                         padding: 40
                     },
                 }]
-            }
             }
 
             window.onload = function() {
