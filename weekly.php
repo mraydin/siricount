@@ -1406,7 +1406,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     yAxes: [{
 
                         ticks: {
-                            max: 100,
+                            max: 80,
                             beginAtZero: true,
                             mirror: true,
                         },
