@@ -1291,7 +1291,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 maintainAspectRatio: false,
                 plugins: {
                     datalabels: {
-                        color: 'blue',
+                        color: '#3498DB',
                         font: {
                             weight: 'bold'
                         },
