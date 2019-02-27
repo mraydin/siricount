@@ -199,8 +199,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <div class="col-md-12 col-sm-8 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Son 7 gün(<?php  $objDateTime = new DateTime('NOW');
-                                    echo $objDateTime->format('d.m')-7;
+                                <h2>Son 7 gün (<?php  $objDateTime = new DateTime('NOW');
+                                    echo $objDateTime->format('d.M')-7;
                                     ?> - <?php  $objDateTime = new DateTime('NOW');
                                     echo $objDateTime->format('d.m');
                                     ?>)</h2>
