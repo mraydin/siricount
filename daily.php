@@ -575,6 +575,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
           console.log(getValue().datax);
           document.getElementById("dunOran").innerHTML = getValue().datax;
           document.getElementById("buSaat").innerHTML = getValue().busaat;
+          document.getElementById("buTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
           function getValue() {
 
               var datax;
