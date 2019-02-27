@@ -1323,7 +1323,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         data: getValueYirmibir().datax,
                         datalabels: {
                             align: 'center',
-                            anchor: 'end',
+                            anchor: 'center',
                             rotation: -90,
                             formatter: function(value) {
                                 return "21:00";
