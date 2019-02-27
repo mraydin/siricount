@@ -297,9 +297,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
   <script src="js/bootstrap.min.js"></script>
 
-  <!-- gauge js -->
-  <script type="text/javascript" src="js/gauge/gauge.min.js"></script>
-  <script type="text/javascript" src="js/gauge/gauge_demo.js"></script>
   <!-- bootstrap progress js -->
   <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
   <script src="js/nicescroll/jquery.nicescroll.min.js"></script>
