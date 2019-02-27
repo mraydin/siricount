@@ -303,7 +303,7 @@ aria-valuemax="100" style="width: 12%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>184 Kişi</span>
+                    <span>388 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -321,7 +321,7 @@ aria-valuemax="100" style="width: 11%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>168 Kişi</span>
+                    <span>355 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -338,7 +338,7 @@ aria-valuemax="100" style="width: 40%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>616 Kişi</span>
+                    <span>1293 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -355,7 +355,7 @@ aria-valuemax="100" style="width: 34%;">
                     </div>
                   </div>
                   <div class="w_right w_20">
-                    <span>522 Kişi</span>
+                    <span>1099 Kişi</span>
                   </div>
                   <div class="clearfix"></div>
                 </div>
@@ -413,19 +413,19 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           <td>
                             <p><i class="fa fa-square gray"></i>Kadın </p>
                           </td>
-                          <td>61%</td>
+                          <td>58%</td>
                         </tr>
                         <tr>
                           <td>
                             <p><i class="fa fa-square green"></i>Erkek </p>
                           </td>
-                          <td>18%</td>
+                          <td>22%</td>
                         </tr>
                         <tr>
                           <td>
                             <p><i class="fa fa-square blue"></i>Çocuk-Bebek </p>
                           </td>
-                          <td>21%</td>
+                          <td>19%</td>
                         </tr>
                       </table>
                     </td>
@@ -482,7 +482,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
                     <div class="goal-wrapper">
                       <span class="gauge-value pull-right">sn</span>
-                      <span id="gauge-text" class="gauge-value pull-left">552</span>
+                      <span id="gauge-text" class="gauge-value pull-left">441</span>
                       <span id="goal-text" class="goal-value pull-right">1200</span>
                     </div>
                   </div>
@@ -1360,7 +1360,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			wtuesday = data.list[13].main.temp-273;
 			wwednesday = data.list[21].main.temp-273;
 			wthursday = data.list[29].main.temp-273;
-			wstatus = data.list[05].weather[0].main;
+			wstatus = data.list[5].weather[0].main;
 			//console.log(city); 
 
                 //document.getElementById("graph").innerHTML = x.toFixed(1);
@@ -1376,7 +1376,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 		if (wstatus == "Rain") {
 		//document.getElementsByTagName("P")[0].innerHTML = "<canvas height='32' width='32' id='rain'> </canvas>";	
 		//	console.log(wstatus);
-		};
+		}
 
 
 	
