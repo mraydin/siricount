@@ -1169,8 +1169,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOn().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "10:00";
@@ -1183,8 +1183,8 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         borderWidth: 1,
                         data: getValueOnbir().datax,
                         datalabels: {
-                            align: 'end',
-                            anchor: 'end',
+                            align: 'start',
+                            anchor: 'start',
                             rotation: -90,
                             formatter: function(value) {
                                 return "11:00";
