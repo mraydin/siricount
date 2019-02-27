@@ -154,7 +154,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+
                         <div class="col-md-3 tile">
                             <span>Total Sessions</span>
                             <h2>231,809</h2>
@@ -177,7 +177,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 </span>
                         </div>
 
-                    </div>
+
 
                 </div>
 
