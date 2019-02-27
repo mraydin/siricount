@@ -688,13 +688,13 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			var haftaoran = document.getElementById("beforeweek").innerHTML =
                         (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
                         };
-			if (myObj[0].AyOran == 0) {
+			/*if (myObj[0].AyOran == 0) {
                          var ayoran = document.getElementById("beforemonth").innerHTML =  "-";
                         } else {
                         var ayoran = document.getElementById("beforemonth").innerHTML =
                         (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
-                        };
-			console.log(oran);
+                        };*/
+			//console.log(oran);
 			var z =  document.getElementsByClassName("example")[0];
 			var v =  document.getElementsByClassName("example")[1];
 			var w =  document.getElementsByClassName("example")[2];
@@ -736,7 +736,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           w.classList.add("fa");
                           w.classList.add("fa-sort-asc");
                         };
-			if (ayoran <= 0) {
+			/*if (ayoran <= 0) {
                           v.style.color = "red";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-desc");
@@ -744,7 +744,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           v.style.color = "#1ABB9C";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-asc");
-                        };
+                        };*/
   		
 	};
 	xmlhttp.open("GET", "../../count.php", true);
@@ -867,7 +867,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
     $(document).ready(function() {
 
       var cb = function(start, end, label) {
-        console.log(start.toISOString(), end.toISOString(), label);
+        //console.log(start.toISOString(), end.toISOString(), label);
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
         //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
       }
@@ -973,14 +973,14 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         prexmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var preobj = this.responseText;
-                        console.log ("preobj: ",preobj);
+                        //console.log ("preobj: ",preobj);
                         //var x;
          var predata = JSON.parse(preobj);
         //console.log (data);
 	var prelabels = predata.map(function(e) {
                 return e.Week;
                 });
-        console.log (prelabels);
+        //console.log (prelabels);
         var precount = predata.map(function(e) {
                 return e.Trafik;
                 });
@@ -992,7 +992,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var obj = this.responseText;
-                        console.log (obj);
+                        //console.log (obj);
                         //var x;
          var data = JSON.parse(obj);
 	//console.log (data);
@@ -1000,7 +1000,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	var labels = data.map(function(e) {
    		return e.Week;
 		});
-	console.log (labels);
+	//console.log (labels);
 	var count = data.map(function(e) {
                 return e.Trafik;
                 });
@@ -1064,14 +1064,14 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         prexmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var preobj = this.responseText;
-                        console.log ("preobj: ",preobj);
+                        //console.log ("preobj: ",preobj);
                         //var x;
          var predata = JSON.parse(preobj);
         //console.log (data);
         var prelabels = predata.map(function(e) {
                 return e.Tarih;
                 });
-        console.log (prelabels);
+        //console.log (prelabels);
         var precount = predata.map(function(e) {
                 return e.Giris;
                 });
@@ -1083,7 +1083,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var obj = this.responseText;
-                        console.log (obj);
+                        //console.log (obj);
                         //var x;
          var data = JSON.parse(obj);
         //console.log (data);
@@ -1091,7 +1091,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         var labels = data.map(function(e) {
                 return e.Tarih;
                 });
-        console.log (labels);
+        //console.log (labels);
         var count = data.map(function(e) {
                 return e.Giris;
                 });
@@ -1229,7 +1229,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   <script src="js/moris/raphael-min.js"></script>
   <script src="js/moris/morris.min.js"></script>
-  <script>
+  <!--<script>
 	var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -1260,7 +1260,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	};
         xmlhttp.open("GET", "../../daycount.php", true);
         xmlhttp.send();
-  </script>
+  </script>-->
 
   <script>
 
@@ -1352,7 +1352,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                         var myObj = this.responseText;
 			var x, city, wmonday,wsunday,wtuesday,wwednesday,wthursday;
 			var data = JSON.parse(myObj);
-			console.log(data);
+			//console.log(data);
 	                x = data.list[0].main.temp-273;
 			city = data.city.name;
 			wmonday = data.list[0].main.temp-273;
@@ -1475,7 +1475,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         prexmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var preobj = this.responseText;
-                        console.log ("preobj: ",preobj);
+                        //console.log ("preobj: ",preobj);
                         //var x;
          var predata = JSON.parse(preobj);
         //console.log (data);
@@ -1492,7 +1492,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                         var obj = this.responseText;
-                        console.log (obj);
+                        //console.log (obj);
                         //var x;
          var data = JSON.parse(obj);
         //console.log (data);
@@ -1500,7 +1500,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         var labels = data.map(function(e) {
                 return e.Tarih;
                 });
-        console.log ("Count",precount);
+        //console.log ("Count",precount);
         var count = data.map(function(e) {
                 return e.Count;
                 });
