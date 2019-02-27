@@ -1404,9 +1404,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                             display: true,
                             labelString: 'Ziyaretçi Sayısı'
 
-                        },
-                        afterFit: (scale) => {
-                            scale.height = 60;
+                        }
                     }]
                 }
             }
