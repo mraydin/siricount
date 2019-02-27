@@ -520,7 +520,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                    //window.lineChart.destroy();
                 window.lineChart = new Chart(ctx, {
                         type: chartType,
-                        data: data
+                        data: data,
                         options: {
                             plugins: {
                                 datalabels: {
