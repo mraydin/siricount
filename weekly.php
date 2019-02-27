@@ -221,22 +221,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
 
-                <div class="row">
-            <div class="col-md-12 col-sm-8 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-            <div class="col-md-4">
-                    <h2>Saatlik Trend <small>
-            </small></h2>
-            </div>
-        <div class="clearfix"></div>
-	      </div>
-              <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
-                  <canvas id="mybarChart""></canvas>
-                </div>
-              </div>
-            </div>
-    </div>
           <div class="clearfix"></div>
 
 
@@ -548,78 +532,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
-	<!-- Default Bar Script -->
-		// Bar chart
-    	var canvas = document.getElementById("mybarChart");
-	var ctx = canvas.getContext('2d');
-	var chartType = 'bar';
-	var myBarChart;
-	var data = {
-		labels: [],
-        	datasets: [{
-          		label: 'Dün, bu saatte',
-         		backgroundColor: "rgba(3, 88, 106, 0.65)",
-          		data: []
-        	}, {
-          		label: 'Bugün',
-          		backgroundColor: "rgba(38, 185, 154, 0.65)",
-          		data: []
-        	}]
-      	};
-
-      	var options = {
-      	    barPercentage: 0.7,
-		responsive: true,
-                maintainAspectRatio: false,
-        	scales: {
-          		yAxes: [{
-            			ticks: {
-              				beginAtZero: true
-            			}
-          		}]
-		}
-      	};
-	//destroyChart(myBarChart);
-
-	
-	init();
-
-	updateConfigByMutating(window.myBarChart);
-	updateConfigByMutating2(window.myBarChart);
-	function updateConfigByMutating(chart) {
-	   var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
-           $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                //console.log("jd",jd);
-                var datax = jd.map(function(e) {return e.Tarih;});
-                //console.log("Tarih",datax);
-                var datay = jd.map(function(e) {return e.Giris; });
-                //console.log("tcounty",datay);
-		chart.data.labels = datax;
-		chart.data.datasets[1].data = datay;
- 		chart.update();
-	    });
-	}
-	 function updateConfigByMutating2(chart) {
-           var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
-           $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                var datay = jd.map(function(e) {return e.Giris;});
-                console.log("Son Tarih",datay);
-                chart.data.datasets[0].data = datay;
-                chart.update();
-            });
-        }
-    	function init() {
-		//Chart declaration:
-		if (window.myBarChart != undefined)
-		   window.myBarChart.destroy();
-		window.myBarChart = new Chart(ctx, {
-			type: chartType,
-			data: data,
-			options: options
-		});
-	}
-	<!-- /Defaul Bar Script Data-->
-
        
 
       $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
@@ -641,103 +553,6 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	//
 	//var startDate = picker.startDate.locale('tr').format('DD.MM.YYYY');
 	 //console.log (startDate);
-	
-
-
-	// Bar chart
-    	var canvas = document.getElementById("mybarChart");
-	var ctx = canvas.getContext('2d');
-	var chartType = 'bar';
-	var myBarChart;
-	var data = {
-		labels: [],
-        	datasets: [{
-          		label: picker.startDate.locale('tr').format('DD.MM.YYYY')+' bu saatte',
-         		backgroundColor: "rgba(3, 88, 106, 0.65)",
-          		data: []
-        	}, {
-          		label: picker.endDate.locale('tr').format('DD.MM.YYYY')+' bu saat',
-          		backgroundColor: "rgba(38, 185, 154, 0.65)",
-          		data: []
-        	}]
-      	};
-
-      	var options = {
-		responsive: true,
-            barPercentage: 0.7,
-                maintainAspectRatio: false,
-        	scales: {
-          		yAxes: [{
-            			ticks: {
-              				beginAtZero: true
-            			}
-          		}]
-		}
-      	};
-	//destroyChart(myBarChart);
-
-	
-	init();
-
-	updateConfigByMutating(window.myBarChart);
-	updateConfigByMutating2(window.myBarChart);
-	function updateConfigByMutating(chart) {
-	   //chart.destroy();
-	   var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
-
-           $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                console.log("jd",jd);
-                var datax = jd.map(function(e) {
-                        return e.Tarih;
-                     });
-                console.log("tcountx",datax);
-                 var datay = jd.map(function(e) {
-                        return e.Giris;
-                     });
-                console.log("tcounty",datay);
-		chart.data.labels = datax;
-		chart.data.datasets[0].data = datay;
-		chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM') + "'da bu saatte";
-
-
-//		 chart.data.labels = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
-//"2013", "2014", "2015", "2016"];
- //   		chart.data.datasets[0].data = [10, 13, 17, 12, 30, 47, 60, 120, 230, 300, 310, 400];
- 		chart.update();
-
-	    });
-	}
-
-	 function updateConfigByMutating2(chart) {
-           //chart.destroy();
-           var myObject = {name: picker.endDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
-
-           $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                console.log("jd",jd);
-                 var datay = jd.map(function(e) {
-                        return e.Giris;
-                     });
-                //console.log("tcounty",datay);
-                chart.data.datasets[1].data = datay;
-		        chart.data.datasets[1].label = picker.endDate.locale('tr').format('D MMMM') + "'da bu saatte";
-                chart.update();
-
-           });
-        }
-
-	
-
-    	function init() {
-		//Chart declaration:
-		if (window.myBarChart != undefined)
-		   window.myBarChart.destroy();
-		window.myBarChart = new Chart(ctx, {
-			type: chartType,
-			data: data,
-			options: options
-		});
-		//myBarChart.destroy();
-	}
 
 	//function destroyChart(chart) {
  	//	 //destroy chart:

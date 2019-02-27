@@ -376,6 +376,32 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	};
 	//destroyChart(myBarChart);
 
+        <!-- Menu Widget Data -->
+
+        function getValueOnsekiz() {
+
+            var datax;
+            var datatarih;
+            $.ajax({
+                type: 'GET',
+                url: "../../rcountSearch.php?name" + "=" + "18" + "&" + "s=submit",
+                async: false,
+                dataType: 'json',
+                success: function (resp) {
+                    datax = resp.map(function(e) {return e.Giris;});
+                    //datax.unshift("Pazartesi");
+                    datatarih = resp.map(function(e) {return e.Tarih;});
+                    //datatarih.unshift("Month");
+                    //console.log ("Resp",datax);
+                }
+            });
+            return { datax: datax,
+                datatarih: datatarih}
+        }
+
+
+        <!-- /Menu Widget Data-->
+
 	
 	init();
 
