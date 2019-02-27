@@ -220,7 +220,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
-  
+
+
+    !-- sparkline -->
+    <script src="js/sparkline/jquery.sparkline.min.js"></script>
   <!-- User Script -->
 
 
