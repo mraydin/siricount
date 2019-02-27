@@ -198,9 +198,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <div class="col-md-12 col-sm-8 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Geçen Hafta(<?php  $objDateTime = new DateTime('NOW');
-                                    echo $objDateTime->format('W')-1;
-                                    ?>.Hafta)</h2>
+                                <h2>Son 7 gün(<?php  $objDateTime = new DateTime('NOW');
+                                    echo $objDateTime->format('d.M')-7;
+                                    ?> - <?php  $objDateTime = new DateTime('NOW');
+                                    echo $objDateTime->format('d.M');
+                                    ?>)</h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content" style="position: relative; margin: auto; height: 40vh; width: 80vw;">
