@@ -447,11 +447,11 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	var data = {
 		labels: [],
         	datasets: [{
-          		label: picker.startDate.locale('tr').format('DD.MM.YYYY'),'bu saatte',
+          		label: picker.startDate.locale('tr').format('DD.MM.YYYY')+'bu saatte',
          		backgroundColor: "rgba(3, 88, 106, 0.35)",
           		data: []
         	}, {
-          		label: picker.startDate.locale('tr').format('DD.MM.YYYY'),'bu saat',
+          		label: picker.startDate.locale('tr').format('DD.MM.YYYY')+'bu saat',
           		backgroundColor: "rgba(38, 185, 154, 0.35)",
           		data: []
         	}]
