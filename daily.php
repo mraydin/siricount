@@ -173,11 +173,13 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </div>
                         <div class="col-md-3 tile_stats_count">
                             <div class="left"></div>
+                            <div class="right">
                             <span>Dış Alan</span>
                             <h2>------</h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
+                            </div>
                         </div>
                         <div class="col-md-3 tile_stats_count">
                         <div class="left"></div>
