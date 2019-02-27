@@ -198,7 +198,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <div class="col-md-12 col-sm-8 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Geçen Hafta</h2>
+                                <h2>Geçen Hafta(<?php  $objDateTime = new DateTime('NOW');
+                                    echo $objDateTime->format('a');
+                                    ?>)</h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content" style="position: relative; margin: auto; height: 40vh; width: 80vw;">
