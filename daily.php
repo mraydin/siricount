@@ -302,7 +302,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
         timePickerIncrement: 1,
         timePicker12Hour: true,
         ranges: {
-          'Bugün': [moment(), moment()],
+          'Bugün': [moment(), moment().subtract(1, 'days')],
           'Dün': [moment().subtract(1, 'days'), moment()],
           'Son 7 Gün': [moment().subtract(6, 'days'), moment()],
           'Son 30 Gün': [moment().subtract(29, 'days'), moment()],
