@@ -574,7 +574,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                      </div>
                      <div class="x_content">
 
-                         <div id="mymonthchart"></div>
+                         <canvas id="mymonthchart"></canvas>
 
                      </div>
                  </div>
@@ -1548,7 +1548,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
       var mybarChart = new Chart(ctx, {
           type: 'bar',
           data: {
-              labels: getMonthValue().datax,
+              labels: getMonthValue().datatarih,
               datasets: {
                   label: 'Dün, bu saatte',
                   backgroundColor: "#26B99A",
