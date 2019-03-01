@@ -1537,6 +1537,57 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
  </script>
 
+
+
+  <script>
+
+      console.log("Month Value", getMonthValue().datax);
+
+      / Bar chart
+      var ctx = document.getElementById("mymonthchart");
+      var mybarChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: getMonthValue().datax,
+              datasets: [{
+                  label: 'Dün, bu saatte',
+                  backgroundColor: "#26B99A",
+                  data: getMonthValue().datax
+              }
+          },
+
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+
+      function getMonthValue() {
+
+          var datax;
+          var datatarih;
+          $.ajax({
+              type: 'GET',
+              url: "../../mcountSearch.php?name" + "=" + "2019" + "&" + "s=submit",
+              async: false,
+              dataType: 'json',
+              success: function (resp) {
+                  datax = resp.map(function(e) {return e.Giris;});
+                  //datax.unshift("Pazartesi");
+                  datatarih = resp.map(function(e) {return e.Tarih;});
+                  //datatarih.unshift("Month");
+                  //console.log ("Resp",datax);
+              }
+          });
+          return { datax: datax,
+              datatarih: datatarih}
+      }
+  </script>
   <!-- /footer content -->
 </body>
 
