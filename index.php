@@ -1550,7 +1550,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     //xLabels: 'week',
                     fillOpacity: 0.6,
                     data: getNowValue(),
-                    xkey: 'Week',
+                    xkey: datatarih,
                     parseTime: false,
                     smooth: false,
                     ykeys: datax,
