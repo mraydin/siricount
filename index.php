@@ -1546,16 +1546,13 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           var mymonthChart = new Chart(ctx, {
               type: 'bar',
               data: {
-                  labels: [],
-                  datasets: [{
+                  labels: getNowValue(),
+                  datasets: {
                       label: 'Geçen Ay',
                       backgroundColor: "#26B99A",
-                      data: getPastValue().datax
-                  }, {
-                      label: 'Bu Ay',
-                      backgroundColor: "#03586A",
                       data: getNowValue().datax
-                  }]
+                  }
+
               },
 
               options: {
@@ -1568,14 +1565,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                   }
               }
           });
-            window.onload = function() {
-                var ctx = document.getElementById("MYcanvas").getContext("2d");
-                window.myBar = new Chart(ctx, {
-                    type: "bar",
-                    data: barChartData,
-                    options: chartOptions
-                });
-            };
       function getPastValue() {
 
           var datax;
@@ -1602,7 +1591,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               var datatarih;
               $.ajax({
                   type: 'GET',
-                  url: "../../mcountSearch.php?name" + "=" + "03" + "&" + "s=submit",
+                  url: "../../mcountSearch.php?name" + "=" + "2019" + "&" + "s=submit",
                   async: false,
                   dataType: 'json',
                   success: function (resp) {
