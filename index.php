@@ -481,7 +481,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                       </div>
                       <div class="x_content">
 
-                          <canvas id="mymonthchart" style="height: 200px;"></canvas>
+                          <canvas id="mymonthchart"></canvas>
 
                       </div>
                   </div>
@@ -1589,7 +1589,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           },
           title: {
               fontSize: 12,
-              display: true,
+              display: false,
               text: 'Aylık Ziyaret Tablosu',
               position: 'top'
           }
