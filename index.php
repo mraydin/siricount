@@ -1574,10 +1574,12 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
       // Notice the scaleLabel at the same level as Ticks
       var options = {
+          responsive: true,
+          maintainAspectRatio: false,
           scales: {
               yAxes: [{
                   ticks: {
-                      //beginAtZero: true
+                      beginAtZero: true
                   }
               }]
           },
