@@ -237,12 +237,6 @@ fa-wrench"></i></a>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa 
 fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -568,9 +562,29 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
 		
 	 </div>
-	
+         <div class="row">
+             <br />
 
-        <div class="row">
+             <div class="col-md-12 col-sm-8 col-xs-12">
+                 <div class="x_panel tile fixed_height_320 overflow_hidden">
+                     <div class="x_title">
+                         <h2>Haftalık Trend</h2>
+
+                         <div class="clearfix"></div>
+                     </div>
+                     <div class="x_content">
+
+                         <div id="mymonthchart" style="width: 100%; height: 220px"></div>
+
+                     </div>
+                 </div>
+             </div>
+
+         </div>
+
+
+
+         <div class="row">
 
 		<div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
@@ -1523,6 +1537,84 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
         prexmlhttp.send(); // chart.
 
  </script>
+
+  <script>
+            console.log("Past Value", getPastValue().datax);
+            console.log("Now Value", getNowValue().datax);
+          // Bar chart
+          var ctx = document.getElementById("mymonthchart");
+          var mybarChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: getPastValue().datatarih,
+                  datasets: [{
+                      label: 'Geçen Ay',
+                      backgroundColor: "#26B99A",
+                      data: getPastValue().datax
+                  }, {
+                      label: 'Bu Ay',
+                      backgroundColor: "#03586A",
+                      data: precount
+                  }]
+              },
+
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }]
+                  }
+              }
+          });
+      function getPastValue() {
+
+          var datax;
+          var datatarih;
+          $.ajax({
+              type: 'GET',
+              url: "../../mcountSearch.php?name" + "=" + "02" + "&" + "s=submit",
+              async: false,
+              dataType: 'json',
+              success: function (resp) {
+                  datax = resp.map(function(e) {return e.Giris;});
+                  //datax.unshift("Pazartesi");
+                  datatarih = resp.map(function(e) {return e.Tarih;});
+                  //datatarih.unshift("Month");
+                  //console.log ("Resp",datax);
+              }
+          });
+          return { datax: datax,
+              datatarih: datatarih}
+      }
+          function getNowValue() {
+
+              var datax;
+              var datatarih;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../mcountSearch.php?name" + "=" + "03" + "&" + "s=submit",
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Giris;});
+                      //datax.unshift("Pazartesi");
+                      datatarih = resp.map(function(e) {return e.Tarih;});
+                      //datatarih.unshift("Month");
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  datatarih: datatarih}
+          }
+
+
+
+
+
+
+  </script>
   <!-- /footer content -->
 </body>
 
