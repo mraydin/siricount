@@ -1485,11 +1485,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
             var data = {
                 labels: getMonthValue().datatarih,
                 datasets: [{
-                    label: "Ziyaret",
+                    label: "Aylık Ziyaret",
                     fill: true,
                     lineTension: 0.1,
                     backgroundColor: "rgba(3, 88, 106,0.6)",
-                    borderColor: "green", // The main line color
                     borderCapStyle: 'square',
                     pointBorderColor: "white",
                     pointBackgroundColor: "green",
@@ -1502,6 +1501,10 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                     pointHitRadius: 10,
                     data: getMonthValue().datax,
                     spanGaps: true,
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'end'
+                    }
                 }]
             };
 
