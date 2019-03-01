@@ -473,10 +473,9 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               <br />
 
               <div class="col-md-12 col-sm-8 col-xs-12">
-                  <div class="x_panel tile fixed_height_320 overflow_hidden">
+                  <div class="x_panel tile overflow_hidden">
                       <div class="x_title">
                           <h2>Aylık Trend</h2>
-
                           <div class="clearfix"></div>
                       </div>
                       <div class="x_content">
