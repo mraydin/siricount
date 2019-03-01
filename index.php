@@ -1621,6 +1621,8 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               options: options
           });
 
+      }
+
 
   </script>
   <!-- /footer content -->
