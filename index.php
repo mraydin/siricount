@@ -1540,7 +1540,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   <script>
 
-            console.log("Now Value", getNowValue().datax);
+            console.log("Now Value", getNowValue());
           // Bar chart
             $(function() {
                 new Morris.Area({
