@@ -1545,7 +1545,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
       // Bar chart
       var ctx = document.getElementById("mymonthchart");
-      var mybarChart = new Chart(ctx, {
+      var mymonthChart = new Chart(ctx, {
           type: 'bar',
           data: {
               labels: getMonthValue().datatarih,
