@@ -135,10 +135,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <!-- form date pickers -->
               <div class="x_panel" style="">
                 <div class="x_title">
-                    <h2><?php
-                        $objDateTime = new DateTime('NOW');
-                        echo $objDateTime->format('d.m.Y');
-                        ?><small>tarihine ait raporları inceliyorsunuz.</small></h2>
+                    <h2><b id="buTarih"></b><small>tarihine ait raporları inceliyorsunuz.</small></h2>
 
                     <div class="col-md-8">
                                   <form name="name" method="GET" >
@@ -166,14 +163,14 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         <div class="col-md-3 tile">
                             <span>Günlük Toplam</span>
-                            <h2>231</h2>
+                            <h2 id="dunOran"></h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
                         </div>
                         <div class="col-md-3 tile">
                             <span>Saatlik Toplam</span>
-                            <h2>231,809</h2>
+                            <h2 id="buSaat"></h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -292,7 +289,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
       }
 
       var optionSet1 = {
-        startDate: moment().subtract(29, 'days'),
+        startDate: moment().subtract(15, 'days'),
         endDate: moment(),
         minDate: '31/01/2019',
         maxDate: '31/12/2019',
@@ -305,7 +302,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
         timePickerIncrement: 1,
         timePicker12Hour: true,
         ranges: {
-          'Bugün': [moment(), moment()],
+          'Bugün': [moment(), moment().subtract(1, 'days')],
           'Dün': [moment().subtract(1, 'days'), moment()],
           'Son 7 Gün': [moment().subtract(6, 'days'), moment()],
           'Son 30 Gün': [moment().subtract(29, 'days'), moment()],
@@ -343,6 +340,35 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
+        <!-- Menu Widget Data -->
+        console.log(getValue().datax);
+        document.getElementById("dunOran").innerHTML = getValue().datax;
+        document.getElementById("buSaat").innerHTML = getValue().busaat;
+        document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
+        function getValue() {
+
+            var datax;
+            var busaat;
+            $.ajax({
+                type: 'GET',
+                url: "../../count.php",
+                async: false,
+                dataType: 'json',
+                success: function (resp) {
+                    datax = resp.map(function(e) {return e.Giris;});
+                    //datax.unshift("Pazartesi");
+                    busaat = resp.map(function(e) {return e.BuSaat;});
+                    //datatarih.unshift("Month");
+                    //console.log ("Resp",datax);
+                }
+            });
+            return { datax: datax,
+                busaat: busaat}
+        }
+
+
+        <!-- /Menu Widget Data-->
+
 	<!-- Default Bar Script -->
 		// Bar chart
     	var canvas = document.getElementById("mybarChart");
@@ -353,11 +379,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
 		labels: [],
         	datasets: [{
           		label: 'Dün, bu saatte',
-         		backgroundColor: "#26B99A",
+         		backgroundColor: "rgba(3, 88, 106, 0.65)",
           		data: []
         	}, {
           		label: 'Bugün',
-          		backgroundColor: "#03586A",
+          		backgroundColor: "rgba(38, 185, 154, 0.65)",
           		data: []
         	}]
       	};
@@ -375,6 +401,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
 		}
       	};
 	//destroyChart(myBarChart);
+
+
 
 	
 	init();
@@ -447,12 +475,12 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	var data = {
 		labels: [],
         	datasets: [{
-          		label: 'İlk Seçilen,bu saatte',
-         		backgroundColor: "#26B99A",
+          		label: picker.startDate.locale('tr').format('DD.MM.YYYY')+' bu saatte',
+         		backgroundColor: "rgba(3, 88, 106, 0.65)",
           		data: []
         	}, {
-          		label: 'Son Seçilen, bu saat',
-          		backgroundColor: "#03586A",
+          		label: picker.endDate.locale('tr').format('DD.MM.YYYY')+' bu saat',
+          		backgroundColor: "rgba(38, 185, 154, 0.65)",
           		data: []
         	}]
       	};
@@ -540,6 +568,35 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
   		//restart chart:
   	//	init();
 	//}
+
+          <!-- Dynamic Menu Widget Data -->
+          console.log(getValue().datax);
+          document.getElementById("dunOran").innerHTML = getValue().datax;
+          document.getElementById("buSaat").innerHTML = getValue().busaat;
+          document.getElementById("buTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
+          function getValue() {
+
+              var datax;
+              var busaat;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../countSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD'),
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Giris;});
+                      //datax.unshift("Pazartesi");
+                      busaat = resp.map(function(e) {return e.BuSaat;});
+                      //datatarih.unshift("Month");
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  busaat: busaat}
+          }
+
+
+          <!-- /Menu Widget Data-->
 
 	});
       $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
