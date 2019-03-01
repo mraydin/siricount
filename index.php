@@ -1553,8 +1553,8 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     xkey: datatarih,
                     parseTime: false,
                     smooth: false,
-                    ykeys: datax,
-                    labels: datatarih
+                    ykeys: ['datax'],
+                    labels: ['datatarih']
                 });
             });
 
