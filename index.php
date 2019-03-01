@@ -574,7 +574,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                      </div>
                      <div class="x_content">
 
-                         <div id="mymonthchart" style="width: 100%; height: 220px"></div>
+                         <div id="mymonthchart"></div>
 
                      </div>
                  </div>
