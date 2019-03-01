@@ -1587,7 +1587,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               fontSize: 12,
               display: true,
               text: 'Aylık Ziyaret Tablosu',
-              position: 'bottom'
+              position: 'top'
           }
       };
 
