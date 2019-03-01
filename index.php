@@ -1546,7 +1546,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           var mybarChart = new Chart(ctx, {
               type: 'bar',
               data: {
-                  labels: getPastValue().datatarih,
+                  labels: [],
                   datasets: [{
                       label: 'Geçen Ay',
                       backgroundColor: "#26B99A",
@@ -1568,6 +1568,14 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                   }
               }
           });
+            window.onload = function() {
+                var ctx = document.getElementById("MYcanvas").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: "bar",
+                    data: barChartData,
+                    options: chartOptions
+                });
+            };
       function getPastValue() {
 
           var datax;
