@@ -622,7 +622,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                       </div>
                       <div class="x_content">
 
-                          <div id="mainb" style="height:350px;"></div>
+                          <canvas id="mydaychart"></canvas>
 
                       </div>
                   </div>
@@ -1638,6 +1638,103 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
 
   </script>
+  <script>
+
+      console.log("Month Value", getMonthValue().datax);
+
+      // Bar chart
+      var canvas = document.getElementById("mydaychart");
+      var ctx = canvas.getContext('2d');
+      // We are only changing the chart type, so let's make that a global variable along with the chart object:
+      var chartType = 'bar';
+      var myBarChart;
+      var data = {
+          labels: getMonthValue().datatarih,
+          datasets: [{
+              label: "Ziyaret",
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: "rgba(3, 88, 106,0.6)",
+              borderColor: "green", // The main line color
+              borderCapStyle: 'square',
+              pointBorderColor: "white",
+              pointBackgroundColor: "green",
+              pointBorderWidth: 1,
+              pointHoverRadius: 8,
+              pointHoverBackgroundColor: "yellow",
+              pointHoverBorderColor: "green",
+              pointHoverBorderWidth: 2,
+              pointRadius: 4,
+              pointHitRadius: 10,
+              data: getMonthValue().datax,
+              spanGaps: true,
+          }]
+      };
+
+      // Notice the scaleLabel at the same level as Ticks
+      var options = {
+          layout: {
+              padding: {
+                  left: 0,
+                  right: 0,
+                  top: 20,
+                  bottom: 0
+              }
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          },
+          title: {
+              fontSize: 12,
+              display: false,
+              text: 'Aylık Ziyaret Tablosu',
+              position: 'top'
+          }
+      };
+
+
+      init();
+
+      function getMonthValue() {
+
+          var datax;
+          var datatarih;
+          $.ajax({
+              type: 'GET',
+              url: "../../pre_daycount.php",
+              async: false,
+              dataType: 'json',
+              success: function (resp) {
+                  datax = resp.map(function(e) {return e.Giris;});
+                  //datax.unshift("Pazartesi");
+                  datatarih = resp.map(function(e) {return e.Count;});
+                  //datatarih.unshift("Month");
+                  //console.log ("Resp",datax);
+              }
+          });
+          return { datax: datax,
+              datatarih: datatarih}
+      }
+
+      function init() {
+          // Chart declaration:
+          myBarChart = new Chart(ctx, {
+              type: chartType,
+              data: data,
+              options: options
+          });
+
+      }
+
+
+  </script>
+
   <!-- /footer content -->
 </body>
 
