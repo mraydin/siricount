@@ -1538,53 +1538,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
  </script>
 
-  <script>
-
-            console.log("Now Value", getNowValue());
-          // Bar chart
-            $(function() {
-                new Morris.Area({
-                    element: 'mymonthchart',
-                    hideHover: 'true',
-                    lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-                    //xLabels: 'week',
-                    fillOpacity: 0.6,
-                    data: getNowValue(),
-                    xkey: ['datatarih'],
-                    parseTime: false,
-                    smooth: false,
-                    ykeys: ['datax'],
-                    labels: ['datatarih']
-                });
-            });
-
-          function getNowValue() {
-
-              var datax;
-              var datatarih;
-              $.ajax({
-                  type: 'GET',
-                  url: "../../mcountSearch.php?name" + "=" + "2019" + "&" + "s=submit",
-                  async: false,
-                  dataType: 'json',
-                  success: function (resp) {
-                      datax = resp.map(function(e) {return e.Giris;});
-                      //datax.unshift("Pazartesi");
-                      datatarih = resp.map(function(e) {return e.Tarih;});
-                      //datatarih.unshift("Month");
-                      //console.log ("Resp",datax);
-                  }
-              });
-              return { datax: datax,
-                  datatarih: datatarih}
-          }
-
-
-
-
-
-
-  </script>
   <!-- /footer content -->
 </body>
 
