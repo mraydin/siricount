@@ -1550,7 +1550,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           data: {
               labels: getMonthValue().datatarih,
               datasets: {
-                  label: 'Dün, bu saatte',
                   backgroundColor: "#26B99A",
                   data: getMonthValue().datax
               }
