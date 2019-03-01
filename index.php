@@ -1578,6 +1578,14 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
       // Notice the scaleLabel at the same level as Ticks
       var options = {
+          layout: {
+              padding: {
+                  left: 0,
+                  right: 0,
+                  top: 20,
+                  bottom: 0
+              }
+          },
           responsive: true,
           maintainAspectRatio: false,
           scales: {
