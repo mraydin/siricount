@@ -1549,7 +1549,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
                     //xLabels: 'week',
                     fillOpacity: 0.6,
-                    data: getNowValue(),
+                    data: ['datatarih'],
                     xkey: datatarih,
                     parseTime: false,
                     smooth: false,
