@@ -1286,7 +1286,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
 	};
 
-        xmlhttp.open("GET", "../../ucount.php", true);
+        xmlhttp.open("GET", "../../full_ucount.php", true);
         xmlhttp.send();	// chart.
 	
 
