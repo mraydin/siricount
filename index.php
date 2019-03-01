@@ -1553,8 +1553,8 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     xkey: 'Week',
                     parseTime: false,
                     smooth: false,
-                    ykeys: ['Giris'],
-                    labels: ['Tarih']
+                    ykeys: datax,
+                    labels: datatarih
                 });
             });
 
