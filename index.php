@@ -670,9 +670,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			(((myObj[0].BuYil-myObj[0].YilOran)/myObj[0].YilOran)*100).toFixed(0);
 			};
 			var haftaoran = document.getElementById("beforeweek").innerHTML =
-                        (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
-                        };
-
+            (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
 
             var ayoran = document.getElementById("beforemonth").innerHTML =
             (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
