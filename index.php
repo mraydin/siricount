@@ -650,30 +650,32 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
   		if (this.readyState == 4 && this.status == 200) {
-    			var myObj = JSON.parse(this.responseText);
-    			//console.log (myObj);
-    			document.getElementById("enter").innerHTML = myObj[0].Giris;
-    			//document.getElementById("exit").innerHTML = myObj[0].Cikis;
-			document.getElementById("thisyear").innerHTML = myObj[0].BuYil;
-			document.getElementById("thismonth").innerHTML = myObj[0].BuAy;
-			document.getElementById("thisweek").innerHTML = myObj[0].BuHafta;
-			document.getElementById("thishour").innerHTML = myObj[0].BuSaat;
-			//document.getElementById("thisnow").innerHTML = myObj[0].Cikis-myObj[0].Giris;
-			var oran = document.getElementById("beforeday").innerHTML = 
-			(((myObj[0].Giris-myObj[0].DunOran)/myObj[0].DunOran)*100).toFixed(0);
-			var saatoran = document.getElementById("beforehour").innerHTML =
-			(((myObj[0].BuSaat-myObj[0].SaatOran)/myObj[0].SaatOran)*100).toFixed(0);
-			if (myObj[0].YilOran == 0) {
-			 var yiloran = document.getElementById("beforeyear").innerHTML =  "-";
-			} else {
-			var yiloran = document.getElementById("beforeyear").innerHTML =
-			(((myObj[0].BuYil-myObj[0].YilOran)/myObj[0].YilOran)*100).toFixed(0);
-			};
-			var haftaoran = document.getElementById("beforeweek").innerHTML =
-            (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
+            var myObj = JSON.parse(this.responseText);
+            //console.log (myObj);
+            document.getElementById("enter").innerHTML = myObj[0].Giris;
+            //document.getElementById("exit").innerHTML = myObj[0].Cikis;
+            document.getElementById("thisyear").innerHTML = myObj[0].BuYil;
+            document.getElementById("thismonth").innerHTML = myObj[0].BuAy;
+            document.getElementById("thisweek").innerHTML = myObj[0].BuHafta;
+            document.getElementById("thishour").innerHTML = myObj[0].BuSaat;
+            //document.getElementById("thisnow").innerHTML = myObj[0].Cikis-myObj[0].Giris;
+            var oran = document.getElementById("beforeday").innerHTML =
+                (((myObj[0].Giris - myObj[0].DunOran) / myObj[0].DunOran) * 100).toFixed(0);
+            var saatoran = document.getElementById("beforehour").innerHTML =
+                (((myObj[0].BuSaat - myObj[0].SaatOran) / myObj[0].SaatOran) * 100).toFixed(0);
+            if (myObj[0].YilOran == 0) {
+                var yiloran = document.getElementById("beforeyear").innerHTML = "-";
+            } else {
+                var yiloran = document.getElementById("beforeyear").innerHTML =
+                    (((myObj[0].BuYil - myObj[0].YilOran) / myObj[0].YilOran) * 100).toFixed(0);
+            }
+            ;
+            var haftaoran = document.getElementById("beforeweek").innerHTML =
+                (((myObj[0].BuHafta - myObj[0].HaftaOran) / myObj[0].HaftaOran) * 100).toFixed(0);
 
             var ayoran = document.getElementById("beforemonth").innerHTML =
-            (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
+                (((myObj[0].BuAy - myObj[0].AyOran) / myObj[0].AyOran) * 100).toFixed(0);
+        }
 
 			//console.log(oran);
 			var z =  document.getElementsByClassName("example")[0];
