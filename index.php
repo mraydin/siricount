@@ -1038,7 +1038,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                 return e.Giris;
                 });
 
-
+    console.log("Labels :",labels);
 
 	// Bar chart
     	var ctx = document.getElementById("mybarChart");
