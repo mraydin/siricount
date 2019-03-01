@@ -1543,7 +1543,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
       console.log("Month Value", getMonthValue().datax);
 
-      / Bar chart
+      // Bar chart
       var ctx = document.getElementById("mymonthchart");
       var mybarChart = new Chart(ctx, {
           type: 'bar',
