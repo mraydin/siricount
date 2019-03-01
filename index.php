@@ -1542,29 +1542,21 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
             console.log("Now Value", getNowValue().datax);
           // Bar chart
-          var ctx = document.getElementById("mymonthchart");
-          var mymonthChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                  labels: [],
-                  datasets: {
-                      label: getNowValue().datatarih,
-                      backgroundColor: "#26B99A",
-                      data: getNowValue().datax
-                  }
-
-              },
-
-              options: {
-                  scales: {
-                      yAxes: [{
-                          ticks: {
-                              beginAtZero: true
-                          }
-                      }]
-                  }
-              }
-          });
+            $(function() {
+                new Morris.Area({
+                    element: 'mymonthchart',
+                    hideHover: 'true',
+                    lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+                    //xLabels: 'week',
+                    fillOpacity: 0.6,
+                    data: getNowValue(),
+                    xkey: 'Week',
+                    parseTime: false,
+                    smooth: false,
+                    ykeys: ['Giris'],
+                    labels: ['Tarih']
+                });
+            });
 
           function getNowValue() {
 
