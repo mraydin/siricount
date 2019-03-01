@@ -607,7 +607,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               <div class="col-md-12 col-sm-8 col-xs-12">
                   <div class="x_panel">
                       <div class="x_title">
-                          <h2>Karşılaştırmalı Aylık Grafik</h2>
+                          <h2>Aylık Grafik</h2>
                           <ul class="nav navbar-right panel_toolbox">
                               <li><a href="#"><i class="fa fa-chevron-up"></i></a>
                               </li>
@@ -1711,9 +1711,9 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               async: false,
               dataType: 'json',
               success: function (resp) {
-                  datax = resp.map(function(e) {return e.Giris;});
+                  datax = resp.map(function(e) {return e.Count;});
                   //datax.unshift("Pazartesi");
-                  datatarih = resp.map(function(e) {return e.Count;});
+                  datatarih = resp.map(function(e) {return e.Tarih;});
                   //datatarih.unshift("Month");
                   //console.log ("Resp",datax);
               }
