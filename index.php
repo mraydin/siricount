@@ -1552,7 +1552,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
       var data = {
           labels: getMonthValue().datatarih,
           datasets: [{
-              label: "Ay",
+              label: "Ziyaret",
               fill: true,
               lineTension: 0.1,
               backgroundColor: "rgba(38, 185, 154,0.4)",
@@ -1577,7 +1577,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           scales: {
               yAxes: [{
                   ticks: {
-                      beginAtZero: true
+                      //beginAtZero: true
                   }
               }]
           },
