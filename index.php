@@ -469,31 +469,28 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
         </div>
 
+          <div class="row">
+              <br />
 
-	 <div class="row">
-            <div class="col-md-12 col-sm-8 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Karşılaştırmalı Aylık Grafik</h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a href="#"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
+              <div class="col-md-12 col-sm-8 col-xs-12">
+                  <div class="x_panel tile fixed_height_320 overflow_hidden">
+                      <div class="x_title">
+                          <h2>Aylık Trend</h2>
 
-                  <div id="mainb" style="height:350px;"></div>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="x_content">
 
-                </div>
+                          <canvas id="mymonthchart"></canvas>
+
+                      </div>
+                  </div>
               </div>
-            </div>
+
+          </div>
+
+
+
 	<div class="row">
         <br />
 
@@ -562,25 +559,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
 		
 	 </div>
-         <div class="row">
-             <br />
 
-             <div class="col-md-12 col-sm-8 col-xs-12">
-                 <div class="x_panel tile fixed_height_320 overflow_hidden">
-                     <div class="x_title">
-                         <h2>Aylık Trend</h2>
-
-                         <div class="clearfix"></div>
-                     </div>
-                     <div class="x_content">
-
-                         <canvas id="mymonthchart"></canvas>
-
-                     </div>
-                 </div>
-             </div>
-
-         </div>
 
 
 
@@ -624,6 +603,31 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
             </div>
 				
             </div>
+
+          <div class="row">
+              <div class="col-md-12 col-sm-8 col-xs-12">
+                  <div class="x_panel">
+                      <div class="x_title">
+                          <h2>Karşılaştırmalı Aylık Grafik</h2>
+                          <ul class="nav navbar-right panel_toolbox">
+                              <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+                              </li>
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                     aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                              </li>
+                              <li><a href="#"><i class="fa fa-close"></i></a>
+                              </li>
+                          </ul>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="x_content">
+
+                          <div id="mainb" style="height:350px;"></div>
+
+                      </div>
+                  </div>
+              </div>
 
 
         </div>
@@ -1555,7 +1559,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
               label: "Ziyaret",
               fill: true,
               lineTension: 0.1,
-              backgroundColor: "rgba(38, 185, 154,0.4)",
+              backgroundColor: "rgba(38, 185, 154,0.6)",
               borderColor: "green", // The main line color
               borderCapStyle: 'square',
               pointBorderColor: "white",
