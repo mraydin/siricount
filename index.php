@@ -1519,13 +1519,13 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
    	}
 	 };
 
-        xmlhttp.open("GET", "../../daycount.php", true);
+        xmlhttp.open("GET", "../../pre_daycount.php", true);
         xmlhttp.send(); // chart.
 
 	}
          };
 
-	prexmlhttp.open("GET", "../../pre_daycount.php", true);
+	prexmlhttp.open("GET", "../../daycount.php", true);
         prexmlhttp.send(); // chart.
 
  </script>
