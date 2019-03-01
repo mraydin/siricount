@@ -1539,16 +1539,16 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
  </script>
 
   <script>
-            console.log("Past Value", getPastValue().datax);
+
             console.log("Now Value", getNowValue().datax);
           // Bar chart
           var ctx = document.getElementById("mymonthchart");
           var mymonthChart = new Chart(ctx, {
               type: 'bar',
               data: {
-                  labels: getNowValue(),
+                  labels: [],
                   datasets: {
-                      label: 'Geçen Ay',
+                      label: getNowValue().datatarih,
                       backgroundColor: "#26B99A",
                       data: getNowValue().datax
                   }
@@ -1565,26 +1565,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                   }
               }
           });
-      function getPastValue() {
 
-          var datax;
-          var datatarih;
-          $.ajax({
-              type: 'GET',
-              url: "../../mcountSearch.php?name" + "=" + "02" + "&" + "s=submit",
-              async: false,
-              dataType: 'json',
-              success: function (resp) {
-                  datax = resp.map(function(e) {return e.Giris;});
-                  //datax.unshift("Pazartesi");
-                  datatarih = resp.map(function(e) {return e.Tarih;});
-                  //datatarih.unshift("Month");
-                  //console.log ("Resp",datax);
-              }
-          });
-          return { datax: datax,
-              datatarih: datatarih}
-      }
           function getNowValue() {
 
               var datax;
