@@ -1554,7 +1554,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                   }, {
                       label: 'Bu Ay',
                       backgroundColor: "#03586A",
-                      data: precount
+                      data: getNowValue().datax
                   }]
               },
 
