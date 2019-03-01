@@ -1204,7 +1204,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                         ticks: {
                             max: 80,
                             beginAtZero: true,
-                            mirror: true,
+                            mirror: false,
                         },
                         scaleLabel: {
                             display: true,
