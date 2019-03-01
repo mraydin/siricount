@@ -1525,7 +1525,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 	}
          };
 
-	prexmlhttp.open("GET", "../../daycount.php", true);
+	prexmlhttp.open("GET", "../../pre_daycount.php", true);
         prexmlhttp.send(); // chart.
 
  </script>
