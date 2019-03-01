@@ -1543,7 +1543,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
             console.log("Now Value", getNowValue().datax);
           // Bar chart
           var ctx = document.getElementById("mymonthchart");
-          var mybarChart = new Chart(ctx, {
+          var mymonthChart = new Chart(ctx, {
               type: 'bar',
               data: {
                   labels: [],
