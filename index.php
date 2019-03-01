@@ -210,12 +210,6 @@ DateTime('NOW');
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa 
 fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -664,12 +658,12 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			var haftaoran = document.getElementById("beforeweek").innerHTML =
                         (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
                         };
-			/*if (myObj[0].AyOran == 0) {
+			if (myObj[0].AyOran == 0) {
                          var ayoran = document.getElementById("beforemonth").innerHTML =  "-";
                         } else {
                         var ayoran = document.getElementById("beforemonth").innerHTML =
                         (((myObj[0].BuAy-myObj[0].AyOran)/myObj[0].AyOran)*100).toFixed(0);
-                        };*/
+                        };
 			//console.log(oran);
 			var z =  document.getElementsByClassName("example")[0];
 			var v =  document.getElementsByClassName("example")[1];
@@ -712,7 +706,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           w.classList.add("fa");
                           w.classList.add("fa-sort-asc");
                         };
-			/*if (ayoran <= 0) {
+			if (ayoran <= 0) {
                           v.style.color = "red";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-desc");
@@ -720,7 +714,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                           v.style.color = "#1ABB9C";
                           v.classList.add("fa");
                           v.classList.add("fa-sort-asc");
-                        };*/
+                        };
   		
 	};
 	xmlhttp.open("GET", "../../count.php", true);
