@@ -672,7 +672,8 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 			var haftaoran = document.getElementById("beforeweek").innerHTML =
                         (((myObj[0].BuHafta-myObj[0].HaftaOran)/myObj[0].HaftaOran)*100).toFixed(0);
                         };
-			if (myObj[0].AyOran == 0) {
+
+			if (myObj[0].AyOran == null) {
                          var ayoran = document.getElementById("beforemonth").innerHTML =  "-";
                         } else {
                         var ayoran = document.getElementById("beforemonth").innerHTML =
