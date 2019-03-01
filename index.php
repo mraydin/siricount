@@ -1544,27 +1544,53 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
       console.log("Month Value", getMonthValue().datax);
 
       // Bar chart
-      var ctx = document.getElementById("mymonthchart");
-      var mymonthChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: getMonthValue().datatarih,
-              datasets: {
-                  backgroundColor: "#26B99A",
-                  data: getMonthValue().datax
-              }
-          },
+      var canvas = document.getElementById("mymonthchart");
+      var ctx = canvas.getContext('2d');
+      // We are only changing the chart type, so let's make that a global variable along with the chart object:
+      var chartType = 'bar';
+      var myBarChart;
+      var data = {
+          labels: getMonthValue().datatarih,
+          datasets: [{
+              label: "Ay",
+              fill: true,
+              lineTension: 0.1,
+              backgroundColor: "rgba(38, 185, 154,0.4)",
+              borderColor: "green", // The main line color
+              borderCapStyle: 'square',
+              pointBorderColor: "white",
+              pointBackgroundColor: "green",
+              pointBorderWidth: 1,
+              pointHoverRadius: 8,
+              pointHoverBackgroundColor: "yellow",
+              pointHoverBorderColor: "green",
+              pointHoverBorderWidth: 2,
+              pointRadius: 4,
+              pointHitRadius: 10,
+              data: getMonthValue().datax,
+              spanGaps: true,
+          }]
+      };
 
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
-              }
+      // Notice the scaleLabel at the same level as Ticks
+      var options = {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          },
+          title: {
+              fontSize: 12,
+              display: true,
+              text: 'Aylık Ziyaret Tablosu',
+              position: 'bottom'
           }
-      });
+      };
+
+
+      init();
 
       function getMonthValue() {
 
@@ -1586,6 +1612,16 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
           return { datax: datax,
               datatarih: datatarih}
       }
+
+      function init() {
+          // Chart declaration:
+          myBarChart = new Chart(ctx, {
+              type: chartType,
+              data: data,
+              options: options
+          });
+
+
   </script>
   <!-- /footer content -->
 </body>
