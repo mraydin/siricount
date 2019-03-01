@@ -481,7 +481,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                       </div>
                       <div class="x_content">
 
-                          <canvas id="mymonthchart"></canvas>
+                          <canvas id="mymonthchart" style="height: 200px;"></canvas>
 
                       </div>
                   </div>
