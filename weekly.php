@@ -224,7 +224,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
             <div class="col-md-12 col-sm-8 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Aylık Trend</h2>
+                  <h2>Günlük Trend</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a href="#"><i class="fa fa-chevron-up"></i></a>
                     </li>
