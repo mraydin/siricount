@@ -741,7 +741,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
   <script type="text/javascript" src="js/moment/moment.min.js"></script>
   <script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
   <!-- chart js -->
-  <script data-require="chart.js@2.6.0" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+  <script src="js/chartjs/chart.min.js"></script>
 
 
   <!-- flot js -->
