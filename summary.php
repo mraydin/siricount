@@ -381,7 +381,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 var datatarih;
                 $.ajax({
                     type: 'GET',
-                    url: "../../daycount.php",
+                    url: "../../pre_daycount.php",
                     async: false,
                     dataType: 'json',
                     success: function (resp) {
