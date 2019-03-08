@@ -400,6 +400,76 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <!-- /Menu Widget Data-->
 
+                <!-- Default Bar Script -->
+                // Bar chart
+                var canvas = document.getElementById("mybarChart");
+                var ctx = canvas.getContext('2d');
+                var chartType = 'bar';
+                var myBarChart;
+                var data = {
+                    labels: [],
+                    datasets: [{
+                        label: 'Dün, bu saatte',
+                        backgroundColor: "rgba(3, 88, 106, 0.65)",
+                        data: []
+                    }, {
+                        label: 'Bugün',
+                        backgroundColor: "rgba(38, 185, 154, 0.65)",
+                        data: []
+                    }]
+                };
+
+                var options = {
+                    barPercentage: 0.7,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                };
+                //destroyChart(myBarChart);
+
+                init();
+
+                updateConfigByMutating(window.myBarChart);
+                updateConfigByMutating2(window.myBarChart);
+                function updateConfigByMutating(chart) {
+                    var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        //console.log("jd",jd);
+                        var datax = jd.map(function(e) {return e.Tarih;});
+                        //console.log("Tarih",datax);
+                        var datay = jd.map(function(e) {return e.Giris; });
+                        //console.log("tcounty",datay);
+                        chart.data.labels = datax;
+                        chart.data.datasets[1].data = datay;
+                        chart.update();
+                    });
+                }
+                function updateConfigByMutating2(chart) {
+                    var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        var datay = jd.map(function(e) {return e.Giris;});
+                        console.log("Son Tarih",datay);
+                        chart.data.datasets[0].data = datay;
+                        chart.update();
+                    });
+                }
+                function init() {
+                    //Chart declaration:
+                    if (window.myBarChart != undefined)
+                        window.myBarChart.destroy();
+                    window.myBarChart = new Chart(ctx, {
+                        type: chartType,
+                        data: data,
+                        options: options
+                    });
+                }
+                <!-- /Default Bar Script Data-->
 
 
                 <!-- Default Daily Trend Script -->
@@ -473,8 +543,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 function updateConfigByDay(chart) {
                     //var myObject = {name: moment().locale('tr').format('W'), s:"submit"};
                     $.getJSON("../../pre_daycount.php", function(jd) {
-                        var datax = jd.map(function(e) {return e.Count;});
-                        //datax.unshift("Pazartesi");
+
+
 
                         var ldatay = jd.map(function(e) {return e.Tarih;});
                         //console.log("Week",ldatay);
