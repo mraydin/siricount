@@ -477,12 +477,12 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 console.log("Month Value", getMonthValue().datax);
 
                 // Bar chart
-                var canvas = document.getElementById("mydaychart");
-                var ctx = canvas.getContext('2d');
+                var canvasd = document.getElementById("mydaychart");
+                var ctxd = canvasd.getContext('2d');
                 // We are only changing the chart type, so let's make that a global variable along with the chart object:
-                var chartType = 'bar';
-                var myBarChart;
-                var data = {
+                var chartTyped = 'bar';
+                var myBarChartd;
+                var datad = {
                     labels: getMonthValue().datatarih,
                     datasets: [{
                         label: "Aylık Ziyaret",
@@ -509,7 +509,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 };
 
                 // Notice the scaleLabel at the same level as Ticks
-                var options = {
+                var optionsd = {
                     layout: {
                         padding: {
                             left: 0,
@@ -562,10 +562,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 function init() {
                     // Chart declaration:
-                    myBarChart = new Chart(ctx, {
-                        type: chartType,
-                        data: data,
-                        options: options
+                    myBarChartd = new Chart(ctxd, {
+                        type: chartTyped,
+                        data: datad,
+                        options: optionsd
                     });
 
                 }
