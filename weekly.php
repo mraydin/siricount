@@ -239,7 +239,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 </div>
                 <div class="x_content">
 
-                  <canvas id="mydaychart"></canvas>
+                  <canvas id="lineChart"></canvas>
 
                 </div>
               </div>
