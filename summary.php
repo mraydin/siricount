@@ -307,109 +307,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
         <!-- pace -->
         <script src="js/pace/pace.min.js"></script>
-        <script>
-            <!-- Default Daily Trend Script -->
-
-            console.log("Month Value", getMonthValue().datax);
-
-            // Bar chart
-            var canvasDay = document.getElementById("mydaychart");
-            var ctxDay = canvasDay.getContext('2d');
-            // We are only changing the chart type, so let's make that a global variable along with the chart object:
-            var chartTypeDay = 'bar';
-            var myBarChartDay;
-            var dataDay = {
-                labels: getMonthValue().datatarih,
-                datasets: [{
-                    label: "Aylık Ziyaret",
-                    fill: true,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(3, 88, 106,0.6)",
-                    borderCapStyle: 'square',
-                    pointBorderColor: "white",
-                    pointBackgroundColor: "green",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 8,
-                    pointHoverBackgroundColor: "yellow",
-                    pointHoverBorderColor: "green",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 4,
-                    pointHitRadius: 10,
-                    data: getMonthValue().datax,
-                    spanGaps: true,
-                    datalabels: {
-                        align: 'end',
-                        anchor: 'end'
-                    }
-                }]
-            };
-
-            // Notice the scaleLabel at the same level as Ticks
-            var optionsDay = {
-                layout: {
-                    padding: {
-                        left: 0,
-                        right: 0,
-                        top: 20,
-                        bottom: 0
-                    }
-                },
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            max: 500,
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                title: {
-                    fontSize: 12,
-                    display: false,
-                    text: 'Aylık Ziyaret Tablosu',
-                    position: 'top'
-                }
-            };
-
-
-            initDayChart();
-
-            function getMonthValue() {
-
-                var datax;
-                var datatarih;
-                $.ajax({
-                    type: 'GET',
-                    url: "../../pre_daycount.php",
-                    async: false,
-                    dataType: 'json',
-                    success: function (resp) {
-                        datax = resp.map(function(e) {return e.Count;});
-                        //datax.unshift("Pazartesi");
-                        datatarih = resp.map(function(e) {return e.Tarih;});
-                        //datatarih.unshift("Month");
-                        //console.log ("Resp",datax);
-                    }
-                });
-                return { datax: datax,
-                    datatarih: datatarih}
-            }
-
-            function initDayChart() {
-                // Chart declaration:
-
-                    myBarChartDay = new Chart(ctxDay, {
-                        type: chartTypeDay,
-                        data: dataDay,
-                        options: optionsDay
-                    });
-
-            }
-
-            <!-- /Default Daily Trend Script -->
-
-        </script>
 
         <!-- datepicker -->
         <script type="text/javascript">
@@ -535,6 +432,104 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     }
                 };
                 //destroyChart(myBarChart);
+
+
+                <!-- Default Daily Trend Script -->
+
+                console.log("Month Value", getMonthValue().datax);
+
+                // Bar chart
+                var canvasDay = document.getElementById("mydaychart");
+                var ctxDay = canvasDay.getContext('2d');
+                // We are only changing the chart type, so let's make that a global variable along with the chart object:
+                var chartTypeDay = 'bar';
+                var myBarChartDay;
+                var dataDay = {
+                    labels: [],
+                    datasets: [{
+                        label: "Aylık Ziyaret",
+                        fill: true,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(3, 88, 106,0.6)",
+                        borderCapStyle: 'square',
+                        pointBorderColor: "white",
+                        pointBackgroundColor: "green",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 8,
+                        pointHoverBackgroundColor: "yellow",
+                        pointHoverBorderColor: "green",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHitRadius: 10,
+                        data: []
+                        spanGaps: true,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end'
+                        }
+                    }]
+                };
+
+                // Notice the scaleLabel at the same level as Ticks
+                var optionsDay = {
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 20,
+                            bottom: 0
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                max: 500,
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    title: {
+                        fontSize: 12,
+                        display: false,
+                        text: 'Aylık Ziyaret Tablosu',
+                        position: 'top'
+                    }
+                };
+
+
+                initDayChart();
+                updateConfigByDay(window.barChart);
+
+                function updateConfigByDay(chart) {
+                    //var myObject = {name: moment().locale('tr').format('W'), s:"submit"};
+                    $.getJSON("../../pre_daycount.php", function(jd) {
+                        var datax = jd.map(function(e) {return e.Count;});
+                        //datax.unshift("Pazartesi");
+
+                        var ldatay = jd.map(function(e) {return e.Tarih;});
+                        //console.log("Week",ldatay);
+                        chart.data.datasets[0].data = datax;
+                        chart.data.labels = ldatay;
+                        chart.update();
+                    });
+
+                }
+
+                function initDayChart() {
+                    // Chart declaration:
+                    if (window.barChart != undefined)
+                    //window.lineChart.destroy();
+                        window.barChart = new Chart(ctxDay, {
+                        type: chartTypeDay,
+                        data: dataDay,
+                        options: optionsDay
+                    });
+
+                }
+
+                <!-- /Default Daily Trend Script -->
 
 
 
