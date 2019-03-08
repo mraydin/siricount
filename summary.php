@@ -439,7 +439,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 };
 
                 // Notice the scaleLabel at the same level as Ticks
-                var optionsDay = {
+                var options = {
                     layout: {
                         padding: {
                             left: 0,
