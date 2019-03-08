@@ -538,7 +538,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                 initd();
-                getMonthValue(myBarChartd);
+                getMonthValue(window.myBarChartd);
 
                 function getMonthValue(chart) {
 
@@ -564,7 +564,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 function initd() {
                     // Chart declaration:
-                    myBarChartd = new Chart(ctxd, {
+                    window.myBarChartd = new Chart(ctxd, {
                         type: chartTyped,
                         data: datad,
                         options: optionsd
