@@ -547,7 +547,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         //datax.unshift("Pazartesi");
 
                         var ldatay = jd.map(function(e) {return e.Tarih;});
-                        //console.log("Week",ldatay);
+                        console.log("Week",ldatay);
                         //chart.data.datasets[0].data = datax;
                         chart.data.labels = ldatay;
                         chart.update();
