@@ -473,10 +473,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <!-- LineChart Script -->
                 // Line chart
-                var canvas = document.getElementById("lineChart");
-                var ctx = canvas.getContext('2d');
-                var chartType = 'line';
-                var data = {
+                var canvasLine = document.getElementById("lineChart");
+                var ctxLine = canvasLine.getContext('2d');
+                var chartTypeLine = 'line';
+                var dataLine = {
                     labels: [],
                     datasets: [{
                         label: [],
@@ -560,9 +560,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     //Chart declaration:
                     if (window.lineChart != undefined)
                         window.lineChart.destroy();
-                    window.lineChart = new Chart(ctx, {
-                        type: chartType,
-                        data: data,
+                    window.lineChart = new Chart(ctxLine, {
+                        type: chartTypeLine,
+                        data: dataLine,
                         plugins: {
                             datalabels: {
                                 color: '#536c86',
