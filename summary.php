@@ -549,7 +549,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         var ldatay = jd.map(function(e) {return e.Tarih;});
                         //console.log("Week",ldatay);
                         //chart.data.datasets[0].data = datax;
-                        chart.data.labels = ldatay;
+                        chart.data2.labels = ldatay;
                         chart.update();
                     });
 
@@ -561,7 +561,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     //window.lineChart.destroy();
                         window.barChart = new Chart(ctxDay, {
                             type: chartTypeDay,
-                            data: dataDay,
+                            data2: dataDay,
                             options: optionsDay
                         });
 
