@@ -554,7 +554,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             datatarih = resp.map(function(e) {return e.Tarih;});
                             //datatarih.unshift("Month");
                             //console.log ("Resp",datax);
-                            chart.data.labels = datax;
                         }
                     });
                     return { datax: datax,
