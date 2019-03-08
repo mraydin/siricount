@@ -696,7 +696,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     };
 
 
-                    init();
+                    initDayChart();
 
                     function getMonthValue() {
 
@@ -719,7 +719,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             datatarih: datatarih}
                     }
 
-                    function init() {
+                    function initDayChart() {
                         // Chart declaration:
                         myBarChartDay = new Chart(ctxDay, {
                             type: chartTypeDay,
