@@ -475,7 +475,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 // Line chart
                 var canvasLine = document.getElementById("lineChart");
                 var ctxLine = canvasLine.getContext('2d');
-                var chartTypeLine = 'line';
+                var chartTypeLine = 'bar';
                 var dataLine = {
                     labels: [],
                     datasets: [{
