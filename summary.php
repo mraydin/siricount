@@ -407,10 +407,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                 // Bar chart
-                var canvasDay = document.getElementById("mydaychart");
-                var ctxDay = canvasDay.getContext('2d');
+                var canvas = document.getElementById("mydaychart");
+                var ctx = canvas.getContext('2d');
                 // We are only changing the chart type, so let's make that a global variable along with the chart object:
-                var chartTypeDay = 'bar';
+                var chartType = 'bar';
                 var myBarChartDay;
                 var dataDay = {
                     labels: [],
@@ -478,7 +478,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         //datax.unshift("Pazartesi");
 
                         var ldatay = jd.map(function(e) {return e.Tarih;});
-                        //console.log("Week",ldatay);
+                        console.log("Week",ldatay);
                         //chart.data.datasets[0].data = datax;
                         chart.data.labels = ldatay;
                         chart.update();
@@ -490,10 +490,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     // Chart declaration:
                     if (window.myBarChartDay != undefined)
                     //window.lineChart.destroy();
-                        window.myBarChartDay = new Chart(ctxDay, {
-                            type: chartTypeDay,
-                            data: dataDay,
-                            options: optionsDay
+                        window.myBarChartDay = new Chart(ctx, {
+                            type: chartType,
+                            data: data,
+                            options: options
                         });
 
                 }
