@@ -436,7 +436,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <!-- Default Daily Trend Script -->
 
-                console.log("Month Value", getMonthValue().datax);
+
 
                 // Bar chart
                 var canvasDay = document.getElementById("mydaychart");
