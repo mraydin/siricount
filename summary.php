@@ -540,7 +540,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 initDayChart();
                 updateConfigByDay(window.barChart);
 
-                function updateConfigByDay(chart) {
+                function updateConfigByDay(chart2) {
                     //var myObject = {name: moment().locale('tr').format('W'), s:"submit"};
                     $.getJSON("../../pre_daycount.php", function(jd) {
 
@@ -551,7 +551,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         //console.log("Week",ldatay);
                         //chart.data.datasets[0].data = datax;
                         //chart.data.labels = ldatay;
-                        chart.update();
+                        chart2.update();
                     });
 
                 }
