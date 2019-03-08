@@ -529,7 +529,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 }
 
-                <!-- /Default Daily Trend Script -->
+                <!-- /Default Daily Trend Scriptt -->
 
 
 
