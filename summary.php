@@ -289,6 +289,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
         <!-- chart js -->
 
         <script data-require="chart.js@2.6.0" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
 
         <!-- flot js -->
