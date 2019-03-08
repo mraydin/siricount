@@ -412,7 +412,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 // We are only changing the chart type, so let's make that a global variable along with the chart object:
                 var chartType = 'bar';
                 var myBarChartDay;
-                var dataDay = {
+                var data = {
                     labels: [],
                     datasets: [{
                         label: "Aylık Ziyaret",
