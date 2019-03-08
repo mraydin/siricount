@@ -461,7 +461,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         pointHoverBorderWidth: 2,
                         pointRadius: 4,
                         pointHitRadius: 10,
-                        data: []
+                        data: [],
                         spanGaps: true,
                         datalabels: {
                             align: 'end',
