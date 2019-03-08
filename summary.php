@@ -565,10 +565,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 function initDayChart() {
                     // Chart declaration:
-                    myBarChartDay = new Chart(ctxDay, {
-                        type: chartTypeDay,
-                        data: dataDay,
-                        options: optionsDay
+                    if (window.lineChart != undefined)
+                        window.lineChart = new Chart(ctxDay, {
+                            type: chartTypeDay,
+                            data: dataDay,
+                            options: optionsDay
                     });
 
                 }
