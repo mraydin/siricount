@@ -538,9 +538,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                 initd();
-                getMonthValue(window.myBarChartd);
 
-                function getMonthValue(chart) {
+
+                function getMonthValue() {
 
                     var datax;
                     var datatarih;
@@ -555,7 +555,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             datatarih = resp.map(function(e) {return e.Tarih;});
                             //datatarih.unshift("Month");
                             //console.log ("Resp",datax);
-                            chart.update();
                         }
                     });
                     return { datax: datax,
@@ -564,7 +563,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 function initd() {
                     // Chart declaration:
-                    window.myBarChartd = new Chart(ctxd, {
+                    myBarChartd = new Chart(ctxd, {
                         type: chartTyped,
                         data: datad,
                         options: optionsd
