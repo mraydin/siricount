@@ -481,7 +481,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 // Bar chart
                 var canvasDay = document.getElementById("mydaychart");
-                var ctxDay = canvas.getContext('2d');
+                var ctxDay = canvasDay.getContext('2d');
                 // We are only changing the chart type, so let's make that a global variable along with the chart object:
                 var chartTypeDay = 'bar';
                 var myBarChartDay;
