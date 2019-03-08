@@ -218,6 +218,37 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     </div>
                     <div class="clearfix"></div>
 
+                    <!-- Daily Trend -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-8 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Günlük Trend</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                               aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+
+                                    <canvas id="mydaychart"></canvas>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- /Daily Trend -->
+
 
 
 
@@ -570,7 +601,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     //}
 
                     <!-- Dynamic Menu Widget Data -->
-                    console.log(getValue().datax);
+                    //console.log(getValue().datax);
                     document.getElementById("dunOran").innerHTML = getValue().datax;
                     document.getElementById("buSaat").innerHTML = getValue().busaat;
                     document.getElementById("buTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
@@ -597,6 +628,108 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                     <!-- /Menu Widget Data-->
+
+
+
+                    <!-- Daily Trend Script -->
+
+                    console.log("Month Value", getMonthValue().datax);
+
+                    // Bar chart
+                    var canvas = document.getElementById("mydaychart");
+                    var ctx = canvas.getContext('2d');
+                    // We are only changing the chart type, so let's make that a global variable along with the chart object:
+                    var chartType = 'bar';
+                    var myBarChart;
+                    var data = {
+                        labels: getMonthValue().datatarih,
+                        datasets: [{
+                            label: "Aylık Ziyaret",
+                            fill: true,
+                            lineTension: 0.1,
+                            backgroundColor: "rgba(3, 88, 106,0.6)",
+                            borderCapStyle: 'square',
+                            pointBorderColor: "white",
+                            pointBackgroundColor: "green",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: "yellow",
+                            pointHoverBorderColor: "green",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHitRadius: 10,
+                            data: getMonthValue().datax,
+                            spanGaps: true,
+                            datalabels: {
+                                align: 'end',
+                                anchor: 'end'
+                            }
+                        }]
+                    };
+
+                    // Notice the scaleLabel at the same level as Ticks
+                    var options = {
+                        layout: {
+                            padding: {
+                                left: 0,
+                                right: 0,
+                                top: 20,
+                                bottom: 0
+                            }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: 500,
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        title: {
+                            fontSize: 12,
+                            display: false,
+                            text: 'Aylık Ziyaret Tablosu',
+                            position: 'top'
+                        }
+                    };
+
+
+                    init();
+
+                    function getMonthValue() {
+
+                        var datax;
+                        var datatarih;
+                        $.ajax({
+                            type: 'GET',
+                            url: "../../daycount.php",
+                            async: false,
+                            dataType: 'json',
+                            success: function (resp) {
+                                datax = resp.map(function(e) {return e.Count;});
+                                //datax.unshift("Pazartesi");
+                                datatarih = resp.map(function(e) {return e.Tarih;});
+                                //datatarih.unshift("Month");
+                                //console.log ("Resp",datax);
+                            }
+                        });
+                        return { datax: datax,
+                            datatarih: datatarih}
+                    }
+
+                    function init() {
+                        // Chart declaration:
+                        myBarChart = new Chart(ctx, {
+                            type: chartType,
+                            data: data,
+                            options: options
+                        });
+
+                    }
+
+                    <!-- Daily Trend Script -->
 
                 });
                 $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
