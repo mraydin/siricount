@@ -433,6 +433,44 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 };
                 //destroyChart(myBarChart);
 
+                init();
+
+                updateConfigByMutating(window.myBarChart);
+                updateConfigByMutating2(window.myBarChart);
+                function updateConfigByMutating(chart) {
+                    var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        //console.log("jd",jd);
+                        var datax = jd.map(function(e) {return e.Tarih;});
+                        //console.log("Tarih",datax);
+                        var datay = jd.map(function(e) {return e.Giris; });
+                        //console.log("tcounty",datay);
+                        chart.data.labels = datax;
+                        chart.data.datasets[1].data = datay;
+                        chart.update();
+                    });
+                }
+                function updateConfigByMutating2(chart) {
+                    var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        var datay = jd.map(function(e) {return e.Giris;});
+                        console.log("Son Tarih",datay);
+                        chart.data.datasets[0].data = datay;
+                        chart.update();
+                    });
+                }
+                function init() {
+                    //Chart declaration:
+                    if (window.myBarChart != undefined)
+                        window.myBarChart.destroy();
+                    window.myBarChart = new Chart(ctx, {
+                        type: chartType,
+                        data: data,
+                        options: options
+                    });
+                }
+                <!-- /Default Bar Script Data-->
+
 
                 <!-- Default Daily Trend Script -->
 
@@ -510,7 +548,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         var ldatay = jd.map(function(e) {return e.Tarih;});
                         //console.log("Week",ldatay);
-                        //chart.data.datasets[0].data = datax;
+                        chart.data.datasets[0].data = datax;
                         chart.data.labels = ldatay;
                         chart.update();
                     });
@@ -522,55 +560,15 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     if (window.barChart != undefined)
                     //window.lineChart.destroy();
                         window.barChart = new Chart(ctxDay, {
-                        type: chartTypeDay,
-                        data: dataDay,
-                        options: optionsDay
-                    });
+                            type: chartTypeDay,
+                            data: dataDay,
+                            options: optionsDay
+                        });
 
                 }
 
                 <!-- /Default Daily Trend Scriptt -->
 
-
-
-
-                init();
-
-                updateConfigByMutating(window.myBarChart);
-                updateConfigByMutating2(window.myBarChart);
-                function updateConfigByMutating(chart) {
-                    var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
-                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                        //console.log("jd",jd);
-                        var datax = jd.map(function(e) {return e.Tarih;});
-                        //console.log("Tarih",datax);
-                        var datay = jd.map(function(e) {return e.Giris; });
-                        //console.log("tcounty",datay);
-                        chart.data.labels = datax;
-                        chart.data.datasets[1].data = datay;
-                        chart.update();
-                    });
-                }
-                function updateConfigByMutating2(chart) {
-                    var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
-                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
-                        var datay = jd.map(function(e) {return e.Giris;});
-                        console.log("Son Tarih",datay);
-                        chart.data.datasets[0].data = datay;
-                        chart.update();
-                    });
-                }
-                function init() {
-                    //Chart declaration:
-                    if (window.myBarChart != undefined)
-                        window.myBarChart.destroy();
-                    window.myBarChart = new Chart(ctx, {
-                        type: chartType,
-                        data: data,
-                        options: options
-                    });
-                }
-                <!-- /Default Bar Script Data-->
 
 
 
