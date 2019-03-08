@@ -537,7 +537,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 };
 
 
-                init();
+                initd();
 
                 function getMonthValue() {
 
@@ -560,7 +560,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         datatarih: datatarih}
                 }
 
-                function init() {
+                function initd() {
                     // Chart declaration:
                     myBarChartd = new Chart(ctxd, {
                         type: chartTyped,
