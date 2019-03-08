@@ -400,105 +400,184 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <!-- /Menu Widget Data-->
 
-
-
-                <!-- Default Daily Trend Script -->
-
-
-
+                <!-- Default Bar Script -->
                 // Bar chart
-                var canvas = document.getElementById("mydaychart");
+                var canvas = document.getElementById("mybarChart");
                 var ctx = canvas.getContext('2d');
-                // We are only changing the chart type, so let's make that a global variable along with the chart object:
                 var chartType = 'bar';
-                var myBarChartDay;
+                var myBarChart;
                 var data = {
                     labels: [],
                     datasets: [{
-                        label: "Aylık Ziyaret",
-                        fill: true,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(3, 88, 106,0.6)",
-                        borderCapStyle: 'square',
-                        pointBorderColor: "white",
-                        pointBackgroundColor: "green",
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 8,
-                        pointHoverBackgroundColor: "yellow",
-                        pointHoverBorderColor: "green",
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 4,
-                        pointHitRadius: 10,
-                        data: [],
-                        spanGaps: true,
-                        datalabels: {
-                            align: 'end',
-                            anchor: 'end'
-                        }
+                        label: 'Dün, bu saatte',
+                        backgroundColor: "rgba(3, 88, 106, 0.65)",
+                        data: []
+                    }, {
+                        label: 'Bugün',
+                        backgroundColor: "rgba(38, 185, 154, 0.65)",
+                        data: []
                     }]
                 };
 
-                // Notice the scaleLabel at the same level as Ticks
                 var options = {
-                    layout: {
-                        padding: {
-                            left: 0,
-                            right: 0,
-                            top: 20,
-                            bottom: 0
-                        }
-                    },
+                    barPercentage: 0.7,
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
                         yAxes: [{
                             ticks: {
-                                max: 500,
                                 beginAtZero: true
                             }
                         }]
-                    },
-                    title: {
-                        fontSize: 12,
-                        display: false,
-                        text: 'Aylık Ziyaret Tablosu',
-                        position: 'top'
                     }
                 };
+                //destroyChart(myBarChart);
 
+                init();
 
-                initDayChart();
-                updateConfigByDay(window.myBarChartDay);
-
-                function updateConfigByDay(chart) {
-                    //var myObject = {name: moment().locale('tr').format('W'), s:"submit"};
-                    $.getJSON("../../pre_daycount.php", function(jd) {
-
-                        var datax = jd.map(function(e) {return e.Count;});
-                        //datax.unshift("Pazartesi");
-
-                        var ldatay = jd.map(function(e) {return e.Tarih;});
-                        console.log("Week",ldatay);
-                        //chart.data.datasets[0].data = datax;
-                        chart.data.labels = ldatay;
+                updateConfigByMutating(window.myBarChart);
+                updateConfigByMutating2(window.myBarChart);
+                function updateConfigByMutating(chart) {
+                    var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        //console.log("jd",jd);
+                        var datax = jd.map(function(e) {return e.Tarih;});
+                        //console.log("Tarih",datax);
+                        var datay = jd.map(function(e) {return e.Giris; });
+                        //console.log("tcounty",datay);
+                        chart.data.labels = datax;
+                        chart.data.datasets[1].data = datay;
                         chart.update();
                     });
+                }
+                function updateConfigByMutating2(chart) {
+                    var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        var datay = jd.map(function(e) {return e.Giris;});
+                        console.log("Son Tarih",datay);
+                        chart.data.datasets[0].data = datay;
+                        chart.update();
+                    });
+                }
+                function init() {
+                    //Chart declaration:
+                    if (window.myBarChart != undefined)
+                        window.myBarChart.destroy();
+                    window.myBarChart = new Chart(ctx, {
+                        type: chartType,
+                        data: data,
+                        options: options
+                    });
+                }
+                <!-- /Default Bar Script Data-->
 
+                <!-- LineChart Script -->
+                // Line chart
+                var canvas = document.getElementById("lineChart");
+                var ctx = canvas.getContext('2d');
+                var chartType = 'line';
+                var data = {
+                    labels: [],
+                    datasets: [{
+                        label: [],
+                        backgroundColor: "rgba(38, 185, 154, 0.35)",
+                        borderColor: "rgba(38, 185, 154, 0.7)",
+                        pointBorderColor: "rgba(38, 185, 154, 0.7)",
+                        pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'center',
+                            anchor: 'center'
+                        },
+                        data: []
+                    }, {
+                        label: [],
+                        backgroundColor: "rgba(3, 88, 106, 0.35)",
+                        borderColor: "rgba(3, 88, 106, 0.70)",
+                        pointBorderColor: "rgba(3, 88, 106, 0.70)",
+                        pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+                        pointHoverBackgroundColor: "#fff",
+                        pointHoverBorderColor: "rgba(151,187,205,1)",
+                        pointBorderWidth: 1,
+                        datalabels: {
+                            align: 'center',
+                            anchor: 'center'
+                        },
+                        data: []
+                    }]
+                };
+
+                initLineChart();
+
+                updateConfigByLine(window.lineChart);
+                updateConfigByLine2(window.lineChart);
+
+                function updateConfigByLine(chart) {
+                    var myObject = {name: picker.startDate.locale('tr').format('W'), s: "submit"};
+                    $.getJSON("../../wcountSearch.php", myObject, function(jd) {
+                        //console.log("jd",jd);
+                        var ldatax = jd.map(function(e) {return e.Week; });
+                        console.log("Week",ldatax);
+                        var ldatay = jd.map(function(e) {return e.Trafik; });
+                        console.log("Trafik",ldatay);
+                        chart.data.labels = ldatax;
+                        chart.data.datasets[0].data = ldatay;
+                        chart.data.datasets[0].label = picker.startDate.locale('tr').format('W') + ". Hafta";
+                        chart.update();
+
+                        var total = 0;
+                        for (i = 0; i < jd.length; i++) {
+                            total += parseInt(jd[i].Trafik);
+                        }
+
+                        text = "<tr>";
+                        for (i = 0; i < ldatay.length; i++) {
+                            text += "<tr><td>" + ldatax[i] + "</td>";
+                            text += "<td>" + ldatay[i] + "</td>";
+                            text += "<td>" + "--" + "</td>";
+                            text += "<td>" + "%" + "</td></tr>";
+                        }
+                        text += "</tr>";
+                        document.getElementById("totalWeek").innerHTML = total;
+                        document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('W');
+                        document.getElementById("theWeek").innerHTML = text;
+
+                    });
+                }
+                function updateConfigByLine2(chart) {
+                    var myObject = {name: picker.endDate.locale('tr').format('W'), s: "submit"};
+                    $.getJSON("../../wcountSearch.php", myObject, function(jd) {
+                        var ldatay = jd.map(function(e) {return e.Trafik;});
+                        console.log("Week",ldatay);
+                        chart.data.datasets[1].data = ldatay;
+                        chart.data.datasets[1].label = picker.endDate.locale('tr').format('W') + ". Hafta";
+                        chart.update();
+                    });
+                }
+                function initLineChart() {
+                    //Chart declaration:
+                    if (window.lineChart != undefined)
+                        window.lineChart.destroy();
+                    window.lineChart = new Chart(ctx, {
+                        type: chartType,
+                        data: data,
+                        plugins: {
+                            datalabels: {
+                                color: '#536c86',
+                                font: {
+                                    weight: 'bold'
+                                },
+
+                                title: false
+                            }
+                        }
+                    });
                 }
 
-                function initDayChart() {
-                    // Chart declaration:
-                    if (window.myBarChartDay != undefined)
-                    //window.lineChart.destroy();
-                        window.myBarChartDay = new Chart(ctx, {
-                            type: chartType,
-                            data: data,
-                            options: options
-                        });
 
-                }
-
-                <!-- /Default Daily Trend Scriptt -->
+                <!-- /LineChart Script -->
 
 
 
