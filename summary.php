@@ -510,7 +510,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         var ldatay = jd.map(function(e) {return e.Tarih;});
                         //console.log("Week",ldatay);
-                        chart.dataDay.datasets[0].data = datax;
+                        chart.dataDay.datasets.data = datax;
                         chart.dataDay.labels = ldatay;
                         chart.update();
                     });
