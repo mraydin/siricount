@@ -821,7 +821,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 return e.Tarih;
                             });
                             //console.log("tcounty",datay);
-                            chart.data.datasets.data = datay;
+                            chart.data.datasets[0].data = datay;
                             chart.data.datasets.labels = datax;
                             chart.update();
 
