@@ -442,11 +442,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
                     $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                         //console.log("jd",jd);
-                        //var datax = jd.map(function(e) {return e.Tarih;});
+                        var datax = jd.map(function(e) {return e.Tarih;});
                         //console.log("Tarih",datax);
                         var datay = jd.map(function(e) {return e.Giris; });
                         //console.log("tcounty",datay);
-                        //chart.data.labels = datax;
+                        chart.data.labels = datax;
                         chart.data.datasets[1].data = datay;
                         chart.update();
                     });
