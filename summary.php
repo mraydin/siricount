@@ -567,7 +567,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 }
 
                 function initd() {
-                    if (window.myBarChartd != undefined)
+                    if (window.myBarChart != undefined)
                     // Chart declaration:
                     window.myBarChartd = new Chart(ctxd, {
                         type: chartTyped,
