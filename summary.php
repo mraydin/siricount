@@ -747,7 +747,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     var chartTyped = 'bar';
                     var myBarChartd;
                     var datad = {
-                        labels: [1,2,3,4],
+                        labels: [],
                         datasets: [{
                             label: "Aylık Ziyaret",
                             fill: true,
