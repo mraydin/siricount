@@ -551,7 +551,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         async: false,
                         dataType: 'json',
                         success: function (resp) {
-                            datax = resp.map(function(e) {return e.Count;});
+                            datax = resp.map(function(e) {return e.Giris;});
                             //datax.unshift("Pazartesi");
                             datatarih = resp.map(function(e) {return e.Tarih;});
                             //datatarih.unshift("Month");
@@ -818,12 +818,12 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             });
                             console.log("DayCountTarih: ", datax);
                             var datay = jd.map(function(e) {
-                                return e.Count;
+                                return e.Giris;
                             });
                             console.log("DayCount: ", datay);
 
                             //console.log("tcounty",datay);
-                            //chart.data.datasets.labels = datax;
+                            chart.data.datasets.labels = datax;
                             chart.data.datasets[0].data = datay;
                             chart.update();
 
