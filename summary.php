@@ -737,6 +737,112 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
 
+                    <!-- Default Daily Trend Script -->
+
+                    console.log("Month Value", getMonthValue().datax);
+
+                    // Bar chart
+                    var canvasd = document.getElementById("mydaychart");
+                    var ctxd = canvasd.getContext('2d');
+                    // We are only changing the chart type, so let's make that a global variable along with the chart object:
+                    var chartTyped = 'bar';
+                    var myBarChartd;
+                    var datad = {
+                        labels: getMonthValue().datatarih,
+                        datasets: [{
+                            label: "Aylık Ziyaret",
+                            fill: true,
+                            lineTension: 0.1,
+                            backgroundColor: "rgba(3, 88, 106,0.6)",
+                            borderCapStyle: 'square',
+                            pointBorderColor: "white",
+                            pointBackgroundColor: "green",
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: "yellow",
+                            pointHoverBorderColor: "green",
+                            pointHoverBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHitRadius: 10,
+                            data: getMonthValue().datax,
+                            spanGaps: true,
+                            datalabels: {
+                                align: 'end',
+                                anchor: 'end'
+                            }
+                        }]
+                    };
+
+                    // Notice the scaleLabel at the same level as Ticks
+                    var optionsd = {
+                        layout: {
+                            padding: {
+                                left: 0,
+                                right: 0,
+                                top: 20,
+                                bottom: 0
+                            }
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: 500,
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        title: {
+                            fontSize: 12,
+                            display: false,
+                            text: 'Aylık Ziyaret Tablosu',
+                            position: 'top'
+                        }
+                    };
+
+
+                    initd();
+
+
+                    function getMonthValue() {
+
+                        var datax;
+                        var datatarih;
+                        $.ajax({
+                            type: 'GET',
+                            url: "../../daycountSearch.php?s=submit"+"name="+picker.startDate.locale('tr').format('DD')+"surname="
+                            +picker.endDate.locale('tr').format('DD'),
+                            async: false,
+                            dataType: 'json',
+                            success: function (resp) {
+                                datax = resp.map(function(e) {return e.Count;});
+                                //datax.unshift("Pazartesi");
+                                datatarih = resp.map(function(e) {return e.Tarih;});
+                                //datatarih.unshift("Month");
+                                //console.log ("Resp",datax);
+                            }
+                        });
+                        return { datax: datax,
+                            datatarih: datatarih}
+                    }
+
+                    function initd() {
+                        // Chart declaration:
+                        window.myBarChartd = new Chart(ctxd, {
+                            type: chartTyped,
+                            data: datad,
+                            options: optionsd
+                        });
+
+                    }
+
+
+                    <!-- /Default Daily Trend Script -->
+
+
+
+
 
                 });
                 $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
