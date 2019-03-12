@@ -430,6 +430,16 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 beginAtZero: true
                             }
                         }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            color: '#f6f1ff',
+                            font: {
+                                weight: 'bold'
+                            },
+
+                            title: false
+                        }
                     }
                 };
                 //destroyChart(myBarChart);
