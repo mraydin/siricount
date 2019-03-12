@@ -808,8 +808,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     function updategetMonthValue(chart) {
 
                         //chart.destroy();
-                        var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit",
-                        surname: picker.endDate.locale('tr').format('DD.MM.YYYY')};
+                        var myObject = {name: picker.startDate.locale('tr').format('DD'), s: "submit",
+                        surname: picker.endDate.locale('tr').format('DD')};
 
                         $.getJSON("../../daycountSearch.php",myObject, function(jd) {
                             //console.log("jd",jd);
