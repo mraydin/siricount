@@ -817,14 +817,14 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 return e.Tarih;
                             });
                             console.log("DayCountTarih: ", datax);
-                            var datay = jd.map(function(e) {
-                                return e.Count;
-                            });
-                            console.log("DayCount: ", datay);
+                            // var datay = jd.map(function(e) {
+                            //     return e.Count;
+                            // });
+                            // console.log("DayCount: ", datay);
 
                             //console.log("tcounty",datay);
                             chart.data.datasets.labels = datax;
-                            chart.data.datasets[0].data = datay;
+                            //chart.data.datasets[0].data = datay;
                             chart.update();
 
                         });
