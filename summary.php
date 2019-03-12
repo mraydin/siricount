@@ -813,10 +813,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         $.getJSON("../../daycountSearch.php",myObject, function(jd) {
                             //console.log("jd",jd);
-                            // var datax = jd.map(function(e) {
-                            //     return e.Tarih;
-                            // });
-                            // console.log("DayCountTarih: ", datax);
+                            var datax = jd.map(function(e) {
+                                return e.Tarih;
+                            });
+                            console.log("DayCountTarih: ", datax);
                             var datay = jd.map(function(e) {
                                 return e.Count;
                             });
