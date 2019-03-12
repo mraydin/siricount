@@ -475,6 +475,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                 <!-- Default Daily Trend Script -->
 
+                console.log("Month Value", getMonthValue().datax);
 
                 // Bar chart
                 var canvasd = document.getElementById("mydaychart");
@@ -483,7 +484,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 var chartTyped = 'bar';
                 var myBarChartd;
                 var datad = {
-                    labels: [],
+                    labels: getMonthValue().datatarih,
                     datasets: [{
                         label: "Aylık Ziyaret",
                         fill: true,
@@ -499,7 +500,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         pointHoverBorderWidth: 2,
                         pointRadius: 4,
                         pointHitRadius: 10,
-                        data: [],
+                        data: getMonthValue().datax,
                         spanGaps: true,
                         datalabels: {
                             align: 'end',
@@ -538,36 +539,30 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
                 initd();
-                updategetMonthValue(window.myBarChartd);
 
 
-                function updategetMonthValue(chart) {
+                function getMonthValue() {
 
-                    //chart.destroy();
-                    //var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit",
-                       // surname: picker.endDate.locale('tr').format('DD.MM.YYYY')};
-
-                    $.getJSON("../../daycount.php", function(jd) {
-                        //console.log("jd",jd);
-                        var datay = jd.map(function(e) {
-                            return e.Count;
-                        });
-                        console.log("DayCount: ", datay);
-                        var datax = jd.map(function(e) {
-                            return e.Tarih;
-                        });
-                        console.log("DayCountTarih: ", datax);
-                        //console.log("tcounty",datay);
-                        chart.data.datasets[0].data = datay;
-                        chart.data.datasets.labels = datax;
-                        chart.update();
-
+                    var datax;
+                    var datatarih;
+                    $.ajax({
+                        type: 'GET',
+                        url: "../../daycount.php",
+                        async: false,
+                        dataType: 'json',
+                        success: function (resp) {
+                            datax = resp.map(function(e) {return e.Count;});
+                            //datax.unshift("Pazartesi");
+                            datatarih = resp.map(function(e) {return e.Tarih;});
+                            //datatarih.unshift("Month");
+                            //console.log ("Resp",datax);
+                        }
                     });
-
+                    return { datax: datax,
+                        datatarih: datatarih}
                 }
 
                 function initd() {
-                    if (window.myBarChart != undefined)
                     // Chart declaration:
                     window.myBarChartd = new Chart(ctxd, {
                         type: chartTyped,
