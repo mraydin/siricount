@@ -499,7 +499,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         label: "Aylık Ziyaret",
                         fill: true,
                         lineTension: 0.1,
-                        backgroundColor: "rgba(3, 88, 106,0.6)",
+                        backgroundColor: "rgba(38, 185, 154, 0.65)",
                         borderCapStyle: 'square',
                         pointBorderColor: "white",
                         pointBackgroundColor: "green",
@@ -641,6 +641,16 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     beginAtZero: true
                                 }
                             }]
+                        },
+                        plugins: {
+                            datalabels: {
+                                color: '#f6f1ff',
+                                font: {
+                                    weight: 'bold'
+                                },
+
+                                title: false
+                            }
                         }
                     };
                     //destroyChart(myBarChart);
@@ -762,7 +772,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             label: "Aylık Ziyaret",
                             fill: true,
                             lineTension: 0.1,
-                            backgroundColor: "rgba(3, 88, 106,0.6)",
+                            backgroundColor: "rgba(38, 185, 154, 0.65)",
                             borderCapStyle: 'square',
                             pointBorderColor: "white",
                             pointBackgroundColor: "green",
