@@ -551,7 +551,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         async: false,
                         dataType: 'json',
                         success: function (resp) {
-                            datax = resp.map(function(e) {return e.Giris;});
+                            datax = resp.map(function(e) {return e.Count;});
                             //datax.unshift("Pazartesi");
                             datatarih = resp.map(function(e) {return e.Tarih;});
                             //datatarih.unshift("Month");
