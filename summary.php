@@ -813,10 +813,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         surname: picker.endDate.locale('tr').format('DD.MM.YYYY')};
 
                         $.getJSON("../../daycountSearch.php",myObject, function(jd) {
-                            console.log("jd",jd);
+                            //console.log("jd",jd);
                             var datay = jd.map(function(e) {
                                 return e.Count;
                             });
+                            console.log("DayCount: ", datay);
                             var datax = jd.map(function(e) {
                                 return e.Tarih;
                             });
