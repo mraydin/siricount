@@ -653,7 +653,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             var datay = jd.map(function(e) {
                                 return e.Giris;
                             });
-                            console.log("tcounty",datay);
+                            //console.log("tcounty",datay);
                             chart.data.labels = datax;
                             chart.data.datasets[0].data = datay;
                             chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM');
@@ -822,7 +822,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             });
                             console.log("DayCount: ", datay);
 
-                            console.log("tcounty",datay);
+                            //console.log("tcounty",datay);
                             //chart.data.datasets.labels = datax;
                             chart.data.datasets[0].data = datay;
                             chart.update();
