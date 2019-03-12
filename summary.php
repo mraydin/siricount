@@ -739,7 +739,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                     <!-- Default Daily Trend Script -->
 
-                    console.log("Month Value", getMonthValue().datax);
 
                     // Bar chart
                     var canvasd = document.getElementById("mydaychart");
@@ -823,7 +822,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             });
                             //console.log("tcounty",datay);
                             chart.data.datasets[0].data = datay;
-                            chart.data.datasets[0].label = datax;
+                            chart.data.datasets.labels = datax;
                             chart.update();
 
                         });
