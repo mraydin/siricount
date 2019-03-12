@@ -820,6 +820,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             var datax = jd.map(function(e) {
                                 return e.Tarih;
                             });
+                            console.log("DayCountTarih: ", datax);
                             //console.log("tcounty",datay);
                             chart.data.datasets[0].data = datay;
                             chart.data.datasets.labels = datax;
