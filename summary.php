@@ -484,7 +484,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 var chartTyped = 'bar';
                 var myBarChartd;
                 var datad = {
-                    labels: getMonthValue().datatarih,
+                    labels: [],
                     datasets: [{
                         label: "Aylık Ziyaret",
                         fill: true,
@@ -500,7 +500,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         pointHoverBorderWidth: 2,
                         pointRadius: 4,
                         pointHitRadius: 10,
-                        data: getMonthValue().datax,
+                        data: [],
                         spanGaps: true,
                         datalabels: {
                             align: 'end',
@@ -541,25 +541,29 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 initd();
 
 
-                function getMonthValue() {
+                function updategetMonthValue(chart) {
 
-                    var datax;
-                    var datatarih;
-                    $.ajax({
-                        type: 'GET',
-                        url: "../../daycount.php",
-                        async: false,
-                        dataType: 'json',
-                        success: function (resp) {
-                            datax = resp.map(function(e) {return e.Count;});
-                            //datax.unshift("Pazartesi");
-                            datatarih = resp.map(function(e) {return e.Tarih;});
-                            //datatarih.unshift("Month");
-                            //console.log ("Resp",datax);
-                        }
+                    //chart.destroy();
+                    //var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit",
+                       // surname: picker.endDate.locale('tr').format('DD.MM.YYYY')};
+
+                    $.getJSON("../../daycount.php", function(jd) {
+                        //console.log("jd",jd);
+                        var datay = jd.map(function(e) {
+                            return e.Count;
+                        });
+                        console.log("DayCount: ", datay);
+                        var datax = jd.map(function(e) {
+                            return e.Tarih;
+                        });
+                        console.log("DayCountTarih: ", datax);
+                        //console.log("tcounty",datay);
+                        chart.data.datasets[0].data = datay;
+                        chart.data.datasets.labels = datax;
+                        chart.update();
+
                     });
-                    return { datax: datax,
-                        datatarih: datatarih}
+
                 }
 
                 function initd() {
