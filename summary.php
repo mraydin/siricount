@@ -813,18 +813,18 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         $.getJSON("../../daycountSearch.php",myObject, function(jd) {
                             //console.log("jd",jd);
-                            var datax = jd.map(function(e) {
-                                return e.Tarih;
-                            });
-                            console.log("DayCountTarih: ", datax);
-                            // var datay = jd.map(function(e) {
-                            //     return e.Count;
+                            // var datax = jd.map(function(e) {
+                            //     return e.Tarih;
                             // });
-                            // console.log("DayCount: ", datay);
+                            // console.log("DayCountTarih: ", datax);
+                            var datay = jd.map(function(e) {
+                                return e.Count;
+                            });
+                            console.log("DayCount: ", datay);
 
-                            //console.log("tcounty",datay);
-                            chart.data.datasets.labels = datax;
-                            //chart.data.datasets[0].data = datay;
+                            console.log("tcounty",datay);
+                            //chart.data.datasets.labels = datax;
+                            chart.data.datasets[0].data = datay;
                             chart.update();
 
                         });
