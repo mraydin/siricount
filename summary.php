@@ -433,7 +433,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     },
                     plugins: {
                         datalabels: {
-                            color: '#f6f1ff',
+                            color: '#ffffff',
                             font: {
                                 weight: 'bold'
                             },
@@ -644,7 +644,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         },
                         plugins: {
                             datalabels: {
-                                color: '#f6f1ff',
+                                color: '#ffffff',
                                 font: {
                                     weight: 'bold'
                                 },
