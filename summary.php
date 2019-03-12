@@ -823,7 +823,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             console.log("DayCount: ", datay);
 
                             //console.log("tcounty",datay);
-                            chart.data.datasets[0].labels = datax;
+                            chart.data.labels = datax;
                             chart.data.datasets[0].data = datay;
                             chart.update();
 
