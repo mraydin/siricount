@@ -224,7 +224,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th><b id="weekName"></b>.Hafta</th>
+                                            <th><b id="weekName"></b></th>
                                             <th>Bugün</th>
                                             <th>Dün</th>
                                             <th>Değişim</th>
