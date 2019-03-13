@@ -771,7 +771,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             }
                             var oranTotal = 0;
                             for (i = 0; i < jd.length; i++) {
-                                oranTotal += (((parseInt(prejd[i].Giris) - parseInt(jd[i].Giris)) / parseInt(jd[i].Giris)) * 100);
+                                oranTotal += (((pretotal - total) / total) * 100);
                                 if (oranTotal > 0) {
                                     iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
@@ -803,7 +803,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             document.getElementById("theWeek").innerHTML = text;
                             document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("preweekName").innerHTML  = picker.endDate.locale('tr').format('DD.MM.YYYY');
-                            document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
+                            document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal.toFixed(0) ;
                         });
 
                         });
