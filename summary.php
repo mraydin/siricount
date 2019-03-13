@@ -760,7 +760,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                             //var predatax = prejd.map(function(e) {return e.Tarih;});
                             var predatay = prejd.map(function(e) {return e.Giris;});
-                            if (predatay === undefined) {
+                            if (predatay == null) {
 
                                 predatay = 0;
                             }
