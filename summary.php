@@ -235,8 +235,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                         <tfoot>
                                         <tr>
                                             <td>Toplam</td>
+                                            <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
-                                            <td>--</td>
                                             <td>%-</td>
                                         </tr>
                                         </tfoot>
@@ -506,6 +506,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
+                        document.getElementById("pretotalWeek").innerHTML = pretotal;
                         document.getElementById("theWeek").innerHTML = text;
                         document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
                         document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
