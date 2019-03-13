@@ -503,10 +503,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
                             }
                             if (oranTotal > 0) {
-                                icon = "<i" + "id='fa fa-sort-asc'" + "></i>";
+                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:red" + "></i> ";
 
                             } else if (oranTotal < 0) {
-                                icon = "<i " + "class='fa fa-sort-asc'" + "></i>";
+                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:lightgreen" + "></i> ";
                             }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
