@@ -506,7 +506,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 icon = "<i" + "id='fa fa-sort-asc'" + "></i>";
 
                             } else if (oranTotal < 0) {
-                                icon = "<i " + "id='fa fa-sort-asc'" + "></i>";
+                                icon = "<i " + "class='fa fa-sort-asc'" + "></i>";
                             }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
