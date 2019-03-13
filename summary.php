@@ -237,8 +237,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                             <td>Toplam</td>
                                             <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
-                                            <td><?php if ("<b id='totalweekName'></b>">0)
-                                                            echo "Büyük"; ?><b id="totalweekName"></b>%</td>
+                                            <td><b id="totalweekName"></b>%</td>
                                         </tr>
                                         </tfoot>
                                     </table>
@@ -491,6 +490,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         //var predatax = prejd.map(function(e) {return e.Tarih;});
                         var predatay = prejd.map(function(e) {return e.Giris;});
                             var pretotal = 0;
+                            var icon = null;
                             for (i = 0; i < prejd.length; i++) {
                                 pretotal += parseInt(prejd[i].Giris);
                             }
@@ -502,12 +502,18 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             for (i = 0; i < jd.length; i++) {
                                 oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
                             }
+                            if (oranTotal > 0) {
+                                icon = "<i" + "fa fa-sort-asc" + "></i>";
+
+                            } else if (oranTotal < 0) {
+                                icon = "<i" + "fa fa-sort-asc" + "></i>";
+                            }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
-                            text += "<td>" +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
+                            text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
