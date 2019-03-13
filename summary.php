@@ -760,10 +760,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                             //var predatax = prejd.map(function(e) {return e.Tarih;});
                             var predatay = prejd.map(function(e) {return e.Giris;});
-                            if (predatay == null) {
 
-                                predatay = 0;
-                            }
                             console.log("PreDatay :", predatay);
 
                             var pretotal = 0;
@@ -799,6 +796,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 }
                                 text += "<tr><td>" + datax[i] + "</td>";
                                 text += "<td>" + datay[i] + "</td>";
+                                if (predatay[i] === undefined) {
+
+                                    predatay[i] = 0;
+                                }
                                 text += "<td>" + predatay[i] + "</td>";
                                 text += "<td>" + icon +  (((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                             }
