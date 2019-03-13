@@ -235,8 +235,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                         <tfoot>
                                         <tr>
                                             <td>Toplam</td>
-                                            <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
+                                            <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalweekName"></b>%</td>
                                         </tr>
                                         </tfoot>
@@ -801,7 +801,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             document.getElementById("totalWeek").innerHTML = total;
                             document.getElementById("pretotalWeek").innerHTML = pretotal;
                             document.getElementById("theWeek").innerHTML = text;
-                            document.getElementById("weekName").innerHTML = picker.preDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("preweekName").innerHTML  = picker.endDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
                         });
