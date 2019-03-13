@@ -490,10 +490,11 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         //var predatax = prejd.map(function(e) {return e.Tarih;});
                         var predatay = prejd.map(function(e) {return e.Giris;});
                             var pretotal = 0;
-                            var icon;
+
                             for (i = 0; i < prejd.length; i++) {
                                 pretotal += parseInt(prejd[i].Giris);
                             }
+                            var icon;
                         var total = 0;
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
@@ -502,14 +503,15 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             for (i = 0; i < jd.length; i++) {
                                 oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
                             }
-                            if (oranTotal > 0) {
-                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:lightgreen" + "></i> ";
 
-                            } else if (oranTotal < 0) {
-                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
-                            }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
+                            if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) > 0) {
+                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:lightgreen" + "></i> ";
+
+                            } else if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) < 0) {
+                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
+                            }
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
