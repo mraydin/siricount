@@ -502,7 +502,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
-                            text += "<td>" + "%" + "</td></tr>";
+                            text += "<td>" +  (((datay[i].Giris - predatay[i].Giris) / predatay[i].Giris) * 100).toFixed(0 + "</td></tr>";
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
