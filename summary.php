@@ -497,6 +497,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
                         }
+                            var oranTotal = 0;
                             for (i = 0; i < jd.length; i++) {
                                 oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100).toFixed(0);
                             }
