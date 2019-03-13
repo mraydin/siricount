@@ -237,7 +237,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                             <td>Toplam</td>
                                             <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
-                                            <td>%<b id="totalweekName"></b></td>
+                                            <td><b id="totalweekName"></b>%</td>
                                         </tr>
                                         </tfoot>
                                     </table>
@@ -499,7 +499,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         }
                             var oranTotal = 0;
                             for (i = 0; i < jd.length; i++) {
-                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100).toFixed(0);
+                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
                             }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
