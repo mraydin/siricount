@@ -475,8 +475,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 updateConfigByMutating2(window.myBarChart);
                 function updateConfigByMutating(chart) {
                     var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+                    var preObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
                     $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                         //console.log("jd",jd);
+                        $.getJSON("../../tcountSearch.php",preObject, function(prejd) {
                         var datax = jd.map(function(e) {return e.Tarih;});
                         //console.log("Tarih",datax);
                         var datay = jd.map(function(e) {return e.Giris; });
@@ -484,6 +486,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         chart.data.labels = datax;
                         chart.data.datasets[1].data = datay;
                         chart.update();
+
+
                         var total = 0;
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
@@ -499,6 +503,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         document.getElementById("totalWeek").innerHTML = total;
                         document.getElementById("theWeek").innerHTML = text;
                         document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
+                        });
                     });
                 }
                 function updateConfigByMutating2(chart) {
