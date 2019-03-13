@@ -735,8 +735,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     function updateConfigByMutating(chart) {
                         //chart.destroy();
                         var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
+                        var preObject = {name: picker.endDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
 
                         $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                            $.getJSON("../../tcountSearch.php",preObject, function(prejd) {
                             console.log("jd",jd);
                             var datax = jd.map(function(e) {
                                 return e.Tarih;
@@ -749,12 +751,60 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             chart.data.labels = datax;
                             chart.data.datasets[0].data = datay;
                             chart.data.datasets[0].label = picker.startDate.locale('tr').format('D MMMM');
-
-
 //		 chart.data.labels = ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012",
 //"2013", "2014", "2015", "2016"];
                             //   		chart.data.datasets[0].data = [10, 13, 17, 12, 30, 47, 60, 120, 230, 300, 310, 400];
                             chart.update();
+
+
+                            //var predatax = prejd.map(function(e) {return e.Tarih;});
+                            var predatay = prejd.map(function(e) {return e.Giris;});
+                            var pretotal = 0;
+
+                            for (i = 0; i < prejd.length; i++) {
+                                pretotal += parseInt(prejd[i].Giris);
+                            }
+                            var icon, iconTotal;
+                            var total = 0;
+                            for (i = 0; i < jd.length; i++) {
+                                total += parseInt(jd[i].Giris);
+                            }
+                            var oranTotal = 0;
+                            for (i = 0; i < jd.length; i++) {
+                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
+                                if (oranTotal > 0) {
+                                    iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
+
+                                } else if (oranTotal < 0) {
+                                    iconTotal = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
+                                } else {
+                                    iconTotal = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
+                                }
+                            }
+
+                            text = "<tr>";
+                            for (i = 0; i < datay.length; i++) {
+                                if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) > 0) {
+                                    icon = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
+
+                                } else if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) < 0) {
+                                    icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
+                                } else {
+                                    icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
+                                }
+                                text += "<tr><td>" + datax[i] + "</td>";
+                                text += "<td>" + predatay[i] + "</td>";
+                                text += "<td>" + datay[i] + "</td>";
+                                text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
+                            }
+                            text += "</tr>";
+                            document.getElementById("totalWeek").innerHTML = total;
+                            document.getElementById("pretotalWeek").innerHTML = pretotal;
+                            document.getElementById("theWeek").innerHTML = text;
+                            document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("preweekName").innerHTML  = picker.endDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
+                        });
 
                         });
                     }
