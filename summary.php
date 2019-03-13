@@ -494,7 +494,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             for (i = 0; i < prejd.length; i++) {
                                 pretotal += parseInt(prejd[i].Giris);
                             }
-                            var icon;
+                            var icon, iconTotal;
                         var total = 0;
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
@@ -502,6 +502,14 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             var oranTotal = 0;
                             for (i = 0; i < jd.length; i++) {
                                 oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
+                                if (oranTotal > 0) {
+                                    iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
+
+                                } else if (oranTotal < 0) {
+                                    iconTotal = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
+                                } else {
+                                    iconTotal = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
+                                }
                             }
 
                         text = "<tr>";
@@ -525,7 +533,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         document.getElementById("theWeek").innerHTML = text;
                         document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
                         document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
-                        document.getElementById("totalweekName").innerHTML  = oranTotal ;
+                        document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
                         });
                     });
                 }
