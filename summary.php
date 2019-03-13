@@ -489,7 +489,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             total += parseInt(jd[i].Giris);
                         }
                         text = "<tr>";
-                        for (i = 0; i < ldatay.length; i++) {
+                        for (i = 0; i < datay.length; i++) {
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + "--" + "</td>";
