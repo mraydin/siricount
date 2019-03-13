@@ -771,7 +771,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             }
                             var oranTotal = 0;
                             for (i = 0; i < jd.length; i++) {
-                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
+                                oranTotal += (((parseInt(prejd[i].Giris) - parseInt(jd[i].Giris)) / parseInt(jd[i].Giris)) * 100);
                                 if (oranTotal > 0) {
                                     iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
