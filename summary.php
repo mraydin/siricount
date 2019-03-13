@@ -225,8 +225,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                         <thead>
                                         <tr>
                                             <th><b id="weekName"></b>.Hafta</th>
-                                            <th>Bu Yıl</th>
-                                            <th>Geçen Yıl</th>
+                                            <th>Bugün</th>
+                                            <th>Dün</th>
                                             <th>Değişim</th>
                                         </tr>
                                         </thead>
