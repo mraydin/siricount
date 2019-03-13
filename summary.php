@@ -795,6 +795,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                                 }
                                 text += "<tr><td>" + datax[i] + "</td>";
+                                if (datay[i] === undefined) {
+
+                                    datay[i] = 0;
+                                }
                                 text += "<td>" + datay[i] + "</td>";
                                 if (predatay[i] === undefined) {
 
