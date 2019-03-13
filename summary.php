@@ -225,8 +225,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                         <thead>
                                         <tr>
                                             <th><b>Saatler</b></th>
-                                            <th><b id="preweekName"></b></th>
                                             <th><b id="weekName"></b></th>
+                                            <th><b id="preweekName"></b></th>
                                             <th>Değişim</th>
                                         </tr>
                                         </thead>
@@ -784,10 +784,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                             text = "<tr>";
                             for (i = 0; i < datay.length; i++) {
-                                if (((((datay[i] - predatay[i]) / predatay[i]) * 100)*(-1)).toFixed(0) > 0) {
+                                if ((((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) > 0) {
                                     icon = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
-                                } else if (((((datay[i] - predatay[i]) / predatay[i]) * 100)*(-1)).toFixed(0) < 0) {
+                                } else if ((((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) < 0) {
                                     icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
                                 } else {
                                     icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
@@ -795,14 +795,14 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 text += "<tr><td>" + datax[i] + "</td>";
                                 text += "<td>" + datay[i] + "</td>";
                                 text += "<td>" + predatay[i] + "</td>";
-                                text += "<td>" + icon +  ((((datay[i] - predatay[i]) / predatay[i]) * 100)*(-1)).toFixed(0) + "%" + "</td></tr>";
+                                text += "<td>" + icon +  (((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                             }
                             text += "</tr>";
-                            document.getElementById("totalWeek").innerHTML = pretotal;
-                            document.getElementById("pretotalWeek").innerHTML = total;
+                            document.getElementById("totalWeek").innerHTML = total;
+                            document.getElementById("pretotalWeek").innerHTML = pretotal;
                             document.getElementById("theWeek").innerHTML = text;
-                            document.getElementById("weekName").innerHTML = picker.endDate.locale('tr').format('DD.MM.YYYY');
-                            document.getElementById("preweekName").innerHTML  = picker.startDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("weekName").innerHTML = picker.preDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("preweekName").innerHTML  = picker.endDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
                         });
 
