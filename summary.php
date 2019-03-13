@@ -523,16 +523,16 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                             }
                             text += "<tr><td>" + datax[i] + "</td>";
-                            text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
+                            text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
                         document.getElementById("pretotalWeek").innerHTML = pretotal;
                         document.getElementById("theWeek").innerHTML = text;
-                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
-                        document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
+                        document.getElementById("weekName").innerHTML = moment().subtract(1, 'days').locale('tr').format('DD.MM.YYYY');
+                        document.getElementById("preweekName").innerHTML  = moment().format('DD.MM.YYYY');
                         document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal.toFixed(0) ;
                         });
                     });
