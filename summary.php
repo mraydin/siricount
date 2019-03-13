@@ -798,8 +798,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                             }
                             text += "</tr>";
-                            document.getElementById("totalWeek").innerHTML = total;
-                            document.getElementById("pretotalWeek").innerHTML = pretotal;
+                            document.getElementById("totalWeek").innerHTML = pretotal;
+                            document.getElementById("pretotalWeek").innerHTML = total;
                             document.getElementById("theWeek").innerHTML = text;
                             document.getElementById("weekName").innerHTML = picker.endDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("preweekName").innerHTML  = picker.startDate.locale('tr').format('DD.MM.YYYY');
