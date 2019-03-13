@@ -224,9 +224,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
+                                            <th><b>Saatler</b></th>
+                                            <th><b id="preweekName"></b></th>
                                             <th><b id="weekName"></b></th>
-                                            <th>Bugün</th>
-                                            <th>Dün</th>
                                             <th>Değişim</th>
                                         </tr>
                                         </thead>
@@ -500,15 +500,15 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
                             text += "<tr><td>" + datax[i] + "</td>";
-                            text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
+                            text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + "%" + "</td></tr>";
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
                         document.getElementById("theWeek").innerHTML = text;
-                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY')+"-"+
-                            moment().subtract(1, 'days').format('DD.MM.YYYY');
+                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
+                        document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
                         });
                     });
                 }
