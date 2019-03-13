@@ -764,6 +764,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                                 predatay = 0;
                             }
+                            console.log("PreDatay :", predatay);
 
                             var pretotal = 0;
 
