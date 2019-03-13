@@ -507,10 +507,12 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
                             if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) > 0) {
-                                icon = "<i " + "class='fa fa-sort-desc'" + "style=color:lightgreen" + "></i> ";
+                                icon = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
                             } else if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) < 0) {
                                 icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
+                            } else {
+                                icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                             }
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
