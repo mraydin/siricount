@@ -784,10 +784,10 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                             text = "<tr>";
                             for (i = 0; i < datay.length; i++) {
-                                if ((((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) > 0) {
+                                if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) > 0) {
                                     icon = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
-                                } else if ((((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) < 0) {
+                                } else if ((((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) < 0) {
                                     icon = "<i " + "class='fa fa-sort-desc'" + "style=color:palevioletred" + "></i> ";
                                 } else {
                                     icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
@@ -795,7 +795,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 text += "<tr><td>" + datax[i] + "</td>";
                                 text += "<td>" + predatay[i] + "</td>";
                                 text += "<td>" + datay[i] + "</td>";
-                                text += "<td>" + icon +  (((predatay[i] - datay[i]) / datay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
+                                text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                             }
                             text += "</tr>";
                             document.getElementById("totalWeek").innerHTML = total;
