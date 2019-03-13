@@ -476,32 +476,32 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 function updateConfigByMutating(chart) {
                     var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
                     var preObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
-                    $.getJSON("../../tcountSearch.php",preObject, function(jd) {
+                    $.getJSON("../../tcountSearch.php",preObject, function(prejd) {
                         //console.log("jd",jd);
-                        $.getJSON("../../tcountSearch.php",myObject, function(prejd) {
-                        var datax = jd.map(function(e) {return e.Tarih;});
+                        $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                        var datax = prejd.map(function(e) {return e.Tarih;});
                         //console.log("Tarih",datax);
-                        var datay = jd.map(function(e) {return e.Giris; });
+                        var datay = prejd.map(function(e) {return e.Giris; });
                         //console.log("tcounty",datay);
                         chart.data.labels = datax;
                         chart.data.datasets[1].data = datay;
                         chart.update();
 
                         //var predatax = prejd.map(function(e) {return e.Tarih;});
-                        var predatay = prejd.map(function(e) {return e.Giris;});
+                        var predatay = jd.map(function(e) {return e.Giris;});
                             var pretotal = 0;
 
-                            for (i = 0; i < prejd.length; i++) {
+                            for (i = 0; i < jd.length; i++) {
                                 pretotal += parseInt(prejd[i].Giris);
                             }
                             var icon, iconTotal;
                         var total = 0;
-                        for (i = 0; i < jd.length; i++) {
+                        for (i = 0; i < prejd.length; i++) {
                             total += parseInt(jd[i].Giris);
                         }
                             var oranTotal = 0;
-                            for (i = 0; i < jd.length; i++) {
-                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100);
+                            for (i = 0; i < prejd.length; i++) {
+                                oranTotal += (((parseInt(prejd[i].Giris) - parseInt(jd[i].Giris)) / parseInt(jd[i].Giris)) * 100);
                                 if (oranTotal > 0) {
                                     iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
