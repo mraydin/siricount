@@ -237,7 +237,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                             <td>Toplam</td>
                                             <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
-                                            <td>%-</td>
+                                            <td>%<b id="totalweekName"></b></td>
                                         </tr>
                                         </tfoot>
                                     </table>
@@ -497,12 +497,15 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
                         }
+                            for (i = 0; i < jd.length; i++) {
+                                oranTotal += (((parseInt(jd[i].Giris) - parseInt(prejd[i].Giris)) / parseInt(prejd[i].Giris)) * 100).toFixed(0);
+                            }
                         text = "<tr>";
                         for (i = 0; i < datay.length; i++) {
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
-                            text += "<td>" +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "</td></tr>";
+                            text += "<td>" + "%" + (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "</td></tr>";
                         }
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
@@ -510,6 +513,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         document.getElementById("theWeek").innerHTML = text;
                         document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
                         document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
+                        document.getElementById("totalweekName").innerHTML  = oranTotal ;
                         });
                     });
                 }
