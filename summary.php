@@ -224,7 +224,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th><b id="weekName"></b>.Hafta</th>
+                                            <th><b id="weekName"></b></th>
                                             <th>Bugün</th>
                                             <th>Dün</th>
                                             <th>Değişim</th>
@@ -507,7 +507,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
                         document.getElementById("theWeek").innerHTML = text;
-                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
+                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY')+"-"+
+                            moment().subtract(1, 'days').format('DD.MM.YYYY');
                         });
                     });
                 }
