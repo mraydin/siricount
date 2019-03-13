@@ -769,9 +769,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             for (i = 0; i < jd.length; i++) {
                                 total += parseInt(jd[i].Giris);
                             }
-                            var oranTotal = 0;
-                            for (i = 0; i < jd.length; i++) {
-                                oranTotal += (((pretotal - total) / total) * 100);
+
+                              var oranTotal = (((pretotal - total) / total) * 100);
                                 if (oranTotal > 0) {
                                     iconTotal = "<i " + "class='fa fa-sort-asc'" + "style=color:lightgreen" + "></i> ";
 
@@ -780,7 +779,6 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 } else {
                                     iconTotal = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                                 }
-                            }
 
                             text = "<tr>";
                             for (i = 0; i < datay.length; i++) {
