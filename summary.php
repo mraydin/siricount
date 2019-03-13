@@ -507,7 +507,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         text += "</tr>";
                         document.getElementById("totalWeek").innerHTML = total;
                         document.getElementById("theWeek").innerHTML = text;
-                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
+                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY')+"-"+
+                            moment().subtract(1, 'days').format('DD.MM.YYYY');
                         });
                     });
                 }
