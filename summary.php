@@ -476,9 +476,9 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 function updateConfigByMutating(chart) {
                     var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
                     var preObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
-                    $.getJSON("../../tcountSearch.php",preObject, function(jd) {
+                    $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                         //console.log("jd",jd);
-                        $.getJSON("../../tcountSearch.php",myObject, function(prejd) {
+                        $.getJSON("../../tcountSearch.php",preObject, function(prejd) {
                         var datax = jd.map(function(e) {return e.Tarih;});
                         //console.log("Tarih",datax);
                         var datay = jd.map(function(e) {return e.Giris; });
@@ -523,8 +523,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                             }
                             text += "<tr><td>" + datax[i] + "</td>";
-                            text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + predatay[i] + "</td>";
+                            text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                         }
                         text += "</tr>";
