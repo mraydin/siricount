@@ -533,7 +533,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         document.getElementById("theWeek").innerHTML = text;
                         document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
                         document.getElementById("preweekName").innerHTML  = moment().subtract(1, 'days').format('DD.MM.YYYY');
-                        document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
+                        document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal.toFixed(0) ;
                         });
                     });
                 }
