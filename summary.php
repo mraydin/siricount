@@ -489,6 +489,15 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
                         //var predatax = prejd.map(function(e) {return e.Tarih;});
                         var predatay = prejd.map(function(e) {return e.Giris;});
+
+                        if (predatay == undefined) {
+                            predatay = 0;
+
+                        } else {
+
+                            var xpredatay = predata;
+                        }
+
                             var pretotal = 0;
 
                             for (i = 0; i < prejd.length; i++) {
@@ -523,7 +532,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                 icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                             }
                             text += "<tr><td>" + datax[i] + "</td>";
-                            text += "<td>" + predatay[i] + "</td>";
+                            text += "<td>" + xpredatay[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
                             text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                         }
