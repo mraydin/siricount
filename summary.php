@@ -734,8 +734,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     updateConfigByMutating2(window.myBarChart);
                     function updateConfigByMutating(chart) {
                         //chart.destroy();
-                        var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
-                        var preObject = {name: picker.endDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
+                        var myObject = {name: picker.endDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
+                        var preObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
 
                         $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                             $.getJSON("../../tcountSearch.php",preObject, function(prejd) {
@@ -801,8 +801,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             document.getElementById("totalWeek").innerHTML = total;
                             document.getElementById("pretotalWeek").innerHTML = pretotal;
                             document.getElementById("theWeek").innerHTML = text;
-                            document.getElementById("weekName").innerHTML = picker.startDate.locale('tr').format('DD.MM.YYYY');
-                            document.getElementById("preweekName").innerHTML  = picker.endDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("weekName").innerHTML = picker.endDate.locale('tr').format('DD.MM.YYYY');
+                            document.getElementById("preweekName").innerHTML  = picker.startDate.locale('tr').format('DD.MM.YYYY');
                             document.getElementById("totalweekName").innerHTML  = iconTotal + oranTotal ;
                         });
 
