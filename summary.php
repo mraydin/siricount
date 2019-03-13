@@ -217,6 +217,35 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-8 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th><b id="weekName"></b>.Hafta</th>
+                                            <th>Bu Yıl</th>
+                                            <th>Geçen Yıl</th>
+                                            <th>Değişim</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="theWeek">
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td>Toplam</td>
+                                            <td><b id="totalWeek"></b></td>
+                                            <td>--</td>
+                                            <td>%-</td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Daily Trend -->
 
@@ -455,6 +484,21 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         chart.data.labels = datax;
                         chart.data.datasets[1].data = datay;
                         chart.update();
+                        var total = 0;
+                        for (i = 0; i < jd.length; i++) {
+                            total += parseInt(jd[i].Giris);
+                        }
+                        text = "<tr>";
+                        for (i = 0; i < ldatay.length; i++) {
+                            text += "<tr><td>" + ldatax[i] + "</td>";
+                            text += "<td>" + ldatay[i] + "</td>";
+                            text += "<td>" + "--" + "</td>";
+                            text += "<td>" + "%" + "</td></tr>";
+                        }
+                        text += "</tr>";
+                        document.getElementById("totalWeek").innerHTML = total;
+                        document.getElementById("theWeek").innerHTML = text;
+                        document.getElementById("weekName").innerHTML = moment().locale('tr').format('DD.MM.YYYY');
                     });
                 }
                 function updateConfigByMutating2(chart) {
