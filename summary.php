@@ -238,7 +238,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                             <td><b id="pretotalWeek"></b></td>
                                             <td><b id="totalWeek"></b></td>
                                             <td><?php if ("<b id='totalweekName'></b>">0)
-                                                            echo "Büyük" ?><b id="totalweekName"></b>%</td>
+                                                            echo "Büyük"; ?><b id="totalweekName"></b>%</td>
                                         </tr>
                                         </tfoot>
                                     </table>
