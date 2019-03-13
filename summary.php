@@ -487,7 +487,12 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         chart.data.datasets[1].data = datay;
                         chart.update();
 
-
+                        //var predatax = prejd.map(function(e) {return e.Tarih;});
+                        var predatay = prejd.map(function(e) {return e.Giris;});
+                            var pretotal = 0;
+                            for (i = 0; i < prejd.length; i++) {
+                                pretotal += parseInt(prejd[i].Giris);
+                            }
                         var total = 0;
                         for (i = 0; i < jd.length; i++) {
                             total += parseInt(jd[i].Giris);
@@ -496,7 +501,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         for (i = 0; i < datay.length; i++) {
                             text += "<tr><td>" + datax[i] + "</td>";
                             text += "<td>" + datay[i] + "</td>";
-                            text += "<td>" + "--" + "</td>";
+                            text += "<td>" + predatay[i] + "</td>";
                             text += "<td>" + "%" + "</td></tr>";
                         }
                         text += "</tr>";
