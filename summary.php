@@ -793,8 +793,8 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                                     icon = "<i " + "class='fa fa-sort'" + "style=color:lightsteelblue" + "></i> ";
                                 }
                                 text += "<tr><td>" + datax[i] + "</td>";
-                                text += "<td>" + datay[i] + "</td>";
                                 text += "<td>" + predatay[i] + "</td>";
+                                text += "<td>" + datay[i] + "</td>";
                                 text += "<td>" + icon +  (((datay[i] - predatay[i]) / predatay[i]) * 100).toFixed(0) + "%" + "</td></tr>";
                             }
                             text += "</tr>";
