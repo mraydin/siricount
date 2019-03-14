@@ -658,6 +658,10 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
             var saatoran = document.getElementById("beforehour").innerHTML =
                 (((myObj[0].BuSaat - myObj[0].SaatOran) / myObj[0].SaatOran) * 100).toFixed(0);
             console.log("SaatOran", saatoran);
+            if (saatoran == Infinity) {
+
+                saatoran = 0;
+            }
 
             if (myObj[0].YilOran == 0) {
                 var yiloran = document.getElementById("beforeyear").innerHTML = "-";
