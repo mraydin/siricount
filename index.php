@@ -651,10 +651,14 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
             document.getElementById("thisweek").innerHTML = myObj[0].BuHafta;
             document.getElementById("thishour").innerHTML = myObj[0].BuSaat;
             //document.getElementById("thisnow").innerHTML = myObj[0].Cikis-myObj[0].Giris;
+
             var oran = document.getElementById("beforeday").innerHTML =
                 (((myObj[0].Giris - myObj[0].DunOran) / myObj[0].DunOran) * 100).toFixed(0);
+
             var saatoran = document.getElementById("beforehour").innerHTML =
                 (((myObj[0].BuSaat - myObj[0].SaatOran) / myObj[0].SaatOran) * 100).toFixed(0);
+            console.log("SaatOran", saatoran);
+
             if (myObj[0].YilOran == 0) {
                 var yiloran = document.getElementById("beforeyear").innerHTML = "-";
             } else {
