@@ -1,14 +1,17 @@
-body.nav-sm .container.body .left_col {
+body.nav-sm .container.body .col-md-3.left_col {
   width: 70px;
   padding: 0;
   position: fixed;
   height: 100%;
   z-index: 200;
 }
-body.nav-sm .container.body .right_col {
-  padding: 10px 20px;
-  margin-left: 70px;
-  z-index: 2;
+body.nav-sm .container.body .col-md-3.right_col.menu_fixed {
+  position: fixed;
+  height: 100%;
+}
+body.nav-sm .container.body .col-md-3.left_col .mCSB_container,
+body.nav-sm .container.body .col-md-3.left_col .mCustomScrollBox {
+  overflow: visible;
 }
 body.nav-sm .navbar.nav_title {
   width: 70px;
@@ -186,8 +189,9 @@ body.nav-md .container.body .right_col {
     width: 100%;
     margin: 0;
   }
-  body.nav-md .container.body .col-md-3.left_col {
-    display: none;
+  body.nav-md .container.body .col-md-3.left_col.menu_fixed {
+    height: 100%;
+    position: fixed;
   }
   body.nav-md .container.body .right_col {
     width: 100%;
@@ -211,6 +215,12 @@ body.nav-md .container.body .right_col {
   .x_title h2 small {
     display: none
   }
+}
+.left_col .mCSB_scrollTools {
+  width: 6px;
+}
+.left_col .mCSB_dragger {
+  max-height: 400px !important;
 }
 
 /**  ------------------------------------------  **/
@@ -1494,7 +1504,6 @@ span.right {
   padding: 5px 0 0 0;
   position: fixed;
   width: 230px;
-  z-index: 1000;
   background: #2A3F54;
 }
 .sidebar-footer a {
