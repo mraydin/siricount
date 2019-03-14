@@ -1028,7 +1028,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
 
 
 
-        <!-- pace -->
+        <!-- paces -->
         <script src="js/pace/pace.min.js"></script>
 
         <script src="js/custom.min.js"></script>
