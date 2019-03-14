@@ -658,12 +658,6 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
             var saatoran = document.getElementById("beforehour").innerHTML =
                 (((myObj[0].BuSaat - myObj[0].SaatOran) / myObj[0].SaatOran) * 100).toFixed(0);
 
-            console.log("SaatOran :",isFinite(saatoran));
-            if (saatoran != null ) {
-
-                saatoran = 0;
-            }
-
             if (myObj[0].YilOran == 0) {
                 var yiloran = document.getElementById("beforeyear").innerHTML = "-";
             } else {
@@ -1411,7 +1405,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
   <script>
 
-      console.log("Month Value", getMonthValue().datax);
+      //console.log("Month Value", getMonthValue().datax);
 
       // Bar chart
       var canvas = document.getElementById("mymonthchart");
@@ -1507,7 +1501,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
   </script>
   <script>
 
-      console.log("Month Value", getMonthValue().datax);
+      //console.log("Month Value", getMonthValue().datax);
 
       // Bar chart
       var canvas = document.getElementById("mydaychart");
