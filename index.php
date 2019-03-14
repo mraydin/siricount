@@ -1032,7 +1032,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                 return e.Giris;
                 });
 
-    console.log("Labels :",count);
+    //console.log("Labels :",count);
 
 	// Bar chart
     	var ctx = document.getElementById("mybarChart");
