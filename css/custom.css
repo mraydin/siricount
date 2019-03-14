@@ -2,7 +2,7 @@ body.nav-sm .container.body .col-md-3.left_col {
   width: 70px;
   padding: 0;
   position: fixed;
-  height: 101%;
+  height: 100%;
   z-index: 200;
 }
 body.nav-sm .container.body .col-md-3.right_col.menu_fixed {
