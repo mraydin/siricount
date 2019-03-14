@@ -659,7 +659,7 @@ aria-expanded="false"><i class="fa fa-wrench"></i></a>
                 (((myObj[0].BuSaat - myObj[0].SaatOran) / myObj[0].SaatOran) * 100).toFixed(0);
 
             console.log("SaatOran :",isFinite(saatoran));
-            if (saatoran != null )) {
+            if (saatoran != null ) {
 
                 saatoran = 0;
             }
