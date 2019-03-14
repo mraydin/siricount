@@ -1031,7 +1031,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
         <!-- pace -->
         <script src="js/pace/pace.min.js"></script>
 
-        <script src="js/custom.js"></script>
+        <script src="js/custom.min.js"></script>
         <script>
             $('document').ready(function() {
                 $(".sparkline_one").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
