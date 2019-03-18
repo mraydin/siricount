@@ -345,6 +345,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
         console.log(getValue().datax);
         document.getElementById("dunOran").innerHTML = getValue().datax;
         document.getElementById("buSaat").innerHTML = getValue().busaat;
+        document.getElementById("disAlan").innerHTML = getoutValue().disalan;
         document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
         function getValue() {
 
@@ -365,6 +366,26 @@ moment().locale('tr').format('MMMM D, YYYY'));
             });
             return { datax: datax,
                 busaat: busaat}
+        }
+        function getoutValue() {
+
+            var datax;
+            var disalan;
+            $.ajax({
+                type: 'GET',
+                url: "../../outCount.php",
+                async: false,
+                dataType: 'json',
+                success: function (resp) {
+                    datax = resp.map(function(e) {return e.Hour;});
+                    //datax.unshift("Pazartesi");
+                    disalan = resp.map(function(e) {return e.sum;});
+                    //datatarih.unshift("Month");
+                    //console.log ("Resp",datax);
+                }
+            });
+            return { datax: datax,
+                busaat: disalan}
         }
 
 
