@@ -177,7 +177,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         </div>
                         <div class="col-md-3 tile">
                             <span>Dış Alan</span>
-                            <h2>------</h2>
+                            <h2 id="disAlan"></h2>
                             <span class="sparkline_two" style="height: 160px;">
                                     <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
                                 </span>
@@ -405,6 +405,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                 console.log(getValue().datax);
                 document.getElementById("dunOran").innerHTML = getValue().datax;
                 document.getElementById("buSaat").innerHTML = getValue().busaat;
+                document.getElementById("disAlan").innerHTML = getoutValue().disalan;
                 document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
                 function getValue() {
 
@@ -425,6 +426,26 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     });
                     return { datax: datax,
                         busaat: busaat}
+                }
+                function getoutValue() {
+
+                    var datax;
+                    var disalan;
+                    $.ajax({
+                        type: 'GET',
+                        url: "../../outCount.php",
+                        async: false,
+                        dataType: 'json',
+                        success: function (resp) {
+                            datax = resp.map(function(e) {return e.Tarih;});
+                            //datax.unshift("Pazartesi");
+                            disalan = resp.map(function(e) {return e.Giris;});
+                            //datatarih.unshift("Month");
+                            //console.log ("Resp",datax);
+                        }
+                    });
+                    return { datax: datax,
+                        disalan: disalan}
                 }
 
 
