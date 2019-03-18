@@ -889,7 +889,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         var busaat;
                         $.ajax({
                             type: 'GET',
-                            url: "../../countSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD'),
+                            url: "../../countSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD.MM.YYYY'),
                             async: false,
                             dataType: 'json',
                             success: function (resp) {
