@@ -222,7 +222,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                     <div class="col-md-12 col-sm-8 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <div class="col-md-4"><!-- -->
+                                <div class="col-md-4"><!--a -->
                                     <h2>Saatlik Mağaza Önü Yoğunluğu<small><b id="outTarih"></b></small></h2>
                                 </div>
                                 <div class="clearfix"></div>
