@@ -503,6 +503,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 label: 'Dış Alan',
                 backgroundColor: "rgba(3, 88, 106, 0.15)",
                 type: 'line',
+                datalabels: {
+                    align: 'end',
+                    anchor: 'end',
+                },
                 data: []
             }, {
                 label: 'Mağaza Girişi',
