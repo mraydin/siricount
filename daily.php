@@ -406,7 +406,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
         	}, {
           		label: 'Bugün',
           		backgroundColor: "rgba(38, 185, 154, 0.65)",
-                type: 'line',
           		data: []
         	}]
       	};
