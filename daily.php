@@ -377,9 +377,9 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 async: false,
                 dataType: 'json',
                 success: function (resp) {
-                    datax = resp.map(function(e) {return e.Hour;});
+                    datax = resp.map(function(e) {return e.Tarih;});
                     //datax.unshift("Pazartesi");
-                    disalan = resp.map(function(e) {return e.sum;});
+                    disalan = resp.map(function(e) {return e.Giris;});
                     //datatarih.unshift("Month");
                     //console.log ("Resp",datax);
                 }
