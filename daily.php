@@ -506,7 +506,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
             }, {
                 label: 'Dış Alan',
                 backgroundColor: "rgba(38, 185, 154, 0.65)",
-                type: line,
+                type: 'line',
                 data: []
             }]
         };
