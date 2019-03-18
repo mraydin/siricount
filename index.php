@@ -133,8 +133,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
               <span class="count_top"><i class="fa fa-user"></i> Yıllık 
 Ziyaret</span>
               <div class="count"><b id="thisyear"></b></div>
-              <span class="count_bottom"><i class="example"><i id="beforeyear"></i>%</i> Geçen Yıla 
-Göre</span>
+              <span class="count_bottom"><i class="example"><i id="beforeyear"></i>%</i> Geçen Yıl.</span>
             </div>
           </div>
            <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -143,8 +142,7 @@ Göre</span>
               <span class="count_top"><i class="fa fa-clock-o"></i> 
 Aylık Ziyaret</span>
               <div class="count"><b id="thismonth"></b></div>
-              <span class="count_bottom"><i class="example"><i id="beforemonth"></i>%</i> Geçen Aya 
-Göre</span>
+              <span class="count_bottom"><i class="example"><i id="beforemonth"></i>%</i> Gçn. Aya Orn</span>
             </div>
           </div>
 
@@ -154,7 +152,7 @@ Göre</span>
               <span class="count_top"><i class="fa fa-user"></i> Haftalık Ziyaret</span>
               <div class="count green"><b id="thisweek"></b></div>
               <span class="count_bottom"><i class="example"><i id="beforeweek"></i>%</i> 
-Geç. Haft. Göre</span>
+Geç. Haf. Orn.</span>
             </div>
           </div>
           <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
