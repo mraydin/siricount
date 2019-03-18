@@ -552,8 +552,8 @@ moment().locale('tr').format('MMMM D, YYYY'));
             });
         }
         function outConfigByMutating2(chart) {
-            var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
-            $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+            var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+            $.getJSON("../../tcountOutSearch.php",myObject, function(jd) {
                 var datay = jd.map(function(e) {return e.Giris;});
                 console.log("Son Tarih",datay);
                 chart.data.datasets[0].data = datay;
