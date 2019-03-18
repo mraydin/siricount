@@ -536,11 +536,6 @@ moment().locale('tr').format('MMMM D, YYYY'));
                     ticks: {
                         beginAtZero: true
                     }
-                }],
-                xAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
                 }]
             }
         };
