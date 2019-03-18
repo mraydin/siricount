@@ -223,7 +223,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <div class="x_panel">
                             <div class="x_title">
                                 <div class="col-md-4">
-                                    <h2>Saatlik Mağaza Önü Yoğunluğu<small></small></h2>
+                                    <h2>Saatlik Mağaza Önü Yoğunluğu<small><b id="outTarih"></b></small></h2>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -363,6 +363,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
         document.getElementById("dunOran").innerHTML = getValue().datax;
         document.getElementById("buSaat").innerHTML = getValue().busaat;
         document.getElementById("disAlan").innerHTML = getoutValue().disalan;
+        document.getElementById("outTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');;
         document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
         function getValue() {
 
