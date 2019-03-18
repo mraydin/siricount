@@ -504,16 +504,16 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 backgroundColor: "rgba(3, 88, 106, 0.15)",
                 type: 'line',
                 datalabels: {
-                    align: 'start',
-                    anchor: 'start',
+                    align: 'end',
+                    anchor: 'end',
                 },
                 data: []
             }, {
                 label: 'Mağaza Girişi',
                 backgroundColor: "rgba(38, 185, 154, 0.65)",
                 datalabels: {
-                    align: 'start',
-                    anchor: 'start',
+                    align: 'end',
+                    anchor: 'end',
                 },
                 data: []
             }]
