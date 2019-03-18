@@ -500,13 +500,13 @@ moment().locale('tr').format('MMMM D, YYYY'));
         var odata = {
             labels: [],
             datasets: [{
-                label: 'Mağaza Girişi',
+                label: 'Dış Alan',
                 backgroundColor: "rgba(3, 88, 106, 0.65)",
+                type: 'line',
                 data: []
             }, {
-                label: 'Dış Alan',
+                label: 'Mağaza Girişi',
                 backgroundColor: "rgba(38, 185, 154, 0.65)",
-                type: 'line',
                 data: []
             }]
         };
