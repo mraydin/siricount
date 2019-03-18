@@ -525,7 +525,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
             maintainAspectRatio: false,
             plugins: {
                 datalabels: {
-                    color: '#ffffff',
+                    color: '#536c86',
                     title: false
                 }
             },
