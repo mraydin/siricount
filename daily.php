@@ -504,7 +504,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 backgroundColor: "rgba(3, 88, 106, 0.15)",
                 type: 'line',
                 datalabels: {
-                    align: 'end',
+                    align: 'top',
                     anchor: 'end',
                 },
                 data: []
