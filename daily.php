@@ -534,11 +534,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
-        init();
+        initout();
 
-        updateConfigByMutating(window.myOutBarChart);
-        updateConfigByMutating2(window.myOutBarChart);
-        function updateConfigByMutating(chart) {
+        outConfigByMutating(window.myOutBarChart);
+        outConfigByMutating2(window.myOutBarChart);
+        function outConfigByMutating(chart) {
             var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
             $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                 //console.log("jd",jd);
@@ -551,7 +551,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.update();
             });
         }
-        function updateConfigByMutating2(chart) {
+        function outConfigByMutating2(chart) {
             var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
             $.getJSON("../../tcountSearch.php",myObject, function(jd) {
                 var datay = jd.map(function(e) {return e.Giris;});
@@ -560,7 +560,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 chart.update();
             });
         }
-        function init() {
+        function initout() {
             //Chart declaration:
             if (window.myOutBarChart != undefined)
                 window.myOutBarChart.destroy();
