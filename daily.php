@@ -385,7 +385,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 }
             });
             return { datax: datax,
-                busaat: disalan}
+                disalan: disalan}
         }
 
 
