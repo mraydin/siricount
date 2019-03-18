@@ -3,7 +3,7 @@ width: 70px;
 padding: 0;
 position: fixed;
 height: 100%;
-z-index: 200;
+z-index: 201;
 }
 body.nav-sm .container.body .right_col {
   padding: 10px 20px;
