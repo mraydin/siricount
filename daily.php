@@ -208,15 +208,32 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                             <div class="col-md-4">
                             <h2>Saatlik Trend <small></small></h2>
                              </div>
-                    <div class="clearfix"></div>
-                  </div>
-              <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
-                  <canvas id="mybarChart""></canvas>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
+                          <canvas id="mybarChart""></canvas>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-    </div>
           <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <div class="col-md-4">
+                                    <h2>Saatlik Trend <small></small></h2>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content" style="margin: auto; height: 40vh; width: 80vw;">
+                                <canvas id="myoutbarChart""></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
 
 
 
@@ -472,7 +489,90 @@ moment().locale('tr').format('MMMM D, YYYY'));
 	}
 	<!-- /Defaul Bar Script Data-->
 
-       
+
+
+        <!-- Default Bar Script -->
+        // Bar chart
+        var ocanvas = document.getElementById("myoutbarChart");
+        var octx = ocanvas.getContext('2d');
+        var ochartType = 'bar';
+        var myBarChart;
+        var odata = {
+            labels: [],
+            datasets: [{
+                label: 'Dün, bu saatte',
+                backgroundColor: "rgba(3, 88, 106, 0.65)",
+                data: []
+            }, {
+                label: 'Bugün',
+                backgroundColor: "rgba(38, 185, 154, 0.65)",
+                data: []
+            }]
+        };
+
+        var ooptions = {
+            barPercentage: 0.7,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                datalabels: {
+                    color: '#ffffff',
+                    title: false
+                }
+            },
+
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+        //destroyChart(myBarChart);
+
+
+
+
+        init();
+
+        updateConfigByMutating(window.myOutBarChart);
+        updateConfigByMutating2(window.myOutBarChart);
+        function updateConfigByMutating(chart) {
+            var myObject = {name: moment().format('DD.MM.YYYY'), s: "submit"};
+            $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                //console.log("jd",jd);
+                var datax = jd.map(function(e) {return e.Tarih;});
+                //console.log("Tarih",datax);
+                var datay = jd.map(function(e) {return e.Giris; });
+                //console.log("tcounty",datay);
+                chart.data.labels = datax;
+                chart.data.datasets[1].data = datay;
+                chart.update();
+            });
+        }
+        function updateConfigByMutating2(chart) {
+            var myObject = {name: moment().subtract(1, 'days').format('DD.MM.YYYY'), s: "submit"};
+            $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                var datay = jd.map(function(e) {return e.Giris;});
+                console.log("Son Tarih",datay);
+                chart.data.datasets[0].data = datay;
+                chart.update();
+            });
+        }
+        function init() {
+            //Chart declaration:
+            if (window.myOutBarChart != undefined)
+                window.myOutBarChart.destroy();
+            window.myOutBarChart = new Chart(octx, {
+                type: ochartType,
+                data: odata,
+                options: ooptions
+            });
+        }
+        <!-- /Defaul Bar Script Data-->
+
+
 
       $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
         console.log("apply event fired, start/end dates are " + picker.startDate.locale('tr').format('DD.MM.YYYY') + " to " + 
