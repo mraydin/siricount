@@ -507,6 +507,10 @@ moment().locale('tr').format('MMMM D, YYYY'));
             }, {
                 label: 'Mağaza Girişi',
                 backgroundColor: "rgba(38, 185, 154, 0.65)",
+                datalabels: {
+                    align: 'start',
+                    anchor: 'start',
+                }
                 data: []
             }]
         };
