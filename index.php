@@ -152,7 +152,7 @@ Aylık Ziyaret</span>
               <span class="count_top"><i class="fa fa-user"></i> Haftalık Ziyaret</span>
               <div class="count green"><b id="thisweek"></b></div>
               <span class="count_bottom"><i class="example"><i id="beforeweek"></i>%</i> 
-Geç. Haf. Orn.</span>
+   </span>Geç. Haf. Orn.
             </div>
           </div>
           <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
