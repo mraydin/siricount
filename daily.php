@@ -492,7 +492,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
 
 
-        <!-- Default Bar Script -->
+        <!-- Default Out Bar Script -->
         // Bar chart
         var ocanvas = document.getElementById("myoutbarChart");
         var octx = ocanvas.getContext('2d');
@@ -533,6 +533,11 @@ moment().locale('tr').format('MMMM D, YYYY'));
 
             scales: {
                 yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
                     ticks: {
                         beginAtZero: true
                     }
@@ -580,7 +585,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 options: ooptions
             });
         }
-        <!-- /Defaul Bar Script Data-->
+        <!-- /Defaul Out Bar Script Data-->
 
 
 
