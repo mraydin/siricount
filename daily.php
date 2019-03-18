@@ -501,7 +501,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
             labels: [],
             datasets: [{
                 label: 'Dış Alan',
-                backgroundColor: "rgba(3, 88, 106, 0.15)",
+                backgroundColor: "rgba(3, 88, 106, 0.25)",
                 type: 'line',
                 datalabels: {
                     align: 'top',
