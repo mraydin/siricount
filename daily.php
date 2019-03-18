@@ -510,7 +510,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 datalabels: {
                     align: 'start',
                     anchor: 'start',
-                }
+                },
                 data: []
             }]
         };
