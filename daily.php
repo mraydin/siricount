@@ -413,7 +413,14 @@ moment().locale('tr').format('MMMM D, YYYY'));
       	var options = {
       	    barPercentage: 0.7,
 		responsive: true,
-                maintainAspectRatio: false,
+            maintainAspectRatio: false,
+            plugins: {
+                datalabels: {
+                    color: '#ffffff',
+                    title: false
+                }
+            },
+
         	scales: {
           		yAxes: [{
             			ticks: {

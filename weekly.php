@@ -1084,16 +1084,16 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
                 },
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    datalabels: {
-                        color: '#536c86',
-                        font: {
-                            weight: 'bold'
-                        },
+                    plugins: {
+                        datalabels: {
+                            color: '#536c86',
+                            font: {
+                                weight: 'bold'
+                            },
 
-                        title: false
-                    }
-                },
+                            title: false
+                        }
+                    },
                 legend: {
                     padding: 400,
                     position: "top"
