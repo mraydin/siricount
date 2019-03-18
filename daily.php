@@ -223,7 +223,7 @@ fa-paw"></i> <span>SiriCount v2.0!</span></a>
                         <div class="x_panel">
                             <div class="x_title">
                                 <div class="col-md-4">
-                                    <h2>Saatlik Trend <small></small></h2>
+                                    <h2>Saatlik Mağaza Önü Yoğunluğu<small></small></h2>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
