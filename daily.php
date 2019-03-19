@@ -488,7 +488,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
 			options: options
 		});
 	}
-	<!-- /Defaul Bar Script Data-->
+	<!-- /Default Bar Script Data-->
 
 
 
@@ -580,7 +580,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
                 options: ooptions
             });
         }
-        <!-- /Defaul Out Bar Script Data-->
+        <!-- /Default Out Bar Script Data-->
 
 
 
@@ -707,6 +707,100 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
   		//restart chart:
   	//	init();
 	//}
+
+
+
+          <!-- Dynamic Out Bar Script -->
+          // Bar chart
+          var ocanvas = document.getElementById("myoutbarChart");
+          var octx = ocanvas.getContext('2d');
+          var ochartType = 'bar';
+          var myBarChart;
+          var odata = {
+              labels: [],
+              datasets: [{
+                  label: 'Dış Alan',
+                  backgroundColor: "rgba(3, 88, 106, 0.25)",
+                  type: 'line',
+                  datalabels: {
+                      align: 'top',
+                      anchor: 'end',
+                  },
+                  data: []
+              }, {
+                  label: 'Mağaza Girişi',
+                  backgroundColor: "rgba(38, 185, 154, 0.65)",
+                  datalabels: {
+                      align: 'top',
+                      anchor: 'center',
+                  },
+                  data: []
+              }]
+          };
+
+          var ooptions = {
+              barPercentage: 0.7,
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                  datalabels: {
+                      color: '#536c86',
+                      title: false
+                  }
+              },
+
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          };
+          //destroyChart(myBarChart);
+
+
+
+
+          initout();
+
+          outConfigByMutating(window.myOutBarChart);
+          outConfigByMutating2(window.myOutBarChart);
+          function outConfigByMutating(chart) {
+              var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
+              $.getJSON("../../tcountSearch.php",myObject, function(jd) {
+                  //console.log("jd",jd);
+                  var datax = jd.map(function(e) {return e.Tarih;});
+                  //console.log("Tarih",datax);
+                  var datay = jd.map(function(e) {return e.Giris; });
+                  //console.log("tcounty",datay);
+                  chart.data.labels = datax;
+                  chart.data.datasets[1].data = datay;
+                  chart.update();
+              });
+          }
+          function outConfigByMutating2(chart) {
+              var myObject = {name: picker.startDate.locale('tr').format('DD.MM.YYYY'), s: "submit"};
+              $.getJSON("../../tcountOutSearch.php",myObject, function(jd) {
+                  var datay = jd.map(function(e) {return e.Giris;});
+                  console.log("Son Tarih",datay);
+                  chart.data.datasets[0].data = datay;
+                  chart.update();
+              });
+          }
+          function initout() {
+              //Chart declaration:
+              if (window.myOutBarChart != undefined)
+                  window.myOutBarChart.destroy();
+              window.myOutBarChart = new Chart(octx, {
+                  type: ochartType,
+                  data: odata,
+                  options: ooptions
+              });
+          }
+          <!-- /Dynamic Out Bar Script Data-->
+
+
 
           <!-- Dynamic Menu Widget Data -->
           //console.log(getValue().datax);
