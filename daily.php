@@ -363,7 +363,7 @@ moment().locale('tr').format('MMMM D, YYYY'));
         document.getElementById("dunOran").innerHTML = getValue().datax;
         document.getElementById("buSaat").innerHTML = getValue().busaat;
         document.getElementById("disAlan").innerHTML = getoutValue().disalan;
-        document.getElementById("outTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');;
+        document.getElementById("outTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
         document.getElementById("buTarih").innerHTML = moment().locale('tr').format('DD.MMMM.YYYY');
         function getValue() {
 
@@ -709,7 +709,7 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
 	//}
 
           <!-- Dynamic Menu Widget Data -->
-          console.log(getValue().datax);
+          //console.log(getValue().datax);
           document.getElementById("dunOran").innerHTML = getValue().datax;
           document.getElementById("buSaat").innerHTML = getValue().busaat;
           document.getElementById("buTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
@@ -735,9 +735,61 @@ picker.endDate.locale('tr').format('DD.MM.YYYY') + " to " + picker.startDate.loc
           }
 
 
-          <!-- /Menu Widget Data-->
+          <!-- /Dynamic Menu Widget Data-->
 
-	});
+          <!-- Dynamic Menu Widget Data -->
+          //console.log(getValue().datax);
+          document.getElementById("dunOran").innerHTML = getValue().datax;
+          document.getElementById("buSaat").innerHTML = getValue().busaat;
+          document.getElementById("disAlan").innerHTML = getoutValue().disalan;
+          document.getElementById("outTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
+          document.getElementById("buTarih").innerHTML = picker.startDate.locale('tr').format('DD.MMMM.YYYY');
+          function getValue() {
+
+              var datax;
+              var busaat;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../countSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD.MM.YYYY'),
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Giris;});
+                      //datax.unshift("Pazartesi");
+                      busaat = resp.map(function(e) {return e.BuSaat;});
+                      //datatarih.unshift("Month");
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  busaat: busaat}
+          }
+          function getoutValue() {
+
+              var datax;
+              var disalan;
+              $.ajax({
+                  type: 'GET',
+                  url: "../../outCountSearch.php?s=submit&name="+picker.startDate.locale('tr').format('DD.MM.YYYY'),
+                  async: false,
+                  dataType: 'json',
+                  success: function (resp) {
+                      datax = resp.map(function(e) {return e.Tarih;});
+                      //datax.unshift("Pazartesi");
+                      disalan = resp.map(function(e) {return e.Giris;});
+                      //datatarih.unshift("Month");
+                      //console.log ("Resp",datax);
+                  }
+              });
+              return { datax: datax,
+                  disalan: disalan}
+          }
+
+
+          <!-- /Dynamic Menu Widget Data-->
+
+
+      });
       $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
         console.log("cancel event fired");
 	mybarChart.destroy();
